@@ -282,10 +282,7 @@ namespace Takip_Programı
             // 
             // listView1
             // 
-            this.listView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.listView1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+            this.listView1.BackColor = System.Drawing.Color.DimGray;
             this.listView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.ADI,
@@ -297,25 +294,30 @@ namespace Takip_Programı
             this.CEPTEL,
             this.VERGIDAIRE,
             this.VERGINUMARA});
+            this.listView1.ForeColor = System.Drawing.Color.White;
+            this.listView1.FullRowSelect = true;
+            this.listView1.GridLines = true;
             this.listView1.HideSelection = false;
             this.listView1.Location = new System.Drawing.Point(0, 185);
             this.listView1.Name = "listView1";
+            this.listView1.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.listView1.Size = new System.Drawing.Size(1064, 389);
             this.listView1.TabIndex = 27;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
+            this.listView1.SelectedIndexChanged += ListView1_SelectedIndexChanged;
             // 
             // ADI
             // 
             this.ADI.Name = "ADI";
             this.ADI.Text = "ADI";
-            this.ADI.Width = 120;
+            this.ADI.Width = 110;
             // 
             // SOYADI
             // 
             this.SOYADI.Name = "SOYADI";
             this.SOYADI.Text = "SOYADI";
-            this.SOYADI.Width = 100;
+            this.SOYADI.Width = 110;
             // 
             // RISK
             // 
@@ -351,7 +353,7 @@ namespace Takip_Programı
             // 
             this.VERGIDAIRE.Name = "VERGIDAIRE";
             this.VERGIDAIRE.Text = "VERGİ DAİRESİ";
-            this.VERGIDAIRE.Width = 120;
+            this.VERGIDAIRE.Width = 130;
             // 
             // VERGINUMARA
             // 
@@ -704,6 +706,8 @@ namespace Takip_Programı
             this.ResumeLayout(false);
 
         }
+
+    
 
         #endregion
 
