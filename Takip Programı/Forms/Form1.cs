@@ -44,85 +44,87 @@ namespace Takip_Programı
             // this.MaximumSize = this.Size;
             //  this.MinimumSize = this.Size;
             timer1.Start();
+            //ustPanel.Visible = false;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void musteriBtn_Click(object sender, EventArgs e)
         {
-            button2.BackColor = System.Drawing.Color.FromArgb(212, 236, 221);
-            button3.BackColor = System.Drawing.Color.FromArgb(212, 236, 221);
-            button4.BackColor = System.Drawing.Color.FromArgb(212, 236, 221);
-            button5.BackColor = System.Drawing.Color.FromArgb(212, 236, 221);
-            button6.BackColor = System.Drawing.Color.FromArgb(212, 236, 221);
-            button7.BackColor = System.Drawing.Color.FromArgb(212, 236, 221);
-            button1.BackColor = ColorTranslator.FromHtml("#3DB2FF");
+            psatisBtn.BackColor = System.Drawing.Color.FromArgb(212, 236, 221);
+            pompaBtn.BackColor = System.Drawing.Color.FromArgb(212, 236, 221);
+            depoBtn.BackColor = System.Drawing.Color.FromArgb(212, 236, 221);
+            kksatisBtn.BackColor = System.Drawing.Color.FromArgb(212, 236, 221);
+            stokBtn.BackColor = System.Drawing.Color.FromArgb(212, 236, 221);
+            ayarlarBtn.BackColor = System.Drawing.Color.FromArgb(212, 236, 221);
+            musteriBtn.BackColor = ColorTranslator.FromHtml("#3DB2FF");
             OpenChildForm(new Form_Clients(), sender);
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void psatisBtn_Click(object sender, EventArgs e)
         {
-            button1.BackColor = System.Drawing.Color.FromArgb(212, 236, 221);
-            button3.BackColor = System.Drawing.Color.FromArgb(212, 236, 221);
-            button4.BackColor = System.Drawing.Color.FromArgb(212, 236, 221);
-            button5.BackColor = System.Drawing.Color.FromArgb(212, 236, 221);
-            button6.BackColor = System.Drawing.Color.FromArgb(212, 236, 221);
-            button7.BackColor = System.Drawing.Color.FromArgb(212, 236, 221);
-            button2.BackColor = ColorTranslator.FromHtml("#66DE93");
+            musteriBtn.BackColor = System.Drawing.Color.FromArgb(212, 236, 221);
+            pompaBtn.BackColor = System.Drawing.Color.FromArgb(212, 236, 221);
+            depoBtn.BackColor = System.Drawing.Color.FromArgb(212, 236, 221);
+            kksatisBtn.BackColor = System.Drawing.Color.FromArgb(212, 236, 221);
+            stokBtn.BackColor = System.Drawing.Color.FromArgb(212, 236, 221);
+            ayarlarBtn.BackColor = System.Drawing.Color.FromArgb(212, 236, 221);
+            psatisBtn.BackColor = ColorTranslator.FromHtml("#66DE93");
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void pompaBtn_Click(object sender, EventArgs e)
         {
-            button1.BackColor = System.Drawing.Color.FromArgb(212, 236, 221);
-            button2.BackColor = System.Drawing.Color.FromArgb(212, 236, 221);
-            button4.BackColor = System.Drawing.Color.FromArgb(212, 236, 221);
-            button5.BackColor = System.Drawing.Color.FromArgb(212, 236, 221);
-            button6.BackColor = System.Drawing.Color.FromArgb(212, 236, 221);
-            button7.BackColor = System.Drawing.Color.FromArgb(212, 236, 221);
-            button3.BackColor = ColorTranslator.FromHtml("#FFF47D");
+            musteriBtn.BackColor = System.Drawing.Color.FromArgb(212, 236, 221);
+            psatisBtn.BackColor = System.Drawing.Color.FromArgb(212, 236, 221);
+            depoBtn.BackColor = System.Drawing.Color.FromArgb(212, 236, 221);
+            kksatisBtn.BackColor = System.Drawing.Color.FromArgb(212, 236, 221);
+            stokBtn.BackColor = System.Drawing.Color.FromArgb(212, 236, 221);
+            ayarlarBtn.BackColor = System.Drawing.Color.FromArgb(212, 236, 221);
+            pompaBtn.BackColor = ColorTranslator.FromHtml("#FFF47D");
             OpenChildForm(new Form_Pomp(), sender);
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void depoBtn_Click(object sender, EventArgs e)
         {
-            button1.BackColor = System.Drawing.Color.FromArgb(212, 236, 221);
-            button2.BackColor = System.Drawing.Color.FromArgb(212, 236, 221);
-            button3.BackColor = System.Drawing.Color.FromArgb(212, 236, 221);
-            button5.BackColor = System.Drawing.Color.FromArgb(212, 236, 221);
-            button6.BackColor = System.Drawing.Color.FromArgb(212, 236, 221);
-            button7.BackColor = System.Drawing.Color.FromArgb(212, 236, 221);
-            button4.BackColor = ColorTranslator.FromHtml("#FFE6E6");
+            musteriBtn.BackColor = System.Drawing.Color.FromArgb(212, 236, 221);
+            psatisBtn.BackColor = System.Drawing.Color.FromArgb(212, 236, 221);
+            pompaBtn.BackColor = System.Drawing.Color.FromArgb(212, 236, 221);
+            kksatisBtn.BackColor = System.Drawing.Color.FromArgb(212, 236, 221);
+            stokBtn.BackColor = System.Drawing.Color.FromArgb(212, 236, 221);
+            ayarlarBtn.BackColor = System.Drawing.Color.FromArgb(212, 236, 221);
+            depoBtn.BackColor = ColorTranslator.FromHtml("#FFE6E6");
         }
 
-        private void button5_Click(object sender, EventArgs e)
+        private void kksatisBtn_Click(object sender, EventArgs e)
         {
-            button1.BackColor = System.Drawing.Color.FromArgb(212, 236, 221);
-            button2.BackColor = System.Drawing.Color.FromArgb(212, 236, 221);
-            button3.BackColor = System.Drawing.Color.FromArgb(212, 236, 221);
-            button4.BackColor = System.Drawing.Color.FromArgb(212, 236, 221);
-            button6.BackColor = System.Drawing.Color.FromArgb(212, 236, 221);
-            button7.BackColor = System.Drawing.Color.FromArgb(212, 236, 221);
-            button5.BackColor = ColorTranslator.FromHtml("#F3F2C9");
+            musteriBtn.BackColor = System.Drawing.Color.FromArgb(212, 236, 221);
+            psatisBtn.BackColor = System.Drawing.Color.FromArgb(212, 236, 221);
+            pompaBtn.BackColor = System.Drawing.Color.FromArgb(212, 236, 221);
+            depoBtn.BackColor = System.Drawing.Color.FromArgb(212, 236, 221);
+            stokBtn.BackColor = System.Drawing.Color.FromArgb(212, 236, 221);
+            ayarlarBtn.BackColor = System.Drawing.Color.FromArgb(212, 236, 221);
+            kksatisBtn.BackColor = ColorTranslator.FromHtml("#F3F2C9");
         }
 
-        private void button6_Click(object sender, EventArgs e)
+        private void stokBtn_Click(object sender, EventArgs e)
         {
-            button1.BackColor = System.Drawing.Color.FromArgb(212, 236, 221);
-            button2.BackColor = System.Drawing.Color.FromArgb(212, 236, 221);
-            button3.BackColor = System.Drawing.Color.FromArgb(212, 236, 221);
-            button4.BackColor = System.Drawing.Color.FromArgb(212, 236, 221);
-            button5.BackColor = System.Drawing.Color.FromArgb(212, 236, 221);
-            button7.BackColor = System.Drawing.Color.FromArgb(212, 236, 221);
-            button6.BackColor = ColorTranslator.FromHtml("#B2B1B9");
+            musteriBtn.BackColor = System.Drawing.Color.FromArgb(212, 236, 221);
+            psatisBtn.BackColor = System.Drawing.Color.FromArgb(212, 236, 221);
+            pompaBtn.BackColor = System.Drawing.Color.FromArgb(212, 236, 221);
+            depoBtn.BackColor = System.Drawing.Color.FromArgb(212, 236, 221);
+            kksatisBtn.BackColor = System.Drawing.Color.FromArgb(212, 236, 221);
+            ayarlarBtn.BackColor = System.Drawing.Color.FromArgb(212, 236, 221);
+            stokBtn.BackColor = ColorTranslator.FromHtml("#B2B1B9");
         }
 
-        private void button7_Click(object sender, EventArgs e)
+        private void ayarlarBtn_Click(object sender, EventArgs e)
         {
-            button1.BackColor = System.Drawing.Color.FromArgb(212, 236, 221);
-            button2.BackColor = System.Drawing.Color.FromArgb(212, 236, 221);
-            button3.BackColor = System.Drawing.Color.FromArgb(212, 236, 221);
-            button4.BackColor = System.Drawing.Color.FromArgb(212, 236, 221);
-            button5.BackColor = System.Drawing.Color.FromArgb(212, 236, 221);
-            button6.BackColor = System.Drawing.Color.FromArgb(212, 236, 221);
-            button7.BackColor = ColorTranslator.FromHtml("#B5EAEA");
+            musteriBtn.BackColor = System.Drawing.Color.FromArgb(212, 236, 221);
+            psatisBtn.BackColor = System.Drawing.Color.FromArgb(212, 236, 221);
+            pompaBtn.BackColor = System.Drawing.Color.FromArgb(212, 236, 221);
+            depoBtn.BackColor = System.Drawing.Color.FromArgb(212, 236, 221);
+            kksatisBtn.BackColor = System.Drawing.Color.FromArgb(212, 236, 221);
+            stokBtn.BackColor = System.Drawing.Color.FromArgb(212, 236, 221);
+            ayarlarBtn.BackColor = ColorTranslator.FromHtml("#B5EAEA");
+            OpenChildForm(new Form_Settings(), sender);
         }
 
         private void timer1_Tick(object sender, EventArgs e)

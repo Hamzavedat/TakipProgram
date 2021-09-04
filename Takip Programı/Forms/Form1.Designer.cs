@@ -32,15 +32,15 @@ namespace Takip_Programı
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.button7 = new System.Windows.Forms.Button();
+            this.ustPanel = new System.Windows.Forms.Panel();
+            this.ayarlarBtn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.stokBtn = new System.Windows.Forms.Button();
+            this.kksatisBtn = new System.Windows.Forms.Button();
+            this.depoBtn = new System.Windows.Forms.Button();
+            this.pompaBtn = new System.Windows.Forms.Button();
+            this.psatisBtn = new System.Windows.Forms.Button();
+            this.musteriBtn = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.girisBtn = new System.Windows.Forms.Button();
@@ -50,49 +50,49 @@ namespace Takip_Programı
             this.kullaniciLbl = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.panel1.SuspendLayout();
+            this.ustPanel.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // panel1
+            // ustPanel
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(236)))), ((int)(((byte)(221)))));
-            this.panel1.Controls.Add(this.button7);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.button6);
-            this.panel1.Controls.Add(this.button5);
-            this.panel1.Controls.Add(this.button4);
-            this.panel1.Controls.Add(this.button3);
-            this.panel1.Controls.Add(this.button2);
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1064, 52);
-            this.panel1.TabIndex = 0;
+            this.ustPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(236)))), ((int)(((byte)(221)))));
+            this.ustPanel.Controls.Add(this.ayarlarBtn);
+            this.ustPanel.Controls.Add(this.label1);
+            this.ustPanel.Controls.Add(this.stokBtn);
+            this.ustPanel.Controls.Add(this.kksatisBtn);
+            this.ustPanel.Controls.Add(this.depoBtn);
+            this.ustPanel.Controls.Add(this.pompaBtn);
+            this.ustPanel.Controls.Add(this.psatisBtn);
+            this.ustPanel.Controls.Add(this.musteriBtn);
+            this.ustPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.ustPanel.Location = new System.Drawing.Point(0, 0);
+            this.ustPanel.Name = "ustPanel";
+            this.ustPanel.Size = new System.Drawing.Size(1064, 52);
+            this.ustPanel.TabIndex = 0;
             // 
-            // button7
+            // ayarlarBtn
             // 
-            this.button7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(236)))), ((int)(((byte)(221)))));
-            this.button7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button7.Cursor = System.Windows.Forms.Cursors.Default;
-            this.button7.Dock = System.Windows.Forms.DockStyle.Left;
-            this.button7.FlatAppearance.BorderSize = 0;
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Font = new System.Drawing.Font("Palatino Linotype", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button7.ForeColor = System.Drawing.Color.Black;
-            this.button7.Image = global::Takip_Programı.Properties.Resources.settings;
-            this.button7.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button7.Location = new System.Drawing.Point(618, 0);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(103, 52);
-            this.button7.TabIndex = 6;
-            this.button7.Text = "AYARLAR";
-            this.button7.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button7.UseVisualStyleBackColor = false;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
+            this.ayarlarBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(236)))), ((int)(((byte)(221)))));
+            this.ayarlarBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.ayarlarBtn.Cursor = System.Windows.Forms.Cursors.Default;
+            this.ayarlarBtn.Dock = System.Windows.Forms.DockStyle.Left;
+            this.ayarlarBtn.FlatAppearance.BorderSize = 0;
+            this.ayarlarBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ayarlarBtn.Font = new System.Drawing.Font("Palatino Linotype", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.ayarlarBtn.ForeColor = System.Drawing.Color.Black;
+            this.ayarlarBtn.Image = global::Takip_Programı.Properties.Resources.settings;
+            this.ayarlarBtn.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.ayarlarBtn.Location = new System.Drawing.Point(618, 0);
+            this.ayarlarBtn.Name = "ayarlarBtn";
+            this.ayarlarBtn.Size = new System.Drawing.Size(103, 52);
+            this.ayarlarBtn.TabIndex = 6;
+            this.ayarlarBtn.Text = "AYARLAR";
+            this.ayarlarBtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.ayarlarBtn.UseVisualStyleBackColor = false;
+            this.ayarlarBtn.Click += new System.EventHandler(this.ayarlarBtn_Click);
             // 
             // label1
             // 
@@ -105,131 +105,131 @@ namespace Takip_Programı
             this.label1.TabIndex = 7;
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // button6
+            // stokBtn
             // 
-            this.button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(236)))), ((int)(((byte)(221)))));
-            this.button6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button6.Cursor = System.Windows.Forms.Cursors.Default;
-            this.button6.Dock = System.Windows.Forms.DockStyle.Left;
-            this.button6.FlatAppearance.BorderSize = 0;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Font = new System.Drawing.Font("Palatino Linotype", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button6.ForeColor = System.Drawing.Color.Black;
-            this.button6.Image = global::Takip_Programı.Properties.Resources.storage;
-            this.button6.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button6.Location = new System.Drawing.Point(515, 0);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(103, 52);
-            this.button6.TabIndex = 5;
-            this.button6.Text = "STOK";
-            this.button6.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button6.UseVisualStyleBackColor = false;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
+            this.stokBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(236)))), ((int)(((byte)(221)))));
+            this.stokBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.stokBtn.Cursor = System.Windows.Forms.Cursors.Default;
+            this.stokBtn.Dock = System.Windows.Forms.DockStyle.Left;
+            this.stokBtn.FlatAppearance.BorderSize = 0;
+            this.stokBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.stokBtn.Font = new System.Drawing.Font("Palatino Linotype", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.stokBtn.ForeColor = System.Drawing.Color.Black;
+            this.stokBtn.Image = global::Takip_Programı.Properties.Resources.storage;
+            this.stokBtn.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.stokBtn.Location = new System.Drawing.Point(515, 0);
+            this.stokBtn.Name = "stokBtn";
+            this.stokBtn.Size = new System.Drawing.Size(103, 52);
+            this.stokBtn.TabIndex = 5;
+            this.stokBtn.Text = "STOK";
+            this.stokBtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.stokBtn.UseVisualStyleBackColor = false;
+            this.stokBtn.Click += new System.EventHandler(this.stokBtn_Click);
             // 
-            // button5
+            // kksatisBtn
             // 
-            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(236)))), ((int)(((byte)(221)))));
-            this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button5.Cursor = System.Windows.Forms.Cursors.Default;
-            this.button5.Dock = System.Windows.Forms.DockStyle.Left;
-            this.button5.FlatAppearance.BorderSize = 0;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Palatino Linotype", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button5.ForeColor = System.Drawing.Color.Black;
-            this.button5.Image = global::Takip_Programı.Properties.Resources.credit_card;
-            this.button5.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button5.Location = new System.Drawing.Point(412, 0);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(103, 52);
-            this.button5.TabIndex = 4;
-            this.button5.Text = "K.K. SATIŞ";
-            this.button5.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button5.UseVisualStyleBackColor = false;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.kksatisBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(236)))), ((int)(((byte)(221)))));
+            this.kksatisBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.kksatisBtn.Cursor = System.Windows.Forms.Cursors.Default;
+            this.kksatisBtn.Dock = System.Windows.Forms.DockStyle.Left;
+            this.kksatisBtn.FlatAppearance.BorderSize = 0;
+            this.kksatisBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.kksatisBtn.Font = new System.Drawing.Font("Palatino Linotype", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.kksatisBtn.ForeColor = System.Drawing.Color.Black;
+            this.kksatisBtn.Image = global::Takip_Programı.Properties.Resources.credit_card;
+            this.kksatisBtn.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.kksatisBtn.Location = new System.Drawing.Point(412, 0);
+            this.kksatisBtn.Name = "kksatisBtn";
+            this.kksatisBtn.Size = new System.Drawing.Size(103, 52);
+            this.kksatisBtn.TabIndex = 4;
+            this.kksatisBtn.Text = "K.K. SATIŞ";
+            this.kksatisBtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.kksatisBtn.UseVisualStyleBackColor = false;
+            this.kksatisBtn.Click += new System.EventHandler(this.kksatisBtn_Click);
             // 
-            // button4
+            // depoBtn
             // 
-            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(236)))), ((int)(((byte)(221)))));
-            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button4.Cursor = System.Windows.Forms.Cursors.Default;
-            this.button4.Dock = System.Windows.Forms.DockStyle.Left;
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Palatino Linotype", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button4.ForeColor = System.Drawing.Color.Black;
-            this.button4.Image = global::Takip_Programı.Properties.Resources.oil_tanker;
-            this.button4.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button4.Location = new System.Drawing.Point(309, 0);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(103, 52);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "DEPO";
-            this.button4.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button4.UseVisualStyleBackColor = false;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.depoBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(236)))), ((int)(((byte)(221)))));
+            this.depoBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.depoBtn.Cursor = System.Windows.Forms.Cursors.Default;
+            this.depoBtn.Dock = System.Windows.Forms.DockStyle.Left;
+            this.depoBtn.FlatAppearance.BorderSize = 0;
+            this.depoBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.depoBtn.Font = new System.Drawing.Font("Palatino Linotype", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.depoBtn.ForeColor = System.Drawing.Color.Black;
+            this.depoBtn.Image = global::Takip_Programı.Properties.Resources.oil_tanker;
+            this.depoBtn.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.depoBtn.Location = new System.Drawing.Point(309, 0);
+            this.depoBtn.Name = "depoBtn";
+            this.depoBtn.Size = new System.Drawing.Size(103, 52);
+            this.depoBtn.TabIndex = 3;
+            this.depoBtn.Text = "DEPO";
+            this.depoBtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.depoBtn.UseVisualStyleBackColor = false;
+            this.depoBtn.Click += new System.EventHandler(this.depoBtn_Click);
             // 
-            // button3
+            // pompaBtn
             // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(236)))), ((int)(((byte)(221)))));
-            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button3.Cursor = System.Windows.Forms.Cursors.Default;
-            this.button3.Dock = System.Windows.Forms.DockStyle.Left;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Palatino Linotype", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button3.ForeColor = System.Drawing.Color.Black;
-            this.button3.Image = global::Takip_Programı.Properties.Resources.gas_pump;
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button3.Location = new System.Drawing.Point(206, 0);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(103, 52);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "POMPA";
-            this.button3.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.pompaBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(236)))), ((int)(((byte)(221)))));
+            this.pompaBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pompaBtn.Cursor = System.Windows.Forms.Cursors.Default;
+            this.pompaBtn.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pompaBtn.FlatAppearance.BorderSize = 0;
+            this.pompaBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.pompaBtn.Font = new System.Drawing.Font("Palatino Linotype", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.pompaBtn.ForeColor = System.Drawing.Color.Black;
+            this.pompaBtn.Image = global::Takip_Programı.Properties.Resources.gas_pump;
+            this.pompaBtn.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.pompaBtn.Location = new System.Drawing.Point(206, 0);
+            this.pompaBtn.Name = "pompaBtn";
+            this.pompaBtn.Size = new System.Drawing.Size(103, 52);
+            this.pompaBtn.TabIndex = 2;
+            this.pompaBtn.Text = "POMPA";
+            this.pompaBtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.pompaBtn.UseVisualStyleBackColor = false;
+            this.pompaBtn.Click += new System.EventHandler(this.pompaBtn_Click);
             // 
-            // button2
+            // psatisBtn
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(236)))), ((int)(((byte)(221)))));
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button2.Cursor = System.Windows.Forms.Cursors.Default;
-            this.button2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Palatino Linotype", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button2.ForeColor = System.Drawing.Color.Black;
-            this.button2.Image = global::Takip_Programı.Properties.Resources.coins;
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button2.Location = new System.Drawing.Point(103, 0);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(103, 52);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "P. SATIŞ";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.psatisBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(236)))), ((int)(((byte)(221)))));
+            this.psatisBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.psatisBtn.Cursor = System.Windows.Forms.Cursors.Default;
+            this.psatisBtn.Dock = System.Windows.Forms.DockStyle.Left;
+            this.psatisBtn.FlatAppearance.BorderSize = 0;
+            this.psatisBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.psatisBtn.Font = new System.Drawing.Font("Palatino Linotype", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.psatisBtn.ForeColor = System.Drawing.Color.Black;
+            this.psatisBtn.Image = global::Takip_Programı.Properties.Resources.coins;
+            this.psatisBtn.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.psatisBtn.Location = new System.Drawing.Point(103, 0);
+            this.psatisBtn.Name = "psatisBtn";
+            this.psatisBtn.Size = new System.Drawing.Size(103, 52);
+            this.psatisBtn.TabIndex = 1;
+            this.psatisBtn.Text = "P. SATIŞ";
+            this.psatisBtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.psatisBtn.UseVisualStyleBackColor = false;
+            this.psatisBtn.Click += new System.EventHandler(this.psatisBtn_Click);
             // 
-            // button1
+            // musteriBtn
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(236)))), ((int)(((byte)(221)))));
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.button1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Palatino Linotype", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button1.ForeColor = System.Drawing.Color.Black;
-            this.button1.Image = global::Takip_Programı.Properties.Resources.clients;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button1.Location = new System.Drawing.Point(0, 0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(103, 52);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "MÜŞTERİLER";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.musteriBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(236)))), ((int)(((byte)(221)))));
+            this.musteriBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.musteriBtn.Cursor = System.Windows.Forms.Cursors.Default;
+            this.musteriBtn.Dock = System.Windows.Forms.DockStyle.Left;
+            this.musteriBtn.FlatAppearance.BorderSize = 0;
+            this.musteriBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.musteriBtn.Font = new System.Drawing.Font("Palatino Linotype", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.musteriBtn.ForeColor = System.Drawing.Color.Black;
+            this.musteriBtn.Image = global::Takip_Programı.Properties.Resources.clients;
+            this.musteriBtn.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.musteriBtn.Location = new System.Drawing.Point(0, 0);
+            this.musteriBtn.Name = "musteriBtn";
+            this.musteriBtn.Size = new System.Drawing.Size(103, 52);
+            this.musteriBtn.TabIndex = 0;
+            this.musteriBtn.Text = "MÜŞTERİLER";
+            this.musteriBtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.musteriBtn.UseVisualStyleBackColor = false;
+            this.musteriBtn.Click += new System.EventHandler(this.musteriBtn_Click);
             // 
             // panel2
             // 
@@ -246,7 +246,7 @@ namespace Takip_Programı
             // 
             // panel3
             // 
-            this.panel3.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.panel3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel3.Controls.Add(this.girisBtn);
             this.panel3.Controls.Add(this.textBox2);
             this.panel3.Controls.Add(this.textBox1);
@@ -331,14 +331,14 @@ namespace Takip_Programı
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1064, 626);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.ustPanel);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.Text = "TAKİP PROGRAMI";
             this.Load += new System.EventHandler(this.Form1_Load);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.ustPanel.ResumeLayout(false);
+            this.ustPanel.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
@@ -353,14 +353,14 @@ namespace Takip_Programı
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Panel ustPanel;
+        private System.Windows.Forms.Button musteriBtn;
+        private System.Windows.Forms.Button psatisBtn;
+        private System.Windows.Forms.Button ayarlarBtn;
+        private System.Windows.Forms.Button stokBtn;
+        private System.Windows.Forms.Button kksatisBtn;
+        private System.Windows.Forms.Button depoBtn;
+        private System.Windows.Forms.Button pompaBtn;
         private System.Windows.Forms.ColumnHeader RİSKLİMİTİ;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.PictureBox pictureBox1;
