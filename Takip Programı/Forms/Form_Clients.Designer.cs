@@ -62,11 +62,11 @@ namespace Takip_Programı.Forms
             this.label2 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
-            this.button12 = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
+            this.yeniBtn = new System.Windows.Forms.Button();
+            this.duzenBtn = new System.Windows.Forms.Button();
+            this.silBtn = new System.Windows.Forms.Button();
+            this.kayitBtn = new System.Windows.Forms.Button();
+            this.vazgecBtn = new System.Windows.Forms.Button();
             this.TabPage1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -176,7 +176,7 @@ namespace Takip_Programı.Forms
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(219)))), ((int)(((byte)(250)))));
             this.panel1.Controls.Add(this.textBox9);
             this.panel1.Controls.Add(this.label10);
             this.panel1.Controls.Add(this.textBox6);
@@ -197,11 +197,11 @@ namespace Takip_Programı.Forms
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.textBox1);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.button8);
-            this.panel1.Controls.Add(this.button9);
-            this.panel1.Controls.Add(this.button12);
-            this.panel1.Controls.Add(this.button11);
-            this.panel1.Controls.Add(this.button10);
+            this.panel1.Controls.Add(this.yeniBtn);
+            this.panel1.Controls.Add(this.duzenBtn);
+            this.panel1.Controls.Add(this.silBtn);
+            this.panel1.Controls.Add(this.kayitBtn);
+            this.panel1.Controls.Add(this.vazgecBtn);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
@@ -225,10 +225,10 @@ namespace Takip_Programı.Forms
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label10.AutoSize = true;
             this.label10.BackColor = System.Drawing.Color.Transparent;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label10.Font = new System.Drawing.Font("Palatino Linotype", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label10.Location = new System.Drawing.Point(747, 40);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(54, 18);
+            this.label10.Size = new System.Drawing.Size(56, 20);
             this.label10.TabIndex = 45;
             this.label10.Text = "Adres :";
             // 
@@ -247,10 +247,10 @@ namespace Takip_Programı.Forms
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label7.Font = new System.Drawing.Font("Palatino Linotype", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label7.Location = new System.Drawing.Point(531, 69);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(77, 18);
+            this.label7.Size = new System.Drawing.Size(80, 20);
             this.label7.TabIndex = 43;
             this.label7.Text = "Vergi No : ";
             // 
@@ -269,10 +269,10 @@ namespace Takip_Programı.Forms
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label8.AutoSize = true;
             this.label8.BackColor = System.Drawing.Color.Transparent;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label8.Font = new System.Drawing.Font("Palatino Linotype", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label8.Location = new System.Drawing.Point(505, 41);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(103, 18);
+            this.label8.Size = new System.Drawing.Size(106, 20);
             this.label8.TabIndex = 41;
             this.label8.Text = "Vergi Dairesi : ";
             // 
@@ -291,10 +291,10 @@ namespace Takip_Programı.Forms
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label9.AutoSize = true;
             this.label9.BackColor = System.Drawing.Color.Transparent;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label9.Font = new System.Drawing.Font("Palatino Linotype", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label9.Location = new System.Drawing.Point(537, 13);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(71, 18);
+            this.label9.Size = new System.Drawing.Size(71, 20);
             this.label9.TabIndex = 39;
             this.label9.Text = "Cep Tel : ";
             // 
@@ -327,10 +327,10 @@ namespace Takip_Programı.Forms
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label4.Font = new System.Drawing.Font("Palatino Linotype", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label4.Location = new System.Drawing.Point(331, 69);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(40, 18);
+            this.label4.Size = new System.Drawing.Size(40, 20);
             this.label4.TabIndex = 36;
             this.label4.Text = "Tel : ";
             // 
@@ -349,10 +349,10 @@ namespace Takip_Programı.Forms
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label5.Font = new System.Drawing.Font("Palatino Linotype", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label5.Location = new System.Drawing.Point(301, 41);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(70, 18);
+            this.label5.Size = new System.Drawing.Size(74, 20);
             this.label5.TabIndex = 34;
             this.label5.Text = "Mevkisi : ";
             // 
@@ -363,10 +363,10 @@ namespace Takip_Programı.Forms
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label6.Font = new System.Drawing.Font("Palatino Linotype", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label6.Location = new System.Drawing.Point(250, 13);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(121, 18);
+            this.label6.Size = new System.Drawing.Size(127, 20);
             this.label6.TabIndex = 33;
             this.label6.Text = "Fiyat Değişikliği : ";
             // 
@@ -385,10 +385,10 @@ namespace Takip_Programı.Forms
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label3.Font = new System.Drawing.Font("Palatino Linotype", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label3.Location = new System.Drawing.Point(28, 68);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(88, 18);
+            this.label3.Size = new System.Drawing.Size(94, 20);
             this.label3.TabIndex = 31;
             this.label3.Text = "Risk Limiti : ";
             // 
@@ -407,10 +407,10 @@ namespace Takip_Programı.Forms
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.Font = new System.Drawing.Font("Palatino Linotype", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label2.Location = new System.Drawing.Point(50, 40);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(65, 18);
+            this.label2.Size = new System.Drawing.Size(66, 20);
             this.label2.TabIndex = 29;
             this.label2.Text = "Soyadı : ";
             // 
@@ -429,68 +429,83 @@ namespace Takip_Programı.Forms
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.Font = new System.Drawing.Font("Palatino Linotype", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.Location = new System.Drawing.Point(76, 12);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(40, 18);
+            this.label1.Size = new System.Drawing.Size(45, 20);
             this.label1.TabIndex = 27;
             this.label1.Text = "Adı : ";
             // 
-            // button8
+            // yeniBtn
             // 
-            this.button8.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8.Location = new System.Drawing.Point(65, 114);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(125, 35);
-            this.button8.TabIndex = 22;
-            this.button8.Text = "Yeni Kayıt";
-            this.button8.UseVisualStyleBackColor = false;
-            this.button8.Click += new System.EventHandler(this.button8_Click);
+            this.yeniBtn.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.yeniBtn.FlatAppearance.BorderSize = 0;
+            this.yeniBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.yeniBtn.Font = new System.Drawing.Font("Palatino Linotype", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.yeniBtn.ForeColor = System.Drawing.SystemColors.Control;
+            this.yeniBtn.Location = new System.Drawing.Point(65, 114);
+            this.yeniBtn.Name = "yeniBtn";
+            this.yeniBtn.Size = new System.Drawing.Size(125, 35);
+            this.yeniBtn.TabIndex = 22;
+            this.yeniBtn.Text = "Yeni Kayıt";
+            this.yeniBtn.UseVisualStyleBackColor = false;
+            this.yeniBtn.Click += new System.EventHandler(this.yeniBtn_Click);
             // 
-            // button9
+            // duzenBtn
             // 
-            this.button9.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button9.Location = new System.Drawing.Point(235, 114);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(125, 35);
-            this.button9.TabIndex = 23;
-            this.button9.Text = "Düzenle";
-            this.button9.UseVisualStyleBackColor = false;
+            this.duzenBtn.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.duzenBtn.FlatAppearance.BorderSize = 0;
+            this.duzenBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.duzenBtn.Font = new System.Drawing.Font("Palatino Linotype", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.duzenBtn.ForeColor = System.Drawing.SystemColors.Control;
+            this.duzenBtn.Location = new System.Drawing.Point(235, 114);
+            this.duzenBtn.Name = "duzenBtn";
+            this.duzenBtn.Size = new System.Drawing.Size(125, 35);
+            this.duzenBtn.TabIndex = 23;
+            this.duzenBtn.Text = "Düzenle";
+            this.duzenBtn.UseVisualStyleBackColor = false;
             // 
-            // button12
+            // silBtn
             // 
-            this.button12.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button12.Location = new System.Drawing.Point(766, 114);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(125, 35);
-            this.button12.TabIndex = 26;
-            this.button12.Text = "Sil";
-            this.button12.UseVisualStyleBackColor = false;
+            this.silBtn.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.silBtn.FlatAppearance.BorderSize = 0;
+            this.silBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.silBtn.Font = new System.Drawing.Font("Palatino Linotype", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.silBtn.ForeColor = System.Drawing.SystemColors.Control;
+            this.silBtn.Location = new System.Drawing.Point(766, 114);
+            this.silBtn.Name = "silBtn";
+            this.silBtn.Size = new System.Drawing.Size(125, 35);
+            this.silBtn.TabIndex = 26;
+            this.silBtn.Text = "Sil";
+            this.silBtn.UseVisualStyleBackColor = false;
             // 
-            // button11
+            // kayitBtn
             // 
-            this.button11.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button11.Location = new System.Drawing.Point(417, 114);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(125, 35);
-            this.button11.TabIndex = 24;
-            this.button11.Text = "Kaydet";
-            this.button11.UseVisualStyleBackColor = false;
+            this.kayitBtn.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.kayitBtn.FlatAppearance.BorderSize = 0;
+            this.kayitBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.kayitBtn.Font = new System.Drawing.Font("Palatino Linotype", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.kayitBtn.ForeColor = System.Drawing.SystemColors.Control;
+            this.kayitBtn.Location = new System.Drawing.Point(417, 114);
+            this.kayitBtn.Name = "kayitBtn";
+            this.kayitBtn.Size = new System.Drawing.Size(125, 35);
+            this.kayitBtn.TabIndex = 24;
+            this.kayitBtn.Text = "Kaydet";
+            this.kayitBtn.UseVisualStyleBackColor = false;
             // 
-            // button10
+            // vazgecBtn
             // 
-            this.button10.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button10.Location = new System.Drawing.Point(594, 114);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(125, 35);
-            this.button10.TabIndex = 25;
-            this.button10.Text = "Vazgeç";
-            this.button10.UseVisualStyleBackColor = false;
+            this.vazgecBtn.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.vazgecBtn.FlatAppearance.BorderSize = 0;
+            this.vazgecBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.vazgecBtn.Font = new System.Drawing.Font("Palatino Linotype", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.vazgecBtn.ForeColor = System.Drawing.SystemColors.Control;
+            this.vazgecBtn.Location = new System.Drawing.Point(594, 114);
+            this.vazgecBtn.Name = "vazgecBtn";
+            this.vazgecBtn.Size = new System.Drawing.Size(125, 35);
+            this.vazgecBtn.TabIndex = 25;
+            this.vazgecBtn.Text = "Vazgeç";
+            this.vazgecBtn.UseVisualStyleBackColor = false;
             // 
             // Form_Clients
             // 
@@ -511,11 +526,11 @@ namespace Takip_Programı.Forms
         #endregion
 
         private System.Windows.Forms.Panel TabPage1;
-        private System.Windows.Forms.Button button12;
-        private System.Windows.Forms.Button button10;
-        private System.Windows.Forms.Button button11;
-        private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button silBtn;
+        private System.Windows.Forms.Button vazgecBtn;
+        private System.Windows.Forms.Button kayitBtn;
+        private System.Windows.Forms.Button duzenBtn;
+        private System.Windows.Forms.Button yeniBtn;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.ListView listView1;

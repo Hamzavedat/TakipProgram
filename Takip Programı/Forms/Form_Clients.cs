@@ -18,6 +18,7 @@ namespace Takip_Programı.Forms
         public Form_Clients()
         {
             InitializeComponent();
+            LoadTheme();
             customers = new List<Customer>();
 
             for (int i = 0; i < 30; i++)
@@ -41,7 +42,16 @@ namespace Takip_Programı.Forms
             }
         }
 
-        private void button8_Click(object sender, EventArgs e)
+        private void LoadTheme()
+        {
+            yeniBtn.BackColor = ColorTranslator.FromHtml("#5F939A");
+            kayitBtn.BackColor = ColorTranslator.FromHtml("#5F939A");
+            duzenBtn.BackColor = ColorTranslator.FromHtml("#5F939A");
+            silBtn.BackColor = ColorTranslator.FromHtml("#5F939A");
+            vazgecBtn.BackColor = ColorTranslator.FromHtml("#5F939A");
+        }
+
+        private void yeniBtn_Click(object sender, EventArgs e)
         {
 
         }
@@ -62,5 +72,6 @@ namespace Takip_Programı.Forms
             textBox9.Text = customer.Adress;
             comboBox1.SelectedIndex = customer.Change ? 0 : 1;
         }
+
     }
 }
