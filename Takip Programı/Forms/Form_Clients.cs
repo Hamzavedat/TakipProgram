@@ -38,7 +38,7 @@ namespace Takip_Programı.Forms
                 itemlist.SubItems.Add(item.VergiDairesi);
                 itemlist.SubItems.Add(item.VergiNo);
                 itemlist.Name = item.ID.ToString();
-                listView1.Items.Add(itemlist);
+                musteriListView.Items.Add(itemlist);
             }
         }
 
@@ -46,7 +46,6 @@ namespace Takip_Programı.Forms
         {
             yeniBtn.BackColor = ColorTranslator.FromHtml("#5F939A");
             kayitBtn.BackColor = ColorTranslator.FromHtml("#5F939A");
-            duzenBtn.BackColor = ColorTranslator.FromHtml("#5F939A");
             silBtn.BackColor = ColorTranslator.FromHtml("#5F939A");
             vazgecBtn.BackColor = ColorTranslator.FromHtml("#5F939A");
         }
@@ -55,23 +54,24 @@ namespace Takip_Programı.Forms
         {
 
         }
-        private void ListView1_SelectedIndexChanged(object sender, System.EventArgs e)
+
+        private void musteriListView_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             var obj = sender as ListView;
             var data = obj.FocusedItem;
             var customer = customers.FirstOrDefault(x => x.ID.ToString() == data.Name);
-            textBox1.Text = customer.Name;
-            textBox2.Text = customer.SurName;
-            textBox3.Text = customer.Risk;
-            textBox5.Text = customer.Position;
-            textBox4.Text = customer.Phone;
-            textBox8.Text = customer.MobilePhone;
-            textBox7.Text = customer.VergiDairesi;
-            textBox6.Text = customer.VergiNo;
-            textBox9.Text = customer.Adress;
-            textBox9.Text = customer.Adress;
-            comboBox1.SelectedIndex = customer.Change ? 0 : 1;
-        }
+            adTxtBox.Text = customer.Name;
+            soyadTxtBox.Text = customer.SurName;
+            riskTxtBox.Text = customer.Risk;
+            mevkiTxtBox.Text = customer.Position;
+            telTxtBox.Text = customer.Phone;
+            cepTelTxtBox.Text = customer.MobilePhone;
+            vergiDaireTxtBox.Text = customer.VergiDairesi;
+            vergiNoTxtBox.Text = customer.VergiNo;
+            adresTxtBox.Text = customer.Adress;
+            adresTxtBox.Text = customer.Adress;
+            fiyatComboBox.SelectedIndex = customer.Change ? 0 : 1;
 
+        }
     }
 }

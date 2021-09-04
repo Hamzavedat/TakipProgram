@@ -31,7 +31,7 @@ namespace Takip_Programı.Forms
         {
             this.TabPage1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.musteriListView = new System.Windows.Forms.ListView();
             this.ADI = new System.Windows.Forms.ColumnHeader();
             this.SOYADI = new System.Windows.Forms.ColumnHeader();
             this.RISK = new System.Windows.Forms.ColumnHeader();
@@ -42,28 +42,27 @@ namespace Takip_Programı.Forms
             this.VERGIDAIRE = new System.Windows.Forms.ColumnHeader();
             this.VERGINUMARA = new System.Windows.Forms.ColumnHeader();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.adresTxtBox = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.vergiNoTxtBox = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.vergiDaireTxtBox = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.cepTelTxtBox = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.fiyatComboBox = new System.Windows.Forms.ComboBox();
+            this.telTxtBox = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.mevkiTxtBox = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.riskTxtBox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.soyadTxtBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.adTxtBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.yeniBtn = new System.Windows.Forms.Button();
-            this.duzenBtn = new System.Windows.Forms.Button();
             this.silBtn = new System.Windows.Forms.Button();
             this.kayitBtn = new System.Windows.Forms.Button();
             this.vazgecBtn = new System.Windows.Forms.Button();
@@ -86,18 +85,18 @@ namespace Takip_Programı.Forms
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.listView1);
+            this.panel2.Controls.Add(this.musteriListView);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 164);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1064, 462);
             this.panel2.TabIndex = 29;
             // 
-            // listView1
+            // musteriListView
             // 
-            this.listView1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(78)))), ((int)(((byte)(99)))));
-            this.listView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.musteriListView.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(78)))), ((int)(((byte)(99)))));
+            this.musteriListView.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.musteriListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.ADI,
             this.SOYADI,
             this.RISK,
@@ -107,18 +106,19 @@ namespace Takip_Programı.Forms
             this.CEPTEL,
             this.VERGIDAIRE,
             this.VERGINUMARA});
-            this.listView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listView1.ForeColor = System.Drawing.Color.White;
-            this.listView1.FullRowSelect = true;
-            this.listView1.GridLines = true;
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(0, 0);
-            this.listView1.Name = "listView1";
-            this.listView1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.listView1.Size = new System.Drawing.Size(1064, 462);
-            this.listView1.TabIndex = 28;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.Details;
+            this.musteriListView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.musteriListView.ForeColor = System.Drawing.Color.White;
+            this.musteriListView.FullRowSelect = true;
+            this.musteriListView.GridLines = true;
+            this.musteriListView.HideSelection = false;
+            this.musteriListView.Location = new System.Drawing.Point(0, 0);
+            this.musteriListView.Name = "musteriListView";
+            this.musteriListView.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.musteriListView.Size = new System.Drawing.Size(1064, 462);
+            this.musteriListView.TabIndex = 28;
+            this.musteriListView.UseCompatibleStateImageBehavior = false;
+            this.musteriListView.View = System.Windows.Forms.View.Details;
+            this.musteriListView.SelectedIndexChanged += new System.EventHandler(this.musteriListView_SelectedIndexChanged_1);
             // 
             // ADI
             // 
@@ -177,28 +177,27 @@ namespace Takip_Programı.Forms
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(219)))), ((int)(((byte)(250)))));
-            this.panel1.Controls.Add(this.textBox9);
+            this.panel1.Controls.Add(this.adresTxtBox);
             this.panel1.Controls.Add(this.label10);
-            this.panel1.Controls.Add(this.textBox6);
+            this.panel1.Controls.Add(this.vergiNoTxtBox);
             this.panel1.Controls.Add(this.label7);
-            this.panel1.Controls.Add(this.textBox7);
+            this.panel1.Controls.Add(this.vergiDaireTxtBox);
             this.panel1.Controls.Add(this.label8);
-            this.panel1.Controls.Add(this.textBox8);
+            this.panel1.Controls.Add(this.cepTelTxtBox);
             this.panel1.Controls.Add(this.label9);
-            this.panel1.Controls.Add(this.comboBox1);
-            this.panel1.Controls.Add(this.textBox4);
+            this.panel1.Controls.Add(this.fiyatComboBox);
+            this.panel1.Controls.Add(this.telTxtBox);
             this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.textBox5);
+            this.panel1.Controls.Add(this.mevkiTxtBox);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.textBox3);
+            this.panel1.Controls.Add(this.riskTxtBox);
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.textBox2);
+            this.panel1.Controls.Add(this.soyadTxtBox);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.adTxtBox);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.yeniBtn);
-            this.panel1.Controls.Add(this.duzenBtn);
             this.panel1.Controls.Add(this.silBtn);
             this.panel1.Controls.Add(this.kayitBtn);
             this.panel1.Controls.Add(this.vazgecBtn);
@@ -208,15 +207,15 @@ namespace Takip_Programı.Forms
             this.panel1.Size = new System.Drawing.Size(1064, 164);
             this.panel1.TabIndex = 28;
             // 
-            // textBox9
+            // adresTxtBox
             // 
-            this.textBox9.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.textBox9.Location = new System.Drawing.Point(807, 13);
-            this.textBox9.Margin = new System.Windows.Forms.Padding(3, 3, 20, 3);
-            this.textBox9.Multiline = true;
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(203, 77);
-            this.textBox9.TabIndex = 46;
+            this.adresTxtBox.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.adresTxtBox.Location = new System.Drawing.Point(807, 13);
+            this.adresTxtBox.Margin = new System.Windows.Forms.Padding(3, 3, 20, 3);
+            this.adresTxtBox.Multiline = true;
+            this.adresTxtBox.Name = "adresTxtBox";
+            this.adresTxtBox.Size = new System.Drawing.Size(203, 77);
+            this.adresTxtBox.TabIndex = 46;
             // 
             // label10
             // 
@@ -232,13 +231,13 @@ namespace Takip_Programı.Forms
             this.label10.TabIndex = 45;
             this.label10.Text = "Adres :";
             // 
-            // textBox6
+            // vergiNoTxtBox
             // 
-            this.textBox6.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.textBox6.Location = new System.Drawing.Point(605, 68);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(114, 23);
-            this.textBox6.TabIndex = 44;
+            this.vergiNoTxtBox.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.vergiNoTxtBox.Location = new System.Drawing.Point(605, 68);
+            this.vergiNoTxtBox.Name = "vergiNoTxtBox";
+            this.vergiNoTxtBox.Size = new System.Drawing.Size(114, 23);
+            this.vergiNoTxtBox.TabIndex = 44;
             // 
             // label7
             // 
@@ -254,13 +253,13 @@ namespace Takip_Programı.Forms
             this.label7.TabIndex = 43;
             this.label7.Text = "Vergi No : ";
             // 
-            // textBox7
+            // vergiDaireTxtBox
             // 
-            this.textBox7.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.textBox7.Location = new System.Drawing.Point(605, 40);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(114, 23);
-            this.textBox7.TabIndex = 42;
+            this.vergiDaireTxtBox.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.vergiDaireTxtBox.Location = new System.Drawing.Point(605, 40);
+            this.vergiDaireTxtBox.Name = "vergiDaireTxtBox";
+            this.vergiDaireTxtBox.Size = new System.Drawing.Size(114, 23);
+            this.vergiDaireTxtBox.TabIndex = 42;
             // 
             // label8
             // 
@@ -276,13 +275,13 @@ namespace Takip_Programı.Forms
             this.label8.TabIndex = 41;
             this.label8.Text = "Vergi Dairesi : ";
             // 
-            // textBox8
+            // cepTelTxtBox
             // 
-            this.textBox8.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.textBox8.Location = new System.Drawing.Point(605, 12);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(114, 23);
-            this.textBox8.TabIndex = 40;
+            this.cepTelTxtBox.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.cepTelTxtBox.Location = new System.Drawing.Point(605, 12);
+            this.cepTelTxtBox.Name = "cepTelTxtBox";
+            this.cepTelTxtBox.Size = new System.Drawing.Size(114, 23);
+            this.cepTelTxtBox.TabIndex = 40;
             // 
             // label9
             // 
@@ -298,27 +297,27 @@ namespace Takip_Programı.Forms
             this.label9.TabIndex = 39;
             this.label9.Text = "Cep Tel : ";
             // 
-            // comboBox1
+            // fiyatComboBox
             // 
-            this.comboBox1.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.fiyatComboBox.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.fiyatComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.fiyatComboBox.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.fiyatComboBox.FormattingEnabled = true;
+            this.fiyatComboBox.Items.AddRange(new object[] {
             "Etkilensin",
             "Etkilenmesin"});
-            this.comboBox1.Location = new System.Drawing.Point(368, 11);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(114, 23);
-            this.comboBox1.TabIndex = 38;
+            this.fiyatComboBox.Location = new System.Drawing.Point(368, 11);
+            this.fiyatComboBox.Name = "fiyatComboBox";
+            this.fiyatComboBox.Size = new System.Drawing.Size(114, 23);
+            this.fiyatComboBox.TabIndex = 38;
             // 
-            // textBox4
+            // telTxtBox
             // 
-            this.textBox4.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.textBox4.Location = new System.Drawing.Point(368, 68);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(114, 23);
-            this.textBox4.TabIndex = 37;
+            this.telTxtBox.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.telTxtBox.Location = new System.Drawing.Point(368, 68);
+            this.telTxtBox.Name = "telTxtBox";
+            this.telTxtBox.Size = new System.Drawing.Size(114, 23);
+            this.telTxtBox.TabIndex = 37;
             // 
             // label4
             // 
@@ -334,13 +333,13 @@ namespace Takip_Programı.Forms
             this.label4.TabIndex = 36;
             this.label4.Text = "Tel : ";
             // 
-            // textBox5
+            // mevkiTxtBox
             // 
-            this.textBox5.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.textBox5.Location = new System.Drawing.Point(368, 40);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(114, 23);
-            this.textBox5.TabIndex = 35;
+            this.mevkiTxtBox.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.mevkiTxtBox.Location = new System.Drawing.Point(368, 40);
+            this.mevkiTxtBox.Name = "mevkiTxtBox";
+            this.mevkiTxtBox.Size = new System.Drawing.Size(114, 23);
+            this.mevkiTxtBox.TabIndex = 35;
             // 
             // label5
             // 
@@ -370,13 +369,13 @@ namespace Takip_Programı.Forms
             this.label6.TabIndex = 33;
             this.label6.Text = "Fiyat Değişikliği : ";
             // 
-            // textBox3
+            // riskTxtBox
             // 
-            this.textBox3.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.textBox3.Location = new System.Drawing.Point(113, 68);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(114, 23);
-            this.textBox3.TabIndex = 32;
+            this.riskTxtBox.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.riskTxtBox.Location = new System.Drawing.Point(113, 68);
+            this.riskTxtBox.Name = "riskTxtBox";
+            this.riskTxtBox.Size = new System.Drawing.Size(114, 23);
+            this.riskTxtBox.TabIndex = 32;
             // 
             // label3
             // 
@@ -392,13 +391,13 @@ namespace Takip_Programı.Forms
             this.label3.TabIndex = 31;
             this.label3.Text = "Risk Limiti : ";
             // 
-            // textBox2
+            // soyadTxtBox
             // 
-            this.textBox2.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.textBox2.Location = new System.Drawing.Point(113, 40);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(114, 23);
-            this.textBox2.TabIndex = 30;
+            this.soyadTxtBox.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.soyadTxtBox.Location = new System.Drawing.Point(113, 40);
+            this.soyadTxtBox.Name = "soyadTxtBox";
+            this.soyadTxtBox.Size = new System.Drawing.Size(114, 23);
+            this.soyadTxtBox.TabIndex = 30;
             // 
             // label2
             // 
@@ -414,13 +413,13 @@ namespace Takip_Programı.Forms
             this.label2.TabIndex = 29;
             this.label2.Text = "Soyadı : ";
             // 
-            // textBox1
+            // adTxtBox
             // 
-            this.textBox1.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.textBox1.Location = new System.Drawing.Point(113, 12);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(114, 23);
-            this.textBox1.TabIndex = 28;
+            this.adTxtBox.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.adTxtBox.Location = new System.Drawing.Point(113, 12);
+            this.adTxtBox.Name = "adTxtBox";
+            this.adTxtBox.Size = new System.Drawing.Size(114, 23);
+            this.adTxtBox.TabIndex = 28;
             // 
             // label1
             // 
@@ -451,20 +450,6 @@ namespace Takip_Programı.Forms
             this.yeniBtn.UseVisualStyleBackColor = false;
             this.yeniBtn.Click += new System.EventHandler(this.yeniBtn_Click);
             // 
-            // duzenBtn
-            // 
-            this.duzenBtn.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.duzenBtn.FlatAppearance.BorderSize = 0;
-            this.duzenBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.duzenBtn.Font = new System.Drawing.Font("Palatino Linotype", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.duzenBtn.ForeColor = System.Drawing.SystemColors.Control;
-            this.duzenBtn.Location = new System.Drawing.Point(235, 114);
-            this.duzenBtn.Name = "duzenBtn";
-            this.duzenBtn.Size = new System.Drawing.Size(125, 35);
-            this.duzenBtn.TabIndex = 23;
-            this.duzenBtn.Text = "Düzenle";
-            this.duzenBtn.UseVisualStyleBackColor = false;
-            // 
             // silBtn
             // 
             this.silBtn.BackColor = System.Drawing.SystemColors.ActiveBorder;
@@ -472,7 +457,7 @@ namespace Takip_Programı.Forms
             this.silBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.silBtn.Font = new System.Drawing.Font("Palatino Linotype", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.silBtn.ForeColor = System.Drawing.SystemColors.Control;
-            this.silBtn.Location = new System.Drawing.Point(766, 114);
+            this.silBtn.Location = new System.Drawing.Point(605, 114);
             this.silBtn.Name = "silBtn";
             this.silBtn.Size = new System.Drawing.Size(125, 35);
             this.silBtn.TabIndex = 26;
@@ -486,7 +471,7 @@ namespace Takip_Programı.Forms
             this.kayitBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.kayitBtn.Font = new System.Drawing.Font("Palatino Linotype", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.kayitBtn.ForeColor = System.Drawing.SystemColors.Control;
-            this.kayitBtn.Location = new System.Drawing.Point(417, 114);
+            this.kayitBtn.Location = new System.Drawing.Point(246, 114);
             this.kayitBtn.Name = "kayitBtn";
             this.kayitBtn.Size = new System.Drawing.Size(125, 35);
             this.kayitBtn.TabIndex = 24;
@@ -500,7 +485,7 @@ namespace Takip_Programı.Forms
             this.vazgecBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.vazgecBtn.Font = new System.Drawing.Font("Palatino Linotype", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.vazgecBtn.ForeColor = System.Drawing.SystemColors.Control;
-            this.vazgecBtn.Location = new System.Drawing.Point(594, 114);
+            this.vazgecBtn.Location = new System.Drawing.Point(427, 114);
             this.vazgecBtn.Name = "vazgecBtn";
             this.vazgecBtn.Size = new System.Drawing.Size(125, 35);
             this.vazgecBtn.TabIndex = 25;
@@ -529,11 +514,10 @@ namespace Takip_Programı.Forms
         private System.Windows.Forms.Button silBtn;
         private System.Windows.Forms.Button vazgecBtn;
         private System.Windows.Forms.Button kayitBtn;
-        private System.Windows.Forms.Button duzenBtn;
         private System.Windows.Forms.Button yeniBtn;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ListView musteriListView;
         private System.Windows.Forms.ColumnHeader ADI;
         private System.Windows.Forms.ColumnHeader SOYADI;
         private System.Windows.Forms.ColumnHeader RISK;
@@ -543,25 +527,25 @@ namespace Takip_Programı.Forms
         private System.Windows.Forms.ColumnHeader CEPTEL;
         private System.Windows.Forms.ColumnHeader VERGIDAIRE;
         private System.Windows.Forms.ColumnHeader VERGINUMARA;
-        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.TextBox adresTxtBox;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox vergiNoTxtBox;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox vergiDaireTxtBox;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox cepTelTxtBox;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.ComboBox fiyatComboBox;
+        private System.Windows.Forms.TextBox telTxtBox;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox mevkiTxtBox;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox riskTxtBox;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox soyadTxtBox;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox adTxtBox;
         private System.Windows.Forms.Label label1;
     }
 }
