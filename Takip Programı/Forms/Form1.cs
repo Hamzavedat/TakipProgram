@@ -128,8 +128,9 @@ namespace Takip_Programı
         private void timer1_Tick(object sender, EventArgs e)
         {
             var culture = CultureInfo.GetCultureInfo("tr-TR");
-            var date = DateTime.Now.ToString("dd.MM.yyyy HH:mm:ss", culture);
-            label1.Text = "Tarih: " + date;
+            var date = DateTime.Now.ToString("dd.MM.yyyy", culture);
+            var hour = DateTime.Now.ToString("HH:mm:ss", culture);
+            label1.Text = "Tarih: " + date +"\nSaat: " + hour;
         }
 
         /*   private void button1_Click(object sender, EventArgs e)
