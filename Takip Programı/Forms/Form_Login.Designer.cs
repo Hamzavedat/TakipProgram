@@ -40,7 +40,7 @@ namespace Takip_Programı.Forms
             // 
             // panel3
             // 
-            this.panel3.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.AutoSize = true;
             this.panel3.Controls.Add(this.girisBtn);
             this.panel3.Controls.Add(this.textBox2);
@@ -48,7 +48,7 @@ namespace Takip_Programı.Forms
             this.panel3.Controls.Add(this.sifreLbl);
             this.panel3.Controls.Add(this.kullaniciLbl);
             this.panel3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.panel3.Location = new System.Drawing.Point(12, 12);
+            this.panel3.Location = new System.Drawing.Point(12, 11);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(279, 170);
             this.panel3.TabIndex = 9;
@@ -111,7 +111,7 @@ namespace Takip_Programı.Forms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(309, 193);
             this.Controls.Add(this.panel3);
             this.Name = "Form_Login";
             this.Text = "Form_Login";
