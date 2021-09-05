@@ -16,5 +16,13 @@ namespace Takip_Programı.Forms
         {
             InitializeComponent();
         }
+
+        private void girisBtn_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form1 f2 = new Form1(); //this is the change, code for redirect  
+            f2.ShowDialog();
+            this.Close();
+        }
     }
 }

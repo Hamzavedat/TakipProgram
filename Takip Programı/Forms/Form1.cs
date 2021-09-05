@@ -42,7 +42,7 @@ namespace Takip_Programı
         private void Form1_Load(object sender, EventArgs e)
         {
             // this.MaximumSize = this.Size;
-            //  this.MinimumSize = this.Size;
+              this.MinimumSize = new Size(this.Size.Width-100, 350);
             timer1.Start();
             //ustPanel.Visible = false;
         }

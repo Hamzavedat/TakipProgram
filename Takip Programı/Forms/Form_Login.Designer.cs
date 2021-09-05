@@ -65,6 +65,7 @@ namespace Takip_Programı.Forms
             this.girisBtn.TabIndex = 4;
             this.girisBtn.Text = "Giriş";
             this.girisBtn.UseVisualStyleBackColor = false;
+            this.girisBtn.Click += new System.EventHandler(this.girisBtn_Click);
             // 
             // textBox2
             // 

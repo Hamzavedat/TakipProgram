@@ -176,6 +176,7 @@ namespace Takip_Programı.Forms
             // 
             // panel1
             // 
+            this.panel1.AutoScroll = true;
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(219)))), ((int)(((byte)(250)))));
             this.panel1.Controls.Add(this.adresTxtBox);
             this.panel1.Controls.Add(this.label10);
@@ -510,42 +511,42 @@ namespace Takip_Programı.Forms
 
         #endregion
 
-        private System.Windows.Forms.Panel TabPage1;
-        private System.Windows.Forms.Button silBtn;
-        private System.Windows.Forms.Button vazgecBtn;
-        private System.Windows.Forms.Button kayitBtn;
-        private System.Windows.Forms.Button yeniBtn;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.ListView musteriListView;
-        private System.Windows.Forms.ColumnHeader ADI;
-        private System.Windows.Forms.ColumnHeader SOYADI;
-        private System.Windows.Forms.ColumnHeader RISK;
-        private System.Windows.Forms.ColumnHeader FIAT;
-        private System.Windows.Forms.ColumnHeader MEVKI;
-        private System.Windows.Forms.ColumnHeader TEL;
-        private System.Windows.Forms.ColumnHeader CEPTEL;
-        private System.Windows.Forms.ColumnHeader VERGIDAIRE;
-        private System.Windows.Forms.ColumnHeader VERGINUMARA;
-        private System.Windows.Forms.TextBox adresTxtBox;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox vergiNoTxtBox;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox vergiDaireTxtBox;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox cepTelTxtBox;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.ComboBox fiyatComboBox;
-        private System.Windows.Forms.TextBox telTxtBox;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox mevkiTxtBox;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox riskTxtBox;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox soyadTxtBox;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox adTxtBox;
-        private System.Windows.Forms.Label label1;
+        public System.Windows.Forms.Panel TabPage1;
+        public System.Windows.Forms.Button silBtn;
+        public System.Windows.Forms.Button vazgecBtn;
+        public System.Windows.Forms.Button kayitBtn;
+        public System.Windows.Forms.Button yeniBtn;
+        public System.Windows.Forms.Panel panel1;
+        public System.Windows.Forms.Panel panel2;
+        public System.Windows.Forms.ListView musteriListView;
+        public System.Windows.Forms.ColumnHeader ADI;
+        public System.Windows.Forms.ColumnHeader SOYADI;
+        public System.Windows.Forms.ColumnHeader RISK;
+        public System.Windows.Forms.ColumnHeader FIAT;
+        public System.Windows.Forms.ColumnHeader MEVKI;
+        public System.Windows.Forms.ColumnHeader TEL;
+        public System.Windows.Forms.ColumnHeader CEPTEL;
+        public System.Windows.Forms.ColumnHeader VERGIDAIRE;
+        public System.Windows.Forms.ColumnHeader VERGINUMARA;
+        public System.Windows.Forms.TextBox adresTxtBox;
+        public System.Windows.Forms.Label label10;
+        public System.Windows.Forms.TextBox vergiNoTxtBox;
+        public System.Windows.Forms.Label label7;
+        public System.Windows.Forms.TextBox vergiDaireTxtBox;
+        public System.Windows.Forms.Label label8;
+        public System.Windows.Forms.TextBox cepTelTxtBox;
+        public System.Windows.Forms.Label label9;
+        public System.Windows.Forms.ComboBox fiyatComboBox;
+        public System.Windows.Forms.TextBox telTxtBox;
+        public System.Windows.Forms.Label label4;
+        public System.Windows.Forms.TextBox mevkiTxtBox;
+        public System.Windows.Forms.Label label5;
+        public System.Windows.Forms.Label label6;
+        public System.Windows.Forms.TextBox riskTxtBox;
+        public System.Windows.Forms.Label label3;
+        public System.Windows.Forms.TextBox soyadTxtBox;
+        public System.Windows.Forms.Label label2;
+        public System.Windows.Forms.TextBox adTxtBox;
+        public System.Windows.Forms.Label label1;
     }
 }
