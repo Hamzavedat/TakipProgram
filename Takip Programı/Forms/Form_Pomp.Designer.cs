@@ -65,7 +65,7 @@ namespace Takip_Programı.Forms
             // 
             // musteriListView
             // 
-            this.musteriListView.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(78)))), ((int)(((byte)(99)))));
+            this.musteriListView.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(161)))), ((int)(((byte)(157)))));
             this.musteriListView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.musteriListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.ADI,
@@ -76,7 +76,8 @@ namespace Takip_Programı.Forms
             this.TEL,
             this.CEPTEL});
             this.musteriListView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.musteriListView.ForeColor = System.Drawing.Color.White;
+            this.musteriListView.Font = new System.Drawing.Font("Palatino Linotype", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.musteriListView.ForeColor = System.Drawing.Color.Black;
             this.musteriListView.FullRowSelect = true;
             this.musteriListView.GridLines = true;
             this.musteriListView.HideSelection = false;
@@ -177,7 +178,7 @@ namespace Takip_Programı.Forms
             // panel1
             // 
             this.panel1.AutoScroll = true;
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(219)))), ((int)(((byte)(250)))));
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(253)))), ((int)(((byte)(176)))));
             this.panel1.Controls.Add(this.comboBox2);
             this.panel1.Controls.Add(this.comboBox1);
             this.panel1.Controls.Add(this.vergiNoTxtBox);
