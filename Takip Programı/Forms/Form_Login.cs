@@ -24,5 +24,11 @@ namespace Takip_Programı.Forms
             f2.ShowDialog();
             this.Close();
         }
+
+        private void Form_Login_Load(object sender, EventArgs e)
+        {
+            this.MaximumSize = this.Size;
+            this.MinimumSize = this.MaximumSize;
+        }
     }
 }
