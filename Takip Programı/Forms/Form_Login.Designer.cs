@@ -42,13 +42,14 @@ namespace Takip_Programı.Forms
             // 
             this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.AutoSize = true;
+            this.panel3.BackColor = System.Drawing.Color.Transparent;
             this.panel3.Controls.Add(this.girisBtn);
             this.panel3.Controls.Add(this.textBox2);
             this.panel3.Controls.Add(this.textBox1);
             this.panel3.Controls.Add(this.sifreLbl);
             this.panel3.Controls.Add(this.kullaniciLbl);
             this.panel3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.panel3.Location = new System.Drawing.Point(12, 120);
+            this.panel3.Location = new System.Drawing.Point(12, 143);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(454, 170);
             this.panel3.TabIndex = 9;
@@ -111,11 +112,13 @@ namespace Takip_Programı.Forms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(239)))));
+            this.BackgroundImage = global::Takip_Programı.Properties.Resources.Özarpalı_uzun;
             this.ClientSize = new System.Drawing.Size(484, 411);
             this.Controls.Add(this.panel3);
             this.MaximumSize = new System.Drawing.Size(500, 450);
             this.Name = "Form_Login";
-            this.Text = "Form_Login";
+            this.Text = "Kullanıcı Giriş";
             this.Load += new System.EventHandler(this.Form_Login_Load);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
