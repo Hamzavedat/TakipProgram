@@ -15,6 +15,7 @@ namespace Takip_Programı.Forms
         public Form_Settings()
         {
             InitializeComponent();
+            this.CenterToScreen();
         }
     }
 }

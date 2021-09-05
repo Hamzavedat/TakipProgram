@@ -15,6 +15,8 @@ namespace Takip_Programı.Forms
         public Form_Login()
         {
             InitializeComponent();
+            this.CenterToScreen();
+
         }
 
         private void girisBtn_Click(object sender, EventArgs e)
