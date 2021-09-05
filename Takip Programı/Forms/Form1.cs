@@ -16,10 +16,12 @@ namespace Takip_Programı
     public partial class Form1 : Form
     {
         private Form activeForm;
+        private Form newform { get; set; }
 
         public Form1()
         {
             InitializeComponent();
+            this.CenterToScreen();
         }
         private void OpenChildForm(Form childForm, object btnSender)
         {
@@ -54,7 +56,13 @@ namespace Takip_Programı
             stokBtn.BackColor = System.Drawing.Color.FromArgb(212, 236, 221);
             ayarlarBtn.BackColor = System.Drawing.Color.FromArgb(212, 236, 221);
             musteriBtn.BackColor = ColorTranslator.FromHtml("#3DB2FF");
-            OpenChildForm(new Form_Clients(), sender);
+            //            OpenChildForm(new Form_Clients(), sender);
+            if (newform != null)
+            {
+                newform.Close();
+            }
+            newform = new Form_Clients();
+            newform.ShowDialog();
         }
 
         private void psatisBtn_Click(object sender, EventArgs e)
@@ -77,7 +85,12 @@ namespace Takip_Programı
             stokBtn.BackColor = System.Drawing.Color.FromArgb(212, 236, 221);
             ayarlarBtn.BackColor = System.Drawing.Color.FromArgb(212, 236, 221);
             pompaBtn.BackColor = ColorTranslator.FromHtml("#FFF47D");
-            OpenChildForm(new Form_Pomp(), sender);
+            if (newform != null)
+            {
+                newform.Close();
+            }
+            newform = new Form_Pomp();
+            newform.ShowDialog();
         }
 
         private void depoBtn_Click(object sender, EventArgs e)
@@ -122,7 +135,12 @@ namespace Takip_Programı
             kksatisBtn.BackColor = System.Drawing.Color.FromArgb(212, 236, 221);
             stokBtn.BackColor = System.Drawing.Color.FromArgb(212, 236, 221);
             ayarlarBtn.BackColor = ColorTranslator.FromHtml("#B5EAEA");
-            OpenChildForm(new Form_Settings(), sender);
+            if (newform != null)
+            {
+                newform.Close();
+            }
+            newform = new Form_Settings();
+            newform.ShowDialog();
         }
 
         private void timer1_Tick(object sender, EventArgs e)

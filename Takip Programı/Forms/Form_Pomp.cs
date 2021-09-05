@@ -15,6 +15,7 @@ namespace Takip_Programı.Forms
         public Form_Pomp()
         {
             InitializeComponent();
+            this.CenterToParent();
         }
         private void Form_Pomp_Load(object sender, EventArgs e)
         {

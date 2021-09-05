@@ -19,6 +19,8 @@ namespace Takip_Programı.Forms
         {
             InitializeComponent();
             LoadTheme();
+            this.CenterToParent();
+
             customers = new List<Customer>();
 
             for (int i = 0; i < 30; i++)
