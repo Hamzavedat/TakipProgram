@@ -20,8 +20,6 @@ namespace Takip_Programı
         public Form1()
         {
             InitializeComponent();
-
-
         }
         private void OpenChildForm(Form childForm, object btnSender)
         {
@@ -91,7 +89,6 @@ namespace Takip_Programı
             stokBtn.BackColor = System.Drawing.Color.FromArgb(212, 236, 221);
             ayarlarBtn.BackColor = System.Drawing.Color.FromArgb(212, 236, 221);
             depoBtn.BackColor = ColorTranslator.FromHtml("#FFE6E6");
-            OpenChildForm(new Form_Login(), sender);
         }
 
         private void kksatisBtn_Click(object sender, EventArgs e)

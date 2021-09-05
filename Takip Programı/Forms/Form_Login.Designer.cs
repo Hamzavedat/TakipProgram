@@ -42,15 +42,16 @@ namespace Takip_Programı.Forms
             // 
             this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.AutoSize = true;
+            this.panel3.BackColor = System.Drawing.Color.Transparent;
             this.panel3.Controls.Add(this.girisBtn);
             this.panel3.Controls.Add(this.textBox2);
             this.panel3.Controls.Add(this.textBox1);
             this.panel3.Controls.Add(this.sifreLbl);
             this.panel3.Controls.Add(this.kullaniciLbl);
             this.panel3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.panel3.Location = new System.Drawing.Point(12, 11);
+            this.panel3.Location = new System.Drawing.Point(12, 143);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(279, 170);
+            this.panel3.Size = new System.Drawing.Size(454, 170);
             this.panel3.TabIndex = 9;
             // 
             // girisBtn
@@ -59,7 +60,7 @@ namespace Takip_Programı.Forms
             this.girisBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(236)))), ((int)(((byte)(221)))));
             this.girisBtn.FlatAppearance.BorderSize = 0;
             this.girisBtn.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.girisBtn.Location = new System.Drawing.Point(127, 116);
+            this.girisBtn.Location = new System.Drawing.Point(232, 111);
             this.girisBtn.Name = "girisBtn";
             this.girisBtn.Size = new System.Drawing.Size(86, 35);
             this.girisBtn.TabIndex = 4;
@@ -71,7 +72,7 @@ namespace Takip_Programı.Forms
             // 
             this.textBox2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.textBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(247)))), ((int)(((byte)(231)))));
-            this.textBox2.Location = new System.Drawing.Point(127, 70);
+            this.textBox2.Location = new System.Drawing.Point(215, 70);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(126, 23);
             this.textBox2.TabIndex = 3;
@@ -80,7 +81,7 @@ namespace Takip_Programı.Forms
             // 
             this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(247)))), ((int)(((byte)(231)))));
-            this.textBox1.Location = new System.Drawing.Point(127, 23);
+            this.textBox1.Location = new System.Drawing.Point(215, 23);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(126, 23);
             this.textBox1.TabIndex = 2;
@@ -90,7 +91,7 @@ namespace Takip_Programı.Forms
             this.sifreLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.sifreLbl.AutoSize = true;
             this.sifreLbl.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.sifreLbl.Location = new System.Drawing.Point(72, 70);
+            this.sifreLbl.Location = new System.Drawing.Point(160, 70);
             this.sifreLbl.Name = "sifreLbl";
             this.sifreLbl.Size = new System.Drawing.Size(49, 22);
             this.sifreLbl.TabIndex = 1;
@@ -101,7 +102,7 @@ namespace Takip_Programı.Forms
             this.kullaniciLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.kullaniciLbl.AutoSize = true;
             this.kullaniciLbl.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.kullaniciLbl.Location = new System.Drawing.Point(16, 22);
+            this.kullaniciLbl.Location = new System.Drawing.Point(104, 22);
             this.kullaniciLbl.Name = "kullaniciLbl";
             this.kullaniciLbl.Size = new System.Drawing.Size(105, 22);
             this.kullaniciLbl.TabIndex = 0;
@@ -111,10 +112,14 @@ namespace Takip_Programı.Forms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(309, 193);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(239)))));
+            this.BackgroundImage = global::Takip_Programı.Properties.Resources.Özarpalı_uzun;
+            this.ClientSize = new System.Drawing.Size(484, 411);
             this.Controls.Add(this.panel3);
+            this.MaximumSize = new System.Drawing.Size(500, 450);
             this.Name = "Form_Login";
-            this.Text = "Form_Login";
+            this.Text = "Kullanıcı Giriş";
+            this.Load += new System.EventHandler(this.Form_Login_Load);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.ResumeLayout(false);
