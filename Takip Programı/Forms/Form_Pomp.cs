@@ -16,5 +16,19 @@ namespace Takip_Programı.Forms
         {
             InitializeComponent();
         }
+        private void Form_Pomp_Load(object sender, EventArgs e)
+        {
+            LoadTheme();
+        }
+
+        private void LoadTheme()
+        {
+            yeniBtn.BackColor = ColorTranslator.FromHtml("#5F939A");
+            kayitBtn.BackColor = ColorTranslator.FromHtml("#5F939A");
+            silBtn.BackColor = ColorTranslator.FromHtml("#5F939A");
+            vazgecBtn.BackColor = ColorTranslator.FromHtml("#5F939A");
+        }
+
+        
     }
 }
