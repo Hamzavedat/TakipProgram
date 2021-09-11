@@ -103,6 +103,16 @@ namespace Takip_Programı.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap hideBtn {
+            get {
+                object obj = ResourceManager.GetObject("hideBtn", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap oil_tanker {
             get {
                 object obj = ResourceManager.GetObject("oil_tanker", resourceCulture);
@@ -136,6 +146,16 @@ namespace Takip_Programı.Properties {
         internal static System.Drawing.Bitmap settings {
             get {
                 object obj = ResourceManager.GetObject("settings", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap showBtn {
+            get {
+                object obj = ResourceManager.GetObject("showBtn", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

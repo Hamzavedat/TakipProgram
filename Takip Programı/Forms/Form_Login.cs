@@ -40,7 +40,7 @@ namespace Takip_Programı.Forms
                 adapter.Fill(dt);
                 if (dt.Rows.Count>0)
                 {
-                    MessageBox.Show("Sayın "+usernameTxtBox.Text+" Hoşgeldiniz.");
+                    MessageBox.Show("Merhaba " + usernameTxtBox.Text + " Hoşgeldin.");
                     this.Hide();
                     Form1 f2 = new Form1(); //this is the change, code for redirect  
                     f2.ShowDialog();
@@ -59,6 +59,24 @@ namespace Takip_Programı.Forms
         {
             this.MaximumSize = this.Size;
             this.MinimumSize = this.MaximumSize;
+        }
+
+        private void hideBtn_Click(object sender, EventArgs e)
+        {
+            if (passwordTxtBox.PasswordChar == '\0')
+            {
+                showBtn.BringToFront();
+                passwordTxtBox.PasswordChar = '*';
+            }
+        }
+
+        private void showBtn_Click(object sender, EventArgs e)
+        {
+            if (passwordTxtBox.PasswordChar == '*')
+            {
+                hideBtn.BringToFront();
+                passwordTxtBox.PasswordChar = '\0';
+            }
         }
     }
 }

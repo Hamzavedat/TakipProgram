@@ -30,6 +30,8 @@ namespace Takip_Programı.Forms
         private void InitializeComponent()
         {
             this.panel3 = new System.Windows.Forms.Panel();
+            this.showBtn = new System.Windows.Forms.Button();
+            this.hideBtn = new System.Windows.Forms.Button();
             this.girisBtn = new System.Windows.Forms.Button();
             this.passwordTxtBox = new System.Windows.Forms.TextBox();
             this.usernameTxtBox = new System.Windows.Forms.TextBox();
@@ -43,6 +45,8 @@ namespace Takip_Programı.Forms
             this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.AutoSize = true;
             this.panel3.BackColor = System.Drawing.Color.Transparent;
+            this.panel3.Controls.Add(this.showBtn);
+            this.panel3.Controls.Add(this.hideBtn);
             this.panel3.Controls.Add(this.girisBtn);
             this.panel3.Controls.Add(this.passwordTxtBox);
             this.panel3.Controls.Add(this.usernameTxtBox);
@@ -54,13 +58,39 @@ namespace Takip_Programı.Forms
             this.panel3.Size = new System.Drawing.Size(454, 170);
             this.panel3.TabIndex = 9;
             // 
+            // showBtn
+            // 
+            this.showBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(247)))), ((int)(((byte)(231)))));
+            this.showBtn.BackgroundImage = global::Takip_Programı.Properties.Resources.showBtn;
+            this.showBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.showBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.showBtn.Location = new System.Drawing.Point(345, 69);
+            this.showBtn.Name = "showBtn";
+            this.showBtn.Size = new System.Drawing.Size(25, 25);
+            this.showBtn.TabIndex = 7;
+            this.showBtn.UseVisualStyleBackColor = false;
+            this.showBtn.Click += new System.EventHandler(this.showBtn_Click);
+            // 
+            // hideBtn
+            // 
+            this.hideBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(247)))), ((int)(((byte)(231)))));
+            this.hideBtn.BackgroundImage = global::Takip_Programı.Properties.Resources.hideBtn;
+            this.hideBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.hideBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.hideBtn.Location = new System.Drawing.Point(345, 69);
+            this.hideBtn.Name = "hideBtn";
+            this.hideBtn.Size = new System.Drawing.Size(25, 25);
+            this.hideBtn.TabIndex = 6;
+            this.hideBtn.UseVisualStyleBackColor = false;
+            this.hideBtn.Click += new System.EventHandler(this.hideBtn_Click);
+            // 
             // girisBtn
             // 
             this.girisBtn.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.girisBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(236)))), ((int)(((byte)(221)))));
             this.girisBtn.FlatAppearance.BorderSize = 0;
             this.girisBtn.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.girisBtn.Location = new System.Drawing.Point(232, 111);
+            this.girisBtn.Location = new System.Drawing.Point(237, 110);
             this.girisBtn.Name = "girisBtn";
             this.girisBtn.Size = new System.Drawing.Size(86, 35);
             this.girisBtn.TabIndex = 4;
@@ -72,18 +102,21 @@ namespace Takip_Programı.Forms
             // 
             this.passwordTxtBox.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.passwordTxtBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(247)))), ((int)(((byte)(231)))));
-            this.passwordTxtBox.Location = new System.Drawing.Point(215, 70);
+            this.passwordTxtBox.Location = new System.Drawing.Point(220, 69);
+            this.passwordTxtBox.Multiline = true;
             this.passwordTxtBox.Name = "passwordTxtBox";
-            this.passwordTxtBox.Size = new System.Drawing.Size(126, 23);
+            this.passwordTxtBox.PasswordChar = '*';
+            this.passwordTxtBox.Size = new System.Drawing.Size(150, 25);
             this.passwordTxtBox.TabIndex = 3;
             // 
             // usernameTxtBox
             // 
             this.usernameTxtBox.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.usernameTxtBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(247)))), ((int)(((byte)(231)))));
-            this.usernameTxtBox.Location = new System.Drawing.Point(215, 23);
+            this.usernameTxtBox.Location = new System.Drawing.Point(220, 22);
+            this.usernameTxtBox.Multiline = true;
             this.usernameTxtBox.Name = "usernameTxtBox";
-            this.usernameTxtBox.Size = new System.Drawing.Size(126, 23);
+            this.usernameTxtBox.Size = new System.Drawing.Size(150, 25);
             this.usernameTxtBox.TabIndex = 2;
             // 
             // sifreLbl
@@ -91,7 +124,7 @@ namespace Takip_Programı.Forms
             this.sifreLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.sifreLbl.AutoSize = true;
             this.sifreLbl.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.sifreLbl.Location = new System.Drawing.Point(160, 70);
+            this.sifreLbl.Location = new System.Drawing.Point(165, 72);
             this.sifreLbl.Name = "sifreLbl";
             this.sifreLbl.Size = new System.Drawing.Size(49, 22);
             this.sifreLbl.TabIndex = 1;
@@ -102,7 +135,7 @@ namespace Takip_Programı.Forms
             this.kullaniciLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.kullaniciLbl.AutoSize = true;
             this.kullaniciLbl.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.kullaniciLbl.Location = new System.Drawing.Point(104, 22);
+            this.kullaniciLbl.Location = new System.Drawing.Point(109, 25);
             this.kullaniciLbl.Name = "kullaniciLbl";
             this.kullaniciLbl.Size = new System.Drawing.Size(105, 22);
             this.kullaniciLbl.TabIndex = 0;
@@ -135,5 +168,7 @@ namespace Takip_Programı.Forms
         private System.Windows.Forms.TextBox usernameTxtBox;
         private System.Windows.Forms.Label sifreLbl;
         private System.Windows.Forms.Label kullaniciLbl;
+        private System.Windows.Forms.Button hideBtn;
+        private System.Windows.Forms.Button showBtn;
     }
 }
