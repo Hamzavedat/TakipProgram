@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SQLite;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -21,11 +22,19 @@ namespace Takip_Programı.Forms
             LoadTheme();
             this.CenterToParent();
 
+            string query = "SELECT * FROM Customers ";
+            SQLiteConnection con = new SQLiteConnection("Data source=TakipProgramıDb.db;Version=3;");
+            con.Open();
+            SQLiteCommand command = new SQLiteCommand(query, con);
+            SQLiteDataAdapter adapter = new SQLiteDataAdapter(command);
+            DataTable dt = new DataTable();
+            adapter.Fill(dt);
+
             customers = new List<Customer>();
 
             for (int i = 0; i < 30; i++)
             {
-                customers.Add(new Customer { ID = i, Name = "İsim " + i.ToString(), SurName = "Soy İsim " + i.ToString(), Change = true, MobilePhone = "05555555555", Phone = "1234567890", Risk = "500000", Position = "Merkez" });
+                customers.Add(new Customer { ID = i, Name = "İsim " + i.ToString(), SurName = "Soy İsim " + i.ToString(), Change = 1, MobilePhone = "05555555555", Phone = "1234567890", Risk = "500000", Position = "Merkez" });
 
             }
             foreach (var item in customers)
@@ -54,7 +63,22 @@ namespace Takip_Programı.Forms
 
         private void yeniBtn_Click(object sender, EventArgs e)
         {
-
+            string query = "INSERT INTO Customers(Name,Surname,Risk,Change,Position,Phone,MobilePhone,VergiDairesi,VergiNo,Adress) VALUES(@name,@surname,@risk,@change,@position,@phone,@mobile,@vergiD,@vergiN,@adress)";
+            SQLiteConnection con = new SQLiteConnection("Data source=TakipProgramıDb.db;Version=3;");
+            con.Open();
+            var command = new SQLiteCommand(con);
+            command.CommandText = query;
+            command.Parameters.AddWithValue("@name", adTxtBox.Text);
+            command.Parameters.AddWithValue("@surname", soyadTxtBox.Text);
+            command.Parameters.AddWithValue("@risk", riskTxtBox.Text);
+            command.Parameters.AddWithValue("@change", fiyatComboBox.Text == "Etkilensin" ? 1 : 0);
+            command.Parameters.AddWithValue("@position", mevkiTxtBox.Text);
+            command.Parameters.AddWithValue("@phone", telTxtBox.Text);
+            command.Parameters.AddWithValue("@mobile", cepTelTxtBox.Text);
+            command.Parameters.AddWithValue("@vergiD", vergiDaireTxtBox.Text);
+            command.Parameters.AddWithValue("@vergiN", vergiNoTxtBox.Text);
+            command.Parameters.AddWithValue("@adress", adresTxtBox.Text);
+            command.ExecuteNonQuery();
         }
 
         private void musteriListView_SelectedIndexChanged_1(object sender, EventArgs e)
@@ -71,9 +95,18 @@ namespace Takip_Programı.Forms
             vergiDaireTxtBox.Text = customer.VergiDairesi;
             vergiNoTxtBox.Text = customer.VergiNo;
             adresTxtBox.Text = customer.Adress;
-            adresTxtBox.Text = customer.Adress;
-            fiyatComboBox.SelectedIndex = customer.Change ? 0 : 1;
 
+        }
+
+        private void silBtn_Click(object sender, EventArgs e)
+        {
+            string query = "DELETE * FROM Customers WHERE Id = @id";
+            SQLiteConnection con = new SQLiteConnection("Data source=TakipProgramıDb.db;Version=3;");
+            con.Open();
+            var command = new SQLiteCommand(con);
+            command.CommandText = query;
+            command.Parameters.AddWithValue("@id", adTxtBox.Text);
+            command.ExecuteNonQuery();
         }
     }
 }

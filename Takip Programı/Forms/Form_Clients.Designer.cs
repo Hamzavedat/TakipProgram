@@ -465,6 +465,7 @@ namespace Takip_Programı.Forms
             this.silBtn.TabIndex = 26;
             this.silBtn.Text = "Sil";
             this.silBtn.UseVisualStyleBackColor = false;
+            this.silBtn.Click += new System.EventHandler(this.silBtn_Click);
             // 
             // kayitBtn
             // 

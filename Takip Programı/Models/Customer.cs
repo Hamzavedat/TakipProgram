@@ -12,7 +12,7 @@ namespace Takip_Programı.Models
         public string Name { get; set; }
         public string SurName { get; set; }
         public string Risk { get; set; }
-        public bool Change { get; set; }
+        public int Change { get; set; }
         public string Position { get; set; }
         public string Phone { get; set; }
         public string MobilePhone { get; set; }
@@ -21,7 +21,7 @@ namespace Takip_Programı.Models
         public string Adress { get; set; }
         public string ChangeText { 
             get {
-                return Change ? "Etkilensin" : "Etkilenmesin";    
+                return Change == 1 ? "Etkilensin" : "Etkilenmesin";    
             } 
         }
     }
