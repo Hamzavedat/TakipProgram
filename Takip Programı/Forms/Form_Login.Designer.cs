@@ -31,8 +31,8 @@ namespace Takip_Programı.Forms
         {
             this.panel3 = new System.Windows.Forms.Panel();
             this.girisBtn = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.passwordTxtBox = new System.Windows.Forms.TextBox();
+            this.usernameTxtBox = new System.Windows.Forms.TextBox();
             this.sifreLbl = new System.Windows.Forms.Label();
             this.kullaniciLbl = new System.Windows.Forms.Label();
             this.panel3.SuspendLayout();
@@ -44,8 +44,8 @@ namespace Takip_Programı.Forms
             this.panel3.AutoSize = true;
             this.panel3.BackColor = System.Drawing.Color.Transparent;
             this.panel3.Controls.Add(this.girisBtn);
-            this.panel3.Controls.Add(this.textBox2);
-            this.panel3.Controls.Add(this.textBox1);
+            this.panel3.Controls.Add(this.passwordTxtBox);
+            this.panel3.Controls.Add(this.usernameTxtBox);
             this.panel3.Controls.Add(this.sifreLbl);
             this.panel3.Controls.Add(this.kullaniciLbl);
             this.panel3.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -68,23 +68,23 @@ namespace Takip_Programı.Forms
             this.girisBtn.UseVisualStyleBackColor = false;
             this.girisBtn.Click += new System.EventHandler(this.girisBtn_Click);
             // 
-            // textBox2
+            // passwordTxtBox
             // 
-            this.textBox2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(247)))), ((int)(((byte)(231)))));
-            this.textBox2.Location = new System.Drawing.Point(215, 70);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(126, 23);
-            this.textBox2.TabIndex = 3;
+            this.passwordTxtBox.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.passwordTxtBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(247)))), ((int)(((byte)(231)))));
+            this.passwordTxtBox.Location = new System.Drawing.Point(215, 70);
+            this.passwordTxtBox.Name = "passwordTxtBox";
+            this.passwordTxtBox.Size = new System.Drawing.Size(126, 23);
+            this.passwordTxtBox.TabIndex = 3;
             // 
-            // textBox1
+            // usernameTxtBox
             // 
-            this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(247)))), ((int)(((byte)(231)))));
-            this.textBox1.Location = new System.Drawing.Point(215, 23);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(126, 23);
-            this.textBox1.TabIndex = 2;
+            this.usernameTxtBox.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.usernameTxtBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(247)))), ((int)(((byte)(231)))));
+            this.usernameTxtBox.Location = new System.Drawing.Point(215, 23);
+            this.usernameTxtBox.Name = "usernameTxtBox";
+            this.usernameTxtBox.Size = new System.Drawing.Size(126, 23);
+            this.usernameTxtBox.TabIndex = 2;
             // 
             // sifreLbl
             // 
@@ -131,8 +131,8 @@ namespace Takip_Programı.Forms
 
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button girisBtn;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox passwordTxtBox;
+        private System.Windows.Forms.TextBox usernameTxtBox;
         private System.Windows.Forms.Label sifreLbl;
         private System.Windows.Forms.Label kullaniciLbl;
     }
