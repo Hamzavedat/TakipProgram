@@ -8,9 +8,9 @@ namespace Takip_Programı.Models
 {
     public class Customer
     {
-        public int ID { get; set; }
+        public int Id { get; set; }
         public string Name { get; set; }
-        public string SurName { get; set; }
+        public string Surname { get; set; }
         public string Risk { get; set; }
         public int Change { get; set; }
         public string Position { get; set; }

@@ -8,16 +8,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Takip_Programı.Models;
 
 namespace Takip_Programı.Forms
 {
     public partial class Form_Login : Form
     {
+        TakipProgramiContext context = new TakipProgramiContext();
         public Form_Login()
         {
             InitializeComponent();
             this.CenterToScreen();
-
         }
 
         private void girisBtn_Click(object sender, EventArgs e)
@@ -29,16 +30,8 @@ namespace Takip_Programı.Forms
             }
             else
             {
-                string query = "SELECT * FROM Users WHERE Username = @user AND Password = @password";
-                SQLiteConnection con = new SQLiteConnection("Data source=TakipProgramıDb.db;Version=3;");
-                con.Open();
-                SQLiteCommand command = new SQLiteCommand(query, con);
-                command.Parameters.AddWithValue("@user", usernameTxtBox.Text);
-                command.Parameters.AddWithValue("@password", passwordTxtBox.Text);
-                SQLiteDataAdapter adapter = new SQLiteDataAdapter(command);
-                DataTable dt = new DataTable();
-                adapter.Fill(dt);
-                if (dt.Rows.Count>0)
+                var users = context.User.Where(i=>i.Username == usernameTxtBox.Text && i.Password == passwordTxtBox.Text).ToList();
+                if (users.Count>0)
                 {
                     MessageBox.Show("Merhaba " + usernameTxtBox.Text + " Hoşgeldin.");
                     this.Hide();
