@@ -16,7 +16,6 @@ namespace Takip_Programı.Forms
     public partial class Form_Settings : Form
     {
         TakipProgramiContext context = new TakipProgramiContext();
-
         ObservableCollection<WarehouseDefine> WarehouseDefine { get; set; }
         public Form_Settings()
         {
