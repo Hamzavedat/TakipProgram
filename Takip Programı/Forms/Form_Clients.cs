@@ -29,24 +29,6 @@ namespace Takip_Programı.Forms
             this.ResizeRedraw = false;
             customers = new ObservableCollection<Customer>( context.Customer.ToList());
             dataGridView.DataSource = customers;
-           /* for (int i = 0; i < customers.Count(); i++)
-            {
-                
-                var datagrid = new DataGridViewRow();
-                datagrid.Cells.Add(new DataGridViewCellCollection { Value = customers[i].Id.ToString()});
-                datagrid.Cells[0].Value = customers[i].Id.ToString();
-                datagrid.Cells[1].Value = customers[i].Name.ToString();
-                datagrid.Cells[2].Value = customers[i].Surname.ToString();
-                datagrid.Cells[3].Value = customers[i].Risk.ToString();
-                datagrid.Cells[4].Value = customers[i].ChangeText.ToString();
-                datagrid.Cells[5].Value = customers[i].Position.ToString();
-                datagrid.Cells[6].Value = customers[i].Phone.ToString();
-                datagrid.Cells[7].Value = customers[i].MobilePhone.ToString();
-                datagrid.Cells[8].Value = customers[i].VergiDairesi.ToString();
-                datagrid.Cells[9].Value = customers[i].VergiNo.ToString();
-                datagrid.Cells[10].Value = customers[i].Adress.ToString();
-                dataGridView.Rows.Add(datagrid);
-            }*/
         }
 
         private void LoadTheme()

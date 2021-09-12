@@ -37,24 +37,30 @@ namespace Takip_Programı.Forms
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.TabPage1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.musteriListView = new System.Windows.Forms.ListView();
-            this.productType = new System.Windows.Forms.ColumnHeader();
-            this.productName = new System.Windows.Forms.ColumnHeader();
-            this.productAmount = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader1 = new System.Windows.Forms.ColumnHeader();
+            this.dataGridView = new System.Windows.Forms.DataGridView();
+            this.idColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.urunColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.turColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.miktarColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.alisFiyatColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.satisFiyatColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.alisTutarColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.satisTutarColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.vergiDaireTxtBox = new System.Windows.Forms.TextBox();
+            this.idTxtBox = new System.Windows.Forms.TextBox();
+            this.miktarTxtBox = new System.Windows.Forms.TextBox();
+            this.satisTutarTxtBox = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.cepTelTxtBox = new System.Windows.Forms.TextBox();
+            this.alisTutarTxtBox = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.telTxtBox = new System.Windows.Forms.TextBox();
+            this.satisFiyatTxtBox = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.mevkiTxtBox = new System.Windows.Forms.TextBox();
+            this.alisFiyatTxtBox = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.soyadTxtBox = new System.Windows.Forms.TextBox();
+            this.urunTurTxtBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.adTxtBox = new System.Windows.Forms.TextBox();
+            this.urunNameTxtBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.yeniBtn = new System.Windows.Forms.Button();
             this.silBtn = new System.Windows.Forms.Button();
@@ -64,11 +70,11 @@ namespace Takip_Programı.Forms
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.tabPage6 = new System.Windows.Forms.TabPage();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.TabPage1.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -114,65 +120,121 @@ namespace Takip_Programı.Forms
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.musteriListView);
+            this.panel2.Controls.Add(this.dataGridView);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 164);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(865, 412);
             this.panel2.TabIndex = 29;
             // 
-            // musteriListView
+            // dataGridView
             // 
-            this.musteriListView.BackColor = System.Drawing.Color.White;
-            this.musteriListView.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.musteriListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.productType,
-            this.productName,
-            this.productAmount,
-            this.columnHeader1});
-            this.musteriListView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.musteriListView.ForeColor = System.Drawing.Color.White;
-            this.musteriListView.FullRowSelect = true;
-            this.musteriListView.HideSelection = false;
-            this.musteriListView.Location = new System.Drawing.Point(0, 0);
-            this.musteriListView.Name = "musteriListView";
-            this.musteriListView.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.musteriListView.Size = new System.Drawing.Size(865, 412);
-            this.musteriListView.TabIndex = 28;
-            this.musteriListView.UseCompatibleStateImageBehavior = false;
-            this.musteriListView.View = System.Windows.Forms.View.Details;
+            this.dataGridView.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idColumn,
+            this.urunColumn,
+            this.turColumn,
+            this.miktarColumn,
+            this.alisFiyatColumn,
+            this.satisFiyatColumn,
+            this.alisTutarColumn,
+            this.satisTutarColumn});
+            this.dataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView.Location = new System.Drawing.Point(0, 0);
+            this.dataGridView.Name = "dataGridView";
+            this.dataGridView.RowTemplate.Height = 25;
+            this.dataGridView.Size = new System.Drawing.Size(865, 412);
+            this.dataGridView.TabIndex = 0;
+            this.dataGridView.CellClick += dataGridView_CellClick;
             // 
-            // productType
+            // idColumn
             // 
-            this.productType.Text = "Ürün Tipi";
-            this.productType.Width = 100;
+            this.idColumn.DataPropertyName = "Id";
+            this.idColumn.HeaderText = "ID";
+            this.idColumn.Name = "idColumn";
+            this.idColumn.ReadOnly = true;
+            this.idColumn.Visible = false;
             // 
-            // productName
+            // urunColumn
             // 
-            this.productName.Text = "Ürün Adı";
-            this.productName.Width = 100;
+            this.urunColumn.DataPropertyName = "Name";
+            this.urunColumn.FillWeight = 120F;
+            this.urunColumn.HeaderText = "ÜRÜN ADI";
+            this.urunColumn.Name = "urunColumn";
+            this.urunColumn.ReadOnly = true;
+            this.urunColumn.Width = 120;
             // 
-            // productAmount
+            // turColumn
             // 
-            this.productAmount.Text = "Miktar";
+            this.turColumn.DataPropertyName = "Type";
+            this.turColumn.FillWeight = 120F;
+            this.turColumn.HeaderText = "ÜRÜN TÜRÜ";
+            this.turColumn.Name = "turColumn";
+            this.turColumn.ReadOnly = true;
+            this.turColumn.Width = 120;
+            // 
+            // miktarColumn
+            // 
+            this.miktarColumn.DataPropertyName = "Amount";
+            this.miktarColumn.HeaderText = "MİKTAR";
+            this.miktarColumn.Name = "miktarColumn";
+            this.miktarColumn.ReadOnly = true;
+            // 
+            // alisFiyatColumn
+            // 
+            this.alisFiyatColumn.DataPropertyName = "BuyPrice";
+            this.alisFiyatColumn.FillWeight = 120F;
+            this.alisFiyatColumn.HeaderText = "ALIŞ FİYATI";
+            this.alisFiyatColumn.Name = "alisFiyatColumn";
+            this.alisFiyatColumn.ReadOnly = true;
+            this.alisFiyatColumn.Width = 120;
+            // 
+            // satisFiyatColumn
+            // 
+            this.satisFiyatColumn.DataPropertyName = "SellPrice";
+            this.satisFiyatColumn.FillWeight = 125F;
+            this.satisFiyatColumn.HeaderText = "SATIŞ FİYATI";
+            this.satisFiyatColumn.Name = "satisFiyatColumn";
+            this.satisFiyatColumn.ReadOnly = true;
+            this.satisFiyatColumn.Width = 125;
+            // 
+            // alisTutarColumn
+            // 
+            this.alisTutarColumn.DataPropertyName = "BuyAmount";
+            this.alisTutarColumn.FillWeight = 125F;
+            this.alisTutarColumn.HeaderText = "ALIŞ TUTARI";
+            this.alisTutarColumn.Name = "alisTutarColumn";
+            this.alisTutarColumn.ReadOnly = true;
+            this.alisTutarColumn.Width = 125;
+            // 
+            // satisTutarColumn
+            // 
+            this.satisTutarColumn.DataPropertyName = "SellAmount";
+            this.satisTutarColumn.FillWeight = 135F;
+            this.satisTutarColumn.HeaderText = "SATIŞ TUTARI";
+            this.satisTutarColumn.Name = "satisTutarColumn";
+            this.satisTutarColumn.ReadOnly = true;
+            this.satisTutarColumn.Width = 135;
             // 
             // panel1
             // 
             this.panel1.AutoScroll = true;
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(181)))), ((int)(((byte)(234)))), ((int)(((byte)(234)))));
-            this.panel1.Controls.Add(this.textBox1);
-            this.panel1.Controls.Add(this.vergiDaireTxtBox);
+            this.panel1.Controls.Add(this.idTxtBox);
+            this.panel1.Controls.Add(this.miktarTxtBox);
+            this.panel1.Controls.Add(this.satisTutarTxtBox);
             this.panel1.Controls.Add(this.label8);
-            this.panel1.Controls.Add(this.cepTelTxtBox);
+            this.panel1.Controls.Add(this.alisTutarTxtBox);
             this.panel1.Controls.Add(this.label9);
-            this.panel1.Controls.Add(this.telTxtBox);
+            this.panel1.Controls.Add(this.satisFiyatTxtBox);
             this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.mevkiTxtBox);
+            this.panel1.Controls.Add(this.alisFiyatTxtBox);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.soyadTxtBox);
+            this.panel1.Controls.Add(this.urunTurTxtBox);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.adTxtBox);
+            this.panel1.Controls.Add(this.urunNameTxtBox);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.yeniBtn);
             this.panel1.Controls.Add(this.silBtn);
@@ -184,13 +246,30 @@ namespace Takip_Programı.Forms
             this.panel1.Size = new System.Drawing.Size(865, 164);
             this.panel1.TabIndex = 28;
             // 
-            // vergiDaireTxtBox
+            // idTxtBox
             // 
-            this.vergiDaireTxtBox.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.vergiDaireTxtBox.Location = new System.Drawing.Point(605, 40);
-            this.vergiDaireTxtBox.Name = "vergiDaireTxtBox";
-            this.vergiDaireTxtBox.Size = new System.Drawing.Size(114, 25);
-            this.vergiDaireTxtBox.TabIndex = 42;
+            this.idTxtBox.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.idTxtBox.Location = new System.Drawing.Point(605, 71);
+            this.idTxtBox.Name = "idTxtBox";
+            this.idTxtBox.Size = new System.Drawing.Size(114, 25);
+            this.idTxtBox.TabIndex = 46;
+            this.idTxtBox.Visible = false;
+            // 
+            // miktarTxtBox
+            // 
+            this.miktarTxtBox.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.miktarTxtBox.Location = new System.Drawing.Point(368, 12);
+            this.miktarTxtBox.Name = "miktarTxtBox";
+            this.miktarTxtBox.Size = new System.Drawing.Size(114, 25);
+            this.miktarTxtBox.TabIndex = 45;
+            // 
+            // satisTutarTxtBox
+            // 
+            this.satisTutarTxtBox.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.satisTutarTxtBox.Location = new System.Drawing.Point(605, 40);
+            this.satisTutarTxtBox.Name = "satisTutarTxtBox";
+            this.satisTutarTxtBox.Size = new System.Drawing.Size(114, 25);
+            this.satisTutarTxtBox.TabIndex = 42;
             // 
             // label8
             // 
@@ -206,13 +285,13 @@ namespace Takip_Programı.Forms
             this.label8.TabIndex = 41;
             this.label8.Text = "Satış Tutarı : ";
             // 
-            // cepTelTxtBox
+            // alisTutarTxtBox
             // 
-            this.cepTelTxtBox.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.cepTelTxtBox.Location = new System.Drawing.Point(605, 12);
-            this.cepTelTxtBox.Name = "cepTelTxtBox";
-            this.cepTelTxtBox.Size = new System.Drawing.Size(114, 25);
-            this.cepTelTxtBox.TabIndex = 40;
+            this.alisTutarTxtBox.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.alisTutarTxtBox.Location = new System.Drawing.Point(605, 12);
+            this.alisTutarTxtBox.Name = "alisTutarTxtBox";
+            this.alisTutarTxtBox.Size = new System.Drawing.Size(114, 25);
+            this.alisTutarTxtBox.TabIndex = 40;
             // 
             // label9
             // 
@@ -228,13 +307,13 @@ namespace Takip_Programı.Forms
             this.label9.TabIndex = 39;
             this.label9.Text = "Alış Tutarı : ";
             // 
-            // telTxtBox
+            // satisFiyatTxtBox
             // 
-            this.telTxtBox.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.telTxtBox.Location = new System.Drawing.Point(368, 68);
-            this.telTxtBox.Name = "telTxtBox";
-            this.telTxtBox.Size = new System.Drawing.Size(114, 25);
-            this.telTxtBox.TabIndex = 37;
+            this.satisFiyatTxtBox.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.satisFiyatTxtBox.Location = new System.Drawing.Point(368, 68);
+            this.satisFiyatTxtBox.Name = "satisFiyatTxtBox";
+            this.satisFiyatTxtBox.Size = new System.Drawing.Size(114, 25);
+            this.satisFiyatTxtBox.TabIndex = 37;
             // 
             // label4
             // 
@@ -250,13 +329,13 @@ namespace Takip_Programı.Forms
             this.label4.TabIndex = 36;
             this.label4.Text = "Satış Fiyatı : ";
             // 
-            // mevkiTxtBox
+            // alisFiyatTxtBox
             // 
-            this.mevkiTxtBox.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.mevkiTxtBox.Location = new System.Drawing.Point(368, 40);
-            this.mevkiTxtBox.Name = "mevkiTxtBox";
-            this.mevkiTxtBox.Size = new System.Drawing.Size(114, 25);
-            this.mevkiTxtBox.TabIndex = 35;
+            this.alisFiyatTxtBox.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.alisFiyatTxtBox.Location = new System.Drawing.Point(368, 40);
+            this.alisFiyatTxtBox.Name = "alisFiyatTxtBox";
+            this.alisFiyatTxtBox.Size = new System.Drawing.Size(114, 25);
+            this.alisFiyatTxtBox.TabIndex = 35;
             // 
             // label5
             // 
@@ -286,13 +365,13 @@ namespace Takip_Programı.Forms
             this.label6.TabIndex = 33;
             this.label6.Text = "Miktar : ";
             // 
-            // soyadTxtBox
+            // urunTurTxtBox
             // 
-            this.soyadTxtBox.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.soyadTxtBox.Location = new System.Drawing.Point(113, 40);
-            this.soyadTxtBox.Name = "soyadTxtBox";
-            this.soyadTxtBox.Size = new System.Drawing.Size(114, 25);
-            this.soyadTxtBox.TabIndex = 30;
+            this.urunTurTxtBox.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.urunTurTxtBox.Location = new System.Drawing.Point(113, 40);
+            this.urunTurTxtBox.Name = "urunTurTxtBox";
+            this.urunTurTxtBox.Size = new System.Drawing.Size(114, 25);
+            this.urunTurTxtBox.TabIndex = 30;
             // 
             // label2
             // 
@@ -308,13 +387,13 @@ namespace Takip_Programı.Forms
             this.label2.TabIndex = 29;
             this.label2.Text = "Ürün Türü : ";
             // 
-            // adTxtBox
+            // urunNameTxtBox
             // 
-            this.adTxtBox.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.adTxtBox.Location = new System.Drawing.Point(113, 12);
-            this.adTxtBox.Name = "adTxtBox";
-            this.adTxtBox.Size = new System.Drawing.Size(114, 25);
-            this.adTxtBox.TabIndex = 28;
+            this.urunNameTxtBox.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.urunNameTxtBox.Location = new System.Drawing.Point(113, 12);
+            this.urunNameTxtBox.Name = "urunNameTxtBox";
+            this.urunNameTxtBox.Size = new System.Drawing.Size(114, 25);
+            this.urunNameTxtBox.TabIndex = 28;
             // 
             // label1
             // 
@@ -343,10 +422,12 @@ namespace Takip_Programı.Forms
             this.yeniBtn.TabIndex = 22;
             this.yeniBtn.Text = "Yeni Kayıt";
             this.yeniBtn.UseVisualStyleBackColor = false;
+            this.yeniBtn.Click += new System.EventHandler(this.yeniBtn_Click);
             // 
             // silBtn
             // 
             this.silBtn.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.silBtn.Enabled = false;
             this.silBtn.FlatAppearance.BorderSize = 0;
             this.silBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.silBtn.Font = new System.Drawing.Font("Palatino Linotype", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -357,10 +438,12 @@ namespace Takip_Programı.Forms
             this.silBtn.TabIndex = 26;
             this.silBtn.Text = "Sil";
             this.silBtn.UseVisualStyleBackColor = false;
+            this.silBtn.Click += new System.EventHandler(this.silBtn_Click);
             // 
             // kayitBtn
             // 
             this.kayitBtn.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.kayitBtn.Enabled = false;
             this.kayitBtn.FlatAppearance.BorderSize = 0;
             this.kayitBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.kayitBtn.Font = new System.Drawing.Font("Palatino Linotype", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -371,10 +454,12 @@ namespace Takip_Programı.Forms
             this.kayitBtn.TabIndex = 24;
             this.kayitBtn.Text = "Kaydet";
             this.kayitBtn.UseVisualStyleBackColor = false;
+            this.kayitBtn.Click += new System.EventHandler(this.kayitBtn_Click);
             // 
             // vazgecBtn
             // 
             this.vazgecBtn.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.vazgecBtn.Enabled = false;
             this.vazgecBtn.FlatAppearance.BorderSize = 0;
             this.vazgecBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.vazgecBtn.Font = new System.Drawing.Font("Palatino Linotype", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -385,6 +470,7 @@ namespace Takip_Programı.Forms
             this.vazgecBtn.TabIndex = 25;
             this.vazgecBtn.Text = "Vazgeç";
             this.vazgecBtn.UseVisualStyleBackColor = false;
+            this.vazgecBtn.Click += new System.EventHandler(this.vazgecBtn_Click);
             // 
             // tabPage3
             // 
@@ -426,14 +512,6 @@ namespace Takip_Programı.Forms
             this.tabPage6.Text = "Veri Yolu";
             this.tabPage6.UseVisualStyleBackColor = true;
             // 
-            // textBox1
-            // 
-            this.textBox1.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.textBox1.Location = new System.Drawing.Point(368, 12);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(114, 25);
-            this.textBox1.TabIndex = 45;
-            // 
             // Form_Settings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -446,6 +524,7 @@ namespace Takip_Programı.Forms
             this.tabPage2.ResumeLayout(false);
             this.TabPage1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -463,29 +542,34 @@ namespace Takip_Programı.Forms
         private System.Windows.Forms.TabPage tabPage6;
         public Panel TabPage1;
         public Panel panel2;
-        public ListView musteriListView;
         public Panel panel1;
-        public TextBox vergiDaireTxtBox;
+        public TextBox satisTutarTxtBox;
         public Label label8;
-        public TextBox cepTelTxtBox;
+        public TextBox alisTutarTxtBox;
         public Label label9;
-        public TextBox telTxtBox;
+        public TextBox satisFiyatTxtBox;
         public Label label4;
-        public TextBox mevkiTxtBox;
+        public TextBox alisFiyatTxtBox;
         public Label label5;
         public Label label6;
-        public TextBox soyadTxtBox;
+        public TextBox urunTurTxtBox;
         public Label label2;
-        public TextBox adTxtBox;
+        public TextBox urunNameTxtBox;
         public Label label1;
         public Button yeniBtn;
         public Button silBtn;
         public Button kayitBtn;
         public Button vazgecBtn;
-        private ColumnHeader productType;
-        private ColumnHeader productName;
-        private ColumnHeader productAmount;
-        private ColumnHeader columnHeader1;
-        public TextBox textBox1;
+        public TextBox miktarTxtBox;
+        private DataGridView dataGridView;
+        public TextBox idTxtBox;
+        private DataGridViewTextBoxColumn idColumn;
+        private DataGridViewTextBoxColumn urunColumn;
+        private DataGridViewTextBoxColumn turColumn;
+        private DataGridViewTextBoxColumn miktarColumn;
+        private DataGridViewTextBoxColumn alisFiyatColumn;
+        private DataGridViewTextBoxColumn satisFiyatColumn;
+        private DataGridViewTextBoxColumn alisTutarColumn;
+        private DataGridViewTextBoxColumn satisTutarColumn;
     }
 }
