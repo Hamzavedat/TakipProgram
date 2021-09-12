@@ -41,7 +41,9 @@ namespace Takip_Programı.Forms
             this.CEPTEL = new System.Windows.Forms.ColumnHeader();
             this.VERGIDAIRE = new System.Windows.Forms.ColumnHeader();
             this.VERGINUMARA = new System.Windows.Forms.ColumnHeader();
+            this.ID = new System.Windows.Forms.ColumnHeader();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.idTxtBox = new System.Windows.Forms.TextBox();
             this.adresTxtBox = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.vergiNoTxtBox = new System.Windows.Forms.TextBox();
@@ -105,7 +107,8 @@ namespace Takip_Programı.Forms
             this.TEL,
             this.CEPTEL,
             this.VERGIDAIRE,
-            this.VERGINUMARA});
+            this.VERGINUMARA,
+            this.ID});
             this.musteriListView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.musteriListView.Font = new System.Drawing.Font("Palatino Linotype", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.musteriListView.ForeColor = System.Drawing.Color.Black;
@@ -175,10 +178,16 @@ namespace Takip_Programı.Forms
             this.VERGINUMARA.Text = "VERGİ NUMARASI";
             this.VERGINUMARA.Width = 140;
             // 
+            // ID
+            // 
+            this.ID.Text = "ID";
+            this.ID.Width = 1;
+            // 
             // panel1
             // 
             this.panel1.AutoScroll = true;
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(253)))), ((int)(((byte)(176)))));
+            this.panel1.Controls.Add(this.idTxtBox);
             this.panel1.Controls.Add(this.adresTxtBox);
             this.panel1.Controls.Add(this.label10);
             this.panel1.Controls.Add(this.vergiNoTxtBox);
@@ -208,6 +217,14 @@ namespace Takip_Programı.Forms
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1064, 164);
             this.panel1.TabIndex = 28;
+            // 
+            // idTxtBox
+            // 
+            this.idTxtBox.Location = new System.Drawing.Point(807, 97);
+            this.idTxtBox.Name = "idTxtBox";
+            this.idTxtBox.Size = new System.Drawing.Size(100, 23);
+            this.idTxtBox.TabIndex = 47;
+            this.idTxtBox.Visible = false;
             // 
             // adresTxtBox
             // 
@@ -455,6 +472,7 @@ namespace Takip_Programı.Forms
             // silBtn
             // 
             this.silBtn.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.silBtn.Enabled = false;
             this.silBtn.FlatAppearance.BorderSize = 0;
             this.silBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.silBtn.Font = new System.Drawing.Font("Palatino Linotype", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -470,6 +488,7 @@ namespace Takip_Programı.Forms
             // kayitBtn
             // 
             this.kayitBtn.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.kayitBtn.Enabled = false;
             this.kayitBtn.FlatAppearance.BorderSize = 0;
             this.kayitBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.kayitBtn.Font = new System.Drawing.Font("Palatino Linotype", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -480,10 +499,12 @@ namespace Takip_Programı.Forms
             this.kayitBtn.TabIndex = 24;
             this.kayitBtn.Text = "Kaydet";
             this.kayitBtn.UseVisualStyleBackColor = false;
+            this.kayitBtn.Click += new System.EventHandler(this.kayitBtn_Click);
             // 
             // vazgecBtn
             // 
             this.vazgecBtn.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.vazgecBtn.Enabled = false;
             this.vazgecBtn.FlatAppearance.BorderSize = 0;
             this.vazgecBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.vazgecBtn.Font = new System.Drawing.Font("Palatino Linotype", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -494,6 +515,7 @@ namespace Takip_Programı.Forms
             this.vazgecBtn.TabIndex = 25;
             this.vazgecBtn.Text = "Vazgeç";
             this.vazgecBtn.UseVisualStyleBackColor = false;
+            this.vazgecBtn.Click += new System.EventHandler(this.vazgecBtn_Click);
             // 
             // Form_Clients
             // 
@@ -550,5 +572,7 @@ namespace Takip_Programı.Forms
         public System.Windows.Forms.Label label2;
         public System.Windows.Forms.TextBox adTxtBox;
         public System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ColumnHeader ID;
+        private System.Windows.Forms.TextBox idTxtBox;
     }
 }

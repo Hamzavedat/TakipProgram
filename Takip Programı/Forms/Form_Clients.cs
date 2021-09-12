@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,7 +21,6 @@ namespace Takip_Programı.Forms
             InitializeComponent();
             LoadTheme();
             this.CenterToParent();
-
             var customers = context.Customer.ToList();
             foreach (var item in customers)
             {
@@ -33,6 +33,7 @@ namespace Takip_Programı.Forms
                 itemlist.SubItems.Add(item.MobilePhone);
                 itemlist.SubItems.Add(item.VergiDairesi);
                 itemlist.SubItems.Add(item.VergiNo);
+                itemlist.SubItems.Add(item.Id.ToString());
                 itemlist.Name = item.Id.ToString();
                 musteriListView.Items.Add(itemlist);
             }
@@ -63,6 +64,7 @@ namespace Takip_Programı.Forms
             };
             context.Customer.Add(customer);
             context.SaveChanges();
+            musteriListView.Refresh();
         }
 
         private void musteriListView_SelectedIndexChanged_1(object sender, EventArgs e)
@@ -80,17 +82,92 @@ namespace Takip_Programı.Forms
             vergiDaireTxtBox.Text = customer.VergiDairesi;
             vergiNoTxtBox.Text = customer.VergiNo;
             adresTxtBox.Text = customer.Adress;
-
+            idTxtBox.Text = customer.Id.ToString();
+            kayitBtn.Enabled = true;
+            vazgecBtn.Enabled = true;
+            silBtn.Enabled = true;
+            musteriListView.Refresh();
         }
 
         private void silBtn_Click(object sender, EventArgs e)
         {
-            var obj = sender as ListView;
-            var data = obj.FocusedItem;
-            var custo = context.Customer.FirstOrDefault(i => i.Id.ToString() == data.Name);
+            musteriListView.SelectedIndices.Clear();
+            var custo = context.Customer.FirstOrDefault(i => i.Id == Convert.ToInt16(idTxtBox.Text));
             context.Customer.Remove(custo);
             context.SaveChanges();
+            adTxtBox.Text = null;
+            idTxtBox.Text = null;
+            soyadTxtBox.Text = null;
+            riskTxtBox.Text = null;
+            fiyatComboBox.Text = null;
+            mevkiTxtBox.Text = null;
+            telTxtBox.Text = null;
+            cepTelTxtBox.Text = null;
+            vergiDaireTxtBox.Text = null;
+            vergiNoTxtBox.Text = null;
+            adresTxtBox.Text = null;
+            kayitBtn.Enabled = false;
+            vazgecBtn.Enabled = false;
+            silBtn.Enabled = false;
+            musteriListView.Refresh();
+        }
 
+        private void kayitBtn_Click(object sender, EventArgs e)
+        {
+            musteriListView.SelectedIndices.Clear();
+            var customer = new Customer()
+            {
+                Id = Convert.ToInt16(idTxtBox.Text),
+                Name = adTxtBox.Text,
+                Surname = soyadTxtBox.Text,
+                Risk = riskTxtBox.Text,
+                Change = fiyatComboBox.Text == "Etkilensin" ? 1 : 0,
+                Position = mevkiTxtBox.Text,
+                Phone = telTxtBox.Text,
+                MobilePhone = cepTelTxtBox.Text,
+                VergiDairesi = vergiDaireTxtBox.Text,
+                VergiNo = vergiNoTxtBox.Text,
+                Adress = adresTxtBox.Text
+            };
+            context.Customer.AsNoTracking();
+            var current = context.Customer.FirstOrDefault(i => i.Id == Convert.ToInt16(idTxtBox.Text));
+            context.Entry(current).CurrentValues.SetValues(customer);
+            context.SaveChanges();
+            adTxtBox.Text = null;
+            idTxtBox.Text = null;
+            soyadTxtBox.Text = null;
+            riskTxtBox.Text = null;
+            fiyatComboBox.Text = null;
+            mevkiTxtBox.Text = null;
+            telTxtBox.Text = null;
+            cepTelTxtBox.Text = null;
+            vergiDaireTxtBox.Text = null;
+            vergiNoTxtBox.Text = null;
+            adresTxtBox.Text = null;
+            kayitBtn.Enabled = false;
+            vazgecBtn.Enabled = false;
+            silBtn.Enabled = false;
+            musteriListView.Refresh();
+        }
+
+        private void vazgecBtn_Click(object sender, EventArgs e)
+        {
+            musteriListView.SelectedIndices.Clear();
+            adTxtBox.Text = null;
+            idTxtBox.Text = null;
+            soyadTxtBox.Text = null;
+            riskTxtBox.Text = null;
+            fiyatComboBox.Text = null;
+            mevkiTxtBox.Text = null;
+            telTxtBox.Text = null;
+            cepTelTxtBox.Text = null;
+            vergiDaireTxtBox.Text = null;
+            vergiNoTxtBox.Text = null;
+            adresTxtBox.Text = null;
+            kayitBtn.Enabled = false;
+            vazgecBtn.Enabled = false;
+            silBtn.Enabled = false;
+            musteriListView.Refresh();
         }
     }
 }
