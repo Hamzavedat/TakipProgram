@@ -123,6 +123,7 @@ namespace Takip_Programı.Forms
             this.dataGridView.RowTemplate.Height = 25;
             this.dataGridView.Size = new System.Drawing.Size(1060, 462);
             this.dataGridView.TabIndex = 0;
+            this.dataGridView.CellClick += dataGridView_CellClick;
             // 
             // Id
             // 
