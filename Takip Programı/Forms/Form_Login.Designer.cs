@@ -103,10 +103,9 @@ namespace Takip_Programı.Forms
             this.passwordTxtBox.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.passwordTxtBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(247)))), ((int)(((byte)(231)))));
             this.passwordTxtBox.Location = new System.Drawing.Point(220, 69);
-            this.passwordTxtBox.Multiline = true;
             this.passwordTxtBox.Name = "passwordTxtBox";
             this.passwordTxtBox.PasswordChar = '*';
-            this.passwordTxtBox.Size = new System.Drawing.Size(150, 25);
+            this.passwordTxtBox.Size = new System.Drawing.Size(150, 23);
             this.passwordTxtBox.TabIndex = 3;
             // 
             // usernameTxtBox
@@ -114,9 +113,8 @@ namespace Takip_Programı.Forms
             this.usernameTxtBox.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.usernameTxtBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(247)))), ((int)(((byte)(231)))));
             this.usernameTxtBox.Location = new System.Drawing.Point(220, 22);
-            this.usernameTxtBox.Multiline = true;
             this.usernameTxtBox.Name = "usernameTxtBox";
-            this.usernameTxtBox.Size = new System.Drawing.Size(150, 25);
+            this.usernameTxtBox.Size = new System.Drawing.Size(150, 23);
             this.usernameTxtBox.TabIndex = 2;
             // 
             // sifreLbl

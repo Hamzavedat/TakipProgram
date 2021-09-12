@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Data;
 using System.Data.SQLite;
@@ -16,27 +17,36 @@ namespace Takip_Programı.Forms
     public partial class Form_Clients : Form
     {
         TakipProgramiContext context = new TakipProgramiContext();
+
+        ObservableCollection<Customer> customers { get; set; }
         public Form_Clients()
         {
             InitializeComponent();
             LoadTheme();
             this.CenterToParent();
-            var customers = context.Customer.ToList();
-            foreach (var item in customers)
+            this.MinimumSize = this.Size;
+            this.MaximumSize = this.Size;
+            this.ResizeRedraw = false;
+            customers = new ObservableCollection<Customer>( context.Customer.ToList());
+            dataGridView.DataSource = customers;
+           /* for (int i = 0; i < customers.Count(); i++)
             {
-                ListViewItem itemlist = new ListViewItem(item.Name);
-                itemlist.SubItems.Add(item.Surname);
-                itemlist.SubItems.Add(item.Risk);
-                itemlist.SubItems.Add(item.ChangeText);
-                itemlist.SubItems.Add(item.Position);
-                itemlist.SubItems.Add(item.Phone);
-                itemlist.SubItems.Add(item.MobilePhone);
-                itemlist.SubItems.Add(item.VergiDairesi);
-                itemlist.SubItems.Add(item.VergiNo);
-                itemlist.SubItems.Add(item.Id.ToString());
-                itemlist.Name = item.Id.ToString();
-                musteriListView.Items.Add(itemlist);
-            }
+                
+                var datagrid = new DataGridViewRow();
+                datagrid.Cells.Add(new DataGridViewCellCollection { Value = customers[i].Id.ToString()});
+                datagrid.Cells[0].Value = customers[i].Id.ToString();
+                datagrid.Cells[1].Value = customers[i].Name.ToString();
+                datagrid.Cells[2].Value = customers[i].Surname.ToString();
+                datagrid.Cells[3].Value = customers[i].Risk.ToString();
+                datagrid.Cells[4].Value = customers[i].ChangeText.ToString();
+                datagrid.Cells[5].Value = customers[i].Position.ToString();
+                datagrid.Cells[6].Value = customers[i].Phone.ToString();
+                datagrid.Cells[7].Value = customers[i].MobilePhone.ToString();
+                datagrid.Cells[8].Value = customers[i].VergiDairesi.ToString();
+                datagrid.Cells[9].Value = customers[i].VergiNo.ToString();
+                datagrid.Cells[10].Value = customers[i].Adress.ToString();
+                dataGridView.Rows.Add(datagrid);
+            }*/
         }
 
         private void LoadTheme()
@@ -49,7 +59,7 @@ namespace Takip_Programı.Forms
 
         private void yeniBtn_Click(object sender, EventArgs e)
         {
-            var customer = new Customer()
+            var data = new Customer()
             {
                 Name = adTxtBox.Text,
                 Surname = soyadTxtBox.Text,
@@ -62,39 +72,19 @@ namespace Takip_Programı.Forms
                 VergiNo = vergiNoTxtBox.Text,
                 Adress = adresTxtBox.Text
             };
-            context.Customer.Add(customer);
+            context.Customer.Add(data);
             context.SaveChanges();
-            musteriListView.Refresh();
-        }
-
-        private void musteriListView_SelectedIndexChanged_1(object sender, EventArgs e)
-        {
-            var custo = context.Customer.ToList();
-            var obj = sender as ListView;
-            var data = obj.FocusedItem;
-            var customer = custo.FirstOrDefault(x => x.Id.ToString() == data.Name);
-            adTxtBox.Text = customer.Name;
-            soyadTxtBox.Text = customer.Surname;
-            riskTxtBox.Text = customer.Risk;
-            mevkiTxtBox.Text = customer.Position;
-            telTxtBox.Text = customer.Phone;
-            cepTelTxtBox.Text = customer.MobilePhone;
-            vergiDaireTxtBox.Text = customer.VergiDairesi;
-            vergiNoTxtBox.Text = customer.VergiNo;
-            adresTxtBox.Text = customer.Adress;
-            idTxtBox.Text = customer.Id.ToString();
-            kayitBtn.Enabled = true;
-            vazgecBtn.Enabled = true;
-            silBtn.Enabled = true;
-            musteriListView.Refresh();
+            customers = new ObservableCollection<Customer>(context.Customer.ToList());
+            dataGridView.DataSource = customers;
         }
 
         private void silBtn_Click(object sender, EventArgs e)
         {
-            musteriListView.SelectedIndices.Clear();
             var custo = context.Customer.FirstOrDefault(i => i.Id == Convert.ToInt16(idTxtBox.Text));
             context.Customer.Remove(custo);
             context.SaveChanges();
+            customers = new ObservableCollection<Customer>(context.Customer.ToList());
+            dataGridView.DataSource = customers;
             adTxtBox.Text = null;
             idTxtBox.Text = null;
             soyadTxtBox.Text = null;
@@ -109,12 +99,10 @@ namespace Takip_Programı.Forms
             kayitBtn.Enabled = false;
             vazgecBtn.Enabled = false;
             silBtn.Enabled = false;
-            musteriListView.Refresh();
         }
 
         private void kayitBtn_Click(object sender, EventArgs e)
         {
-            musteriListView.SelectedIndices.Clear();
             var customer = new Customer()
             {
                 Id = Convert.ToInt16(idTxtBox.Text),
@@ -133,6 +121,8 @@ namespace Takip_Programı.Forms
             var current = context.Customer.FirstOrDefault(i => i.Id == Convert.ToInt16(idTxtBox.Text));
             context.Entry(current).CurrentValues.SetValues(customer);
             context.SaveChanges();
+            customers = new ObservableCollection<Customer>(context.Customer.ToList());
+            dataGridView.DataSource = customers;
             adTxtBox.Text = null;
             idTxtBox.Text = null;
             soyadTxtBox.Text = null;
@@ -147,12 +137,10 @@ namespace Takip_Programı.Forms
             kayitBtn.Enabled = false;
             vazgecBtn.Enabled = false;
             silBtn.Enabled = false;
-            musteriListView.Refresh();
         }
 
         private void vazgecBtn_Click(object sender, EventArgs e)
         {
-            musteriListView.SelectedIndices.Clear();
             adTxtBox.Text = null;
             idTxtBox.Text = null;
             soyadTxtBox.Text = null;
@@ -167,7 +155,29 @@ namespace Takip_Programı.Forms
             kayitBtn.Enabled = false;
             vazgecBtn.Enabled = false;
             silBtn.Enabled = false;
-            musteriListView.Refresh();
         }
+
+        private void dataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex>=0)
+            {
+                DataGridViewRow row = this.dataGridView.Rows[e.RowIndex];
+                adTxtBox.Text = row.Cells[1].Value.ToString();
+                soyadTxtBox.Text = row.Cells[2].Value.ToString();
+                riskTxtBox.Text = row.Cells[3].Value.ToString();
+                fiyatComboBox.SelectedIndex = Convert.ToInt32(row.Cells[4].Value.ToString());
+                mevkiTxtBox.Text = row.Cells[5].Value.ToString();
+                telTxtBox.Text = row.Cells[6].Value.ToString();
+                cepTelTxtBox.Text = row.Cells[7].Value.ToString();
+                vergiDaireTxtBox.Text = row.Cells[8].Value.ToString();
+                vergiNoTxtBox.Text = row.Cells[9].Value.ToString();
+                adresTxtBox.Text = row.Cells[10].Value.ToString();
+                idTxtBox.Text = row.Cells[0].Value.ToString();
+                kayitBtn.Enabled = true;
+                vazgecBtn.Enabled = true;
+                silBtn.Enabled = true;
+            }
+        }
+       
     }
 }

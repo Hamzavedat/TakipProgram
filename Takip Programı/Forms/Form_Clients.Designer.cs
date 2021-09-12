@@ -31,17 +31,19 @@ namespace Takip_Programı.Forms
         {
             this.TabPage1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.musteriListView = new System.Windows.Forms.ListView();
-            this.ADI = new System.Windows.Forms.ColumnHeader();
-            this.SOYADI = new System.Windows.Forms.ColumnHeader();
-            this.RISK = new System.Windows.Forms.ColumnHeader();
-            this.FIAT = new System.Windows.Forms.ColumnHeader();
-            this.MEVKI = new System.Windows.Forms.ColumnHeader();
-            this.TEL = new System.Windows.Forms.ColumnHeader();
-            this.CEPTEL = new System.Windows.Forms.ColumnHeader();
-            this.VERGIDAIRE = new System.Windows.Forms.ColumnHeader();
-            this.VERGINUMARA = new System.Windows.Forms.ColumnHeader();
-            this.ID = new System.Windows.Forms.ColumnHeader();
+            this.dataGridView = new System.Windows.Forms.DataGridView();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Change = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.surnameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.riskColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fiyatColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mevkiiColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.telColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ceptelColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vergiDaireColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vergiNoColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.adressColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.idTxtBox = new System.Windows.Forms.TextBox();
             this.adresTxtBox = new System.Windows.Forms.TextBox();
@@ -70,6 +72,7 @@ namespace Takip_Programı.Forms
             this.vazgecBtn = new System.Windows.Forms.Button();
             this.TabPage1.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -82,106 +85,143 @@ namespace Takip_Programı.Forms
             this.TabPage1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TabPage1.Location = new System.Drawing.Point(0, 0);
             this.TabPage1.Name = "TabPage1";
-            this.TabPage1.Size = new System.Drawing.Size(1064, 626);
+            this.TabPage1.Size = new System.Drawing.Size(1060, 626);
             this.TabPage1.TabIndex = 1;
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.musteriListView);
+            this.panel2.Controls.Add(this.dataGridView);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 164);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1064, 462);
+            this.panel2.Size = new System.Drawing.Size(1060, 462);
             this.panel2.TabIndex = 29;
             // 
-            // musteriListView
+            // dataGridView
             // 
-            this.musteriListView.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(161)))), ((int)(((byte)(157)))));
-            this.musteriListView.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.musteriListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.ADI,
-            this.SOYADI,
-            this.RISK,
-            this.FIAT,
-            this.MEVKI,
-            this.TEL,
-            this.CEPTEL,
-            this.VERGIDAIRE,
-            this.VERGINUMARA,
-            this.ID});
-            this.musteriListView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.musteriListView.Font = new System.Drawing.Font("Palatino Linotype", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.musteriListView.ForeColor = System.Drawing.Color.Black;
-            this.musteriListView.FullRowSelect = true;
-            this.musteriListView.GridLines = true;
-            this.musteriListView.HideSelection = false;
-            this.musteriListView.Location = new System.Drawing.Point(0, 0);
-            this.musteriListView.Name = "musteriListView";
-            this.musteriListView.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.musteriListView.Size = new System.Drawing.Size(1064, 462);
-            this.musteriListView.TabIndex = 28;
-            this.musteriListView.UseCompatibleStateImageBehavior = false;
-            this.musteriListView.View = System.Windows.Forms.View.Details;
-            this.musteriListView.SelectedIndexChanged += new System.EventHandler(this.musteriListView_SelectedIndexChanged_1);
+            this.dataGridView.AllowUserToAddRows = false;
+            this.dataGridView.AllowUserToDeleteRows = false;
+            this.dataGridView.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Id,
+            this.Change,
+            this.nameColumn,
+            this.surnameColumn,
+            this.riskColumn,
+            this.fiyatColumn,
+            this.mevkiiColumn,
+            this.telColumn,
+            this.ceptelColumn,
+            this.vergiDaireColumn,
+            this.vergiNoColumn,
+            this.adressColumn});
+            this.dataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView.Location = new System.Drawing.Point(0, 0);
+            this.dataGridView.Name = "dataGridView";
+            this.dataGridView.ReadOnly = true;
+            this.dataGridView.RowTemplate.Height = 25;
+            this.dataGridView.Size = new System.Drawing.Size(1060, 462);
+            this.dataGridView.TabIndex = 0;
             // 
-            // ADI
+            // Id
             // 
-            this.ADI.Name = "ADI";
-            this.ADI.Text = "ADI";
-            this.ADI.Width = 110;
+            this.Id.DataPropertyName = "Id";
+            this.Id.HeaderText = "ID";
+            this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
+            this.Id.Visible = false;
             // 
-            // SOYADI
+            // Change
             // 
-            this.SOYADI.Name = "SOYADI";
-            this.SOYADI.Text = "SOYADI";
-            this.SOYADI.Width = 110;
+            this.Change.DataPropertyName = "Change";
+            this.Change.HeaderText = "Change";
+            this.Change.Name = "Change";
+            this.Change.ReadOnly = true;
+            this.Change.Visible = false;
             // 
-            // RISK
+            // nameColumn
             // 
-            this.RISK.Name = "RISK";
-            this.RISK.Text = "RİSK LİMİTİ";
-            this.RISK.Width = 100;
+            this.nameColumn.DataPropertyName = "Name";
+            this.nameColumn.HeaderText = "ADI";
+            this.nameColumn.Name = "nameColumn";
+            this.nameColumn.ReadOnly = true;
             // 
-            // FIAT
+            // surnameColumn
             // 
-            this.FIAT.Name = "FIAT";
-            this.FIAT.Text = "FİYAT DEĞİŞİKLİĞİ";
-            this.FIAT.Width = 140;
+            this.surnameColumn.DataPropertyName = "Surname";
+            this.surnameColumn.HeaderText = "SOYADI";
+            this.surnameColumn.Name = "surnameColumn";
+            this.surnameColumn.ReadOnly = true;
             // 
-            // MEVKI
+            // riskColumn
             // 
-            this.MEVKI.Name = "MEVKI";
-            this.MEVKI.Text = "MEVKİSİ";
-            this.MEVKI.Width = 100;
+            this.riskColumn.DataPropertyName = "Risk";
+            this.riskColumn.HeaderText = "RİSK LİMİTİ";
+            this.riskColumn.Name = "riskColumn";
+            this.riskColumn.ReadOnly = true;
             // 
-            // TEL
+            // fiyatColumn
             // 
-            this.TEL.Name = "TEL";
-            this.TEL.Text = "TELEFON";
-            this.TEL.Width = 120;
+            this.fiyatColumn.DataPropertyName = "ChangeText";
+            this.fiyatColumn.FillWeight = 125F;
+            this.fiyatColumn.HeaderText = "FİYAT DEĞİŞİKLİĞİ";
+            this.fiyatColumn.Name = "fiyatColumn";
+            this.fiyatColumn.ReadOnly = true;
+            this.fiyatColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.fiyatColumn.Width = 125;
             // 
-            // CEPTEL
+            // mevkiiColumn
             // 
-            this.CEPTEL.Name = "CEPTEL";
-            this.CEPTEL.Text = "CEP TELEFONU";
-            this.CEPTEL.Width = 120;
+            this.mevkiiColumn.DataPropertyName = "Position";
+            this.mevkiiColumn.HeaderText = "MEVKİSİ";
+            this.mevkiiColumn.Name = "mevkiiColumn";
+            this.mevkiiColumn.ReadOnly = true;
             // 
-            // VERGIDAIRE
+            // telColumn
             // 
-            this.VERGIDAIRE.Name = "VERGIDAIRE";
-            this.VERGIDAIRE.Text = "VERGİ DAİRESİ";
-            this.VERGIDAIRE.Width = 130;
+            this.telColumn.DataPropertyName = "Phone";
+            this.telColumn.HeaderText = "TELEFONU";
+            this.telColumn.Name = "telColumn";
+            this.telColumn.ReadOnly = true;
             // 
-            // VERGINUMARA
+            // ceptelColumn
             // 
-            this.VERGINUMARA.Name = "VERGINUMARA";
-            this.VERGINUMARA.Text = "VERGİ NUMARASI";
-            this.VERGINUMARA.Width = 140;
+            this.ceptelColumn.DataPropertyName = "MobilePhone";
+            this.ceptelColumn.FillWeight = 125F;
+            this.ceptelColumn.HeaderText = "CEP TELEFONU";
+            this.ceptelColumn.Name = "ceptelColumn";
+            this.ceptelColumn.ReadOnly = true;
+            this.ceptelColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.ceptelColumn.Width = 125;
             // 
-            // ID
+            // vergiDaireColumn
             // 
-            this.ID.Text = "ID";
-            this.ID.Width = 1;
+            this.vergiDaireColumn.DataPropertyName = "VergiDairesi";
+            this.vergiDaireColumn.FillWeight = 125F;
+            this.vergiDaireColumn.HeaderText = "VERGİ DAİRESİ";
+            this.vergiDaireColumn.Name = "vergiDaireColumn";
+            this.vergiDaireColumn.ReadOnly = true;
+            this.vergiDaireColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.vergiDaireColumn.Width = 125;
+            // 
+            // vergiNoColumn
+            // 
+            this.vergiNoColumn.DataPropertyName = "VergiNo";
+            this.vergiNoColumn.FillWeight = 125F;
+            this.vergiNoColumn.HeaderText = "VERGİ NO";
+            this.vergiNoColumn.Name = "vergiNoColumn";
+            this.vergiNoColumn.ReadOnly = true;
+            this.vergiNoColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.vergiNoColumn.Width = 125;
+            // 
+            // adressColumn
+            // 
+            this.adressColumn.DataPropertyName = "Adress";
+            this.adressColumn.HeaderText = "ADRES";
+            this.adressColumn.Name = "adressColumn";
+            this.adressColumn.ReadOnly = true;
+            this.adressColumn.Visible = false;
             // 
             // panel1
             // 
@@ -215,7 +255,7 @@ namespace Takip_Programı.Forms
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1064, 164);
+            this.panel1.Size = new System.Drawing.Size(1060, 164);
             this.panel1.TabIndex = 28;
             // 
             // idTxtBox
@@ -323,8 +363,8 @@ namespace Takip_Programı.Forms
             this.fiyatComboBox.ForeColor = System.Drawing.SystemColors.Desktop;
             this.fiyatComboBox.FormattingEnabled = true;
             this.fiyatComboBox.Items.AddRange(new object[] {
-            "Etkilensin",
-            "Etkilenmesin"});
+            "Etkilenmesin",
+            "Etkilensin"});
             this.fiyatComboBox.Location = new System.Drawing.Point(368, 11);
             this.fiyatComboBox.Name = "fiyatComboBox";
             this.fiyatComboBox.Size = new System.Drawing.Size(114, 23);
@@ -521,17 +561,20 @@ namespace Takip_Programı.Forms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1064, 626);
+            this.ClientSize = new System.Drawing.Size(1060, 626);
             this.Controls.Add(this.TabPage1);
             this.Name = "Form_Clients";
             this.Text = "Form_Clients";
             this.TabPage1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
+
+      
 
         #endregion
 
@@ -542,16 +585,6 @@ namespace Takip_Programı.Forms
         public System.Windows.Forms.Button yeniBtn;
         public System.Windows.Forms.Panel panel1;
         public System.Windows.Forms.Panel panel2;
-        public System.Windows.Forms.ListView musteriListView;
-        public System.Windows.Forms.ColumnHeader ADI;
-        public System.Windows.Forms.ColumnHeader SOYADI;
-        public System.Windows.Forms.ColumnHeader RISK;
-        public System.Windows.Forms.ColumnHeader FIAT;
-        public System.Windows.Forms.ColumnHeader MEVKI;
-        public System.Windows.Forms.ColumnHeader TEL;
-        public System.Windows.Forms.ColumnHeader CEPTEL;
-        public System.Windows.Forms.ColumnHeader VERGIDAIRE;
-        public System.Windows.Forms.ColumnHeader VERGINUMARA;
         public System.Windows.Forms.TextBox adresTxtBox;
         public System.Windows.Forms.Label label10;
         public System.Windows.Forms.TextBox vergiNoTxtBox;
@@ -572,7 +605,19 @@ namespace Takip_Programı.Forms
         public System.Windows.Forms.Label label2;
         public System.Windows.Forms.TextBox adTxtBox;
         public System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ColumnHeader ID;
         private System.Windows.Forms.TextBox idTxtBox;
+        private System.Windows.Forms.DataGridView dataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Change;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn surnameColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn riskColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fiyatColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mevkiiColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn telColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ceptelColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn vergiDaireColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn vergiNoColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn adressColumn;
     }
 }
