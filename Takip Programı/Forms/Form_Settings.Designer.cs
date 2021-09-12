@@ -144,7 +144,7 @@ namespace Takip_Programı.Forms
             this.dataGridView.Location = new System.Drawing.Point(0, 0);
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.RowTemplate.Height = 25;
-            this.dataGridView.Size = new System.Drawing.Size(865, 412);
+            this.dataGridView.Size = new System.Drawing.Size(1060, 462);
             this.dataGridView.TabIndex = 0;
             this.dataGridView.CellClick += dataGridView_CellClick;
             // 
@@ -452,7 +452,7 @@ namespace Takip_Programı.Forms
             this.kayitBtn.Name = "kayitBtn";
             this.kayitBtn.Size = new System.Drawing.Size(125, 35);
             this.kayitBtn.TabIndex = 24;
-            this.kayitBtn.Text = "Kaydet";
+            this.kayitBtn.Text = "Düzenle";
             this.kayitBtn.UseVisualStyleBackColor = false;
             this.kayitBtn.Click += new System.EventHandler(this.kayitBtn_Click);
             // 

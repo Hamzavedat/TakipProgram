@@ -538,7 +538,7 @@ namespace Takip_Programı.Forms
             this.kayitBtn.Name = "kayitBtn";
             this.kayitBtn.Size = new System.Drawing.Size(125, 35);
             this.kayitBtn.TabIndex = 24;
-            this.kayitBtn.Text = "Kaydet";
+            this.kayitBtn.Text = "Düzenle";
             this.kayitBtn.UseVisualStyleBackColor = false;
             this.kayitBtn.Click += new System.EventHandler(this.kayitBtn_Click);
             // 

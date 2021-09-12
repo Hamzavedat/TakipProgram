@@ -58,6 +58,17 @@ namespace Takip_Programı.Forms
             context.SaveChanges();
             customers = new ObservableCollection<Customer>(context.Customer.ToList());
             dataGridView.DataSource = customers;
+            adTxtBox.Text = null;
+            idTxtBox.Text = null;
+            soyadTxtBox.Text = null;
+            riskTxtBox.Text = null;
+            fiyatComboBox.Text = null;
+            mevkiTxtBox.Text = null;
+            telTxtBox.Text = null;
+            cepTelTxtBox.Text = null;
+            vergiDaireTxtBox.Text = null;
+            vergiNoTxtBox.Text = null;
+            adresTxtBox.Text = null;
         }
 
         private void silBtn_Click(object sender, EventArgs e)
@@ -158,6 +169,7 @@ namespace Takip_Programı.Forms
                 kayitBtn.Enabled = true;
                 vazgecBtn.Enabled = true;
                 silBtn.Enabled = true;
+                yeniBtn.Enabled = false;
             }
         }
        

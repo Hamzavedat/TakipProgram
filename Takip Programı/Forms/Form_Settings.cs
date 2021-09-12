@@ -51,6 +51,14 @@ namespace Takip_Programı.Forms
             context.SaveChanges();
             WarehouseDefine = new ObservableCollection<WarehouseDefine>(context.WarehouseDefine.ToList());
             dataGridView.DataSource = WarehouseDefine;
+            urunNameTxtBox.Text = null;
+            idTxtBox.Text = null;
+            urunTurTxtBox.Text = null;
+            miktarTxtBox.Text = null;
+            alisFiyatTxtBox.Text = null;
+            satisFiyatTxtBox.Text = null;
+            alisTutarTxtBox.Text = null;
+            satisTutarTxtBox.Text = null;
         }
         private void silBtn_Click(object sender, EventArgs e)
         {
@@ -133,6 +141,7 @@ namespace Takip_Programı.Forms
                 kayitBtn.Enabled = true;
                 vazgecBtn.Enabled = true;
                 silBtn.Enabled = true;
+                yeniBtn.Enabled = false;
             }
         }
 
