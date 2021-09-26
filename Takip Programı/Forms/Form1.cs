@@ -49,6 +49,7 @@ namespace Takip_Programı
 
         private void musteriBtn_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             psatisBtn.BackColor = System.Drawing.Color.FromArgb(212, 236, 221);
             pompaBtn.BackColor = System.Drawing.Color.FromArgb(212, 236, 221);
             depoBtn.BackColor = System.Drawing.Color.FromArgb(212, 236, 221);
@@ -68,6 +69,7 @@ namespace Takip_Programı
 
         private void psatisBtn_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             musteriBtn.BackColor = System.Drawing.Color.FromArgb(212, 236, 221);
             pompaBtn.BackColor = System.Drawing.Color.FromArgb(212, 236, 221);
             depoBtn.BackColor = System.Drawing.Color.FromArgb(212, 236, 221);
@@ -80,6 +82,7 @@ namespace Takip_Programı
 
         private void pompaBtn_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             musteriBtn.BackColor = System.Drawing.Color.FromArgb(212, 236, 221);
             psatisBtn.BackColor = System.Drawing.Color.FromArgb(212, 236, 221);
             depoBtn.BackColor = System.Drawing.Color.FromArgb(212, 236, 221);
@@ -98,6 +101,7 @@ namespace Takip_Programı
 
         private void depoBtn_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             musteriBtn.BackColor = System.Drawing.Color.FromArgb(212, 236, 221);
             psatisBtn.BackColor = System.Drawing.Color.FromArgb(212, 236, 221);
             pompaBtn.BackColor = System.Drawing.Color.FromArgb(212, 236, 221);
@@ -110,6 +114,7 @@ namespace Takip_Programı
 
         private void kksatisBtn_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             musteriBtn.BackColor = System.Drawing.Color.FromArgb(212, 236, 221);
             psatisBtn.BackColor = System.Drawing.Color.FromArgb(212, 236, 221);
             pompaBtn.BackColor = System.Drawing.Color.FromArgb(212, 236, 221);
@@ -122,6 +127,7 @@ namespace Takip_Programı
 
         private void stokBtn_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             musteriBtn.BackColor = System.Drawing.Color.FromArgb(212, 236, 221);
             psatisBtn.BackColor = System.Drawing.Color.FromArgb(212, 236, 221);
             pompaBtn.BackColor = System.Drawing.Color.FromArgb(212, 236, 221);
@@ -134,6 +140,7 @@ namespace Takip_Programı
 
         private void ayarlarBtn_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             musteriBtn.BackColor = System.Drawing.Color.FromArgb(212, 236, 221);
             psatisBtn.BackColor = System.Drawing.Color.FromArgb(212, 236, 221);
             pompaBtn.BackColor = System.Drawing.Color.FromArgb(212, 236, 221);
@@ -146,6 +153,7 @@ namespace Takip_Programı
             {
                 newform.Close();
             }
+           
             newform = new Form_Settings();
             newform.ShowDialog();
         }
@@ -160,6 +168,7 @@ namespace Takip_Programı
 
         private void cariBtn_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             musteriBtn.BackColor = System.Drawing.Color.FromArgb(212, 236, 221);
             psatisBtn.BackColor = System.Drawing.Color.FromArgb(212, 236, 221);
             pompaBtn.BackColor = System.Drawing.Color.FromArgb(212, 236, 221);
