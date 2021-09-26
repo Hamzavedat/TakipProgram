@@ -19,6 +19,7 @@ namespace Takip_Programı.Forms
         ObservableCollection<ProductDefine> ProductDefine { get; set; }
         ObservableCollection<PumpDefine> PumpDefine { get; set; }
         private int SelectedPumpId { get; set; }
+        private int SelectedProductId { get; set; }
         public Form_Settings()
         {
             InitializeComponent();
@@ -31,6 +32,10 @@ namespace Takip_Programı.Forms
             dataGridView.DataSource = ProductDefine;
             PumpDefine = new ObservableCollection<PumpDefine>(context.PumpDefine.ToList());
             PumpGridView.DataSource = PumpDefine;
+            yakitTurComBox.DataSource = context.ProductDefine.ToList();
+            yakitTurComBox.DisplayMember = "Name";
+            yakitTurComBox.ValueMember = "Id";
+            yakitTurComBox.SelectedIndex = -1;
         }
         private void LoadTheme()
         {
@@ -556,6 +561,44 @@ namespace Takip_Programı.Forms
                 pompavazgecbtn.Enabled = true;
                 pompakayitbtn.Enabled = false;
             }
+        }
+
+        private void DepoYeniBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void DepoDuzenleBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void DepoVazgecBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void DepoSilBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void yakitTurComBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if ((sender as ComboBox).SelectedIndex != -1)
+            {
+                SelectedProductId = (int)(sender as ComboBox).SelectedValue;
+            }
+            else
+            {
+                SelectedProductId = new int();
+            }
+        }
+
+        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            SelectedProductId = new int();
+            SelectedPumpId = new int();
         }
     }
 }

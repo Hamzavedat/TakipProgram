@@ -66,10 +66,10 @@ namespace Takip_Programı.Forms
             this.mevkiTxtBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.yeniBtn = new System.Windows.Forms.Button();
-            this.silBtn = new System.Windows.Forms.Button();
-            this.kayitBtn = new System.Windows.Forms.Button();
-            this.vazgecBtn = new System.Windows.Forms.Button();
+            this.satisBtn = new System.Windows.Forms.Button();
+            this.odemeBtn = new System.Windows.Forms.Button();
+            this.alisBtn = new System.Windows.Forms.Button();
+            this.tahsilatBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -98,7 +98,7 @@ namespace Takip_Programı.Forms
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.ReadOnly = true;
             this.dataGridView.RowTemplate.Height = 25;
-            this.dataGridView.Size = new System.Drawing.Size(1146, 303);
+            this.dataGridView.Size = new System.Drawing.Size(1132, 333);
             this.dataGridView.TabIndex = 29;
             // 
             // Id
@@ -233,14 +233,14 @@ namespace Takip_Programı.Forms
             this.panel1.Controls.Add(this.mevkiTxtBox);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.yeniBtn);
-            this.panel1.Controls.Add(this.silBtn);
-            this.panel1.Controls.Add(this.kayitBtn);
-            this.panel1.Controls.Add(this.vazgecBtn);
+            this.panel1.Controls.Add(this.satisBtn);
+            this.panel1.Controls.Add(this.odemeBtn);
+            this.panel1.Controls.Add(this.alisBtn);
+            this.panel1.Controls.Add(this.tahsilatBtn);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1146, 200);
+            this.panel1.Size = new System.Drawing.Size(1132, 200);
             this.panel1.TabIndex = 30;
             // 
             // fiyatComboBox
@@ -505,70 +505,75 @@ namespace Takip_Programı.Forms
             this.label1.TabIndex = 27;
             this.label1.Text = "Adı ve Soyadı : ";
             // 
-            // yeniBtn
+            // satisBtn
             // 
-            this.yeniBtn.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.yeniBtn.FlatAppearance.BorderSize = 0;
-            this.yeniBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.yeniBtn.Font = new System.Drawing.Font("Palatino Linotype", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.yeniBtn.ForeColor = System.Drawing.SystemColors.Control;
-            this.yeniBtn.Location = new System.Drawing.Point(223, 141);
-            this.yeniBtn.Name = "yeniBtn";
-            this.yeniBtn.Size = new System.Drawing.Size(125, 35);
-            this.yeniBtn.TabIndex = 22;
-            this.yeniBtn.Text = "Yeni Kayıt";
-            this.yeniBtn.UseVisualStyleBackColor = false;
+            this.satisBtn.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.satisBtn.Enabled = false;
+            this.satisBtn.FlatAppearance.BorderSize = 0;
+            this.satisBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.satisBtn.Font = new System.Drawing.Font("Palatino Linotype", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.satisBtn.ForeColor = System.Drawing.SystemColors.Control;
+            this.satisBtn.Location = new System.Drawing.Point(223, 141);
+            this.satisBtn.Name = "satisBtn";
+            this.satisBtn.Size = new System.Drawing.Size(125, 35);
+            this.satisBtn.TabIndex = 22;
+            this.satisBtn.Text = "SATIŞ (F1)";
+            this.satisBtn.UseVisualStyleBackColor = false;
+            this.satisBtn.Click += new System.EventHandler(this.satisBtn_Click);
             // 
-            // silBtn
+            // odemeBtn
             // 
-            this.silBtn.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.silBtn.Enabled = false;
-            this.silBtn.FlatAppearance.BorderSize = 0;
-            this.silBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.silBtn.Font = new System.Drawing.Font("Palatino Linotype", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.silBtn.ForeColor = System.Drawing.SystemColors.Control;
-            this.silBtn.Location = new System.Drawing.Point(763, 141);
-            this.silBtn.Name = "silBtn";
-            this.silBtn.Size = new System.Drawing.Size(125, 35);
-            this.silBtn.TabIndex = 26;
-            this.silBtn.Text = "Sil";
-            this.silBtn.UseVisualStyleBackColor = false;
+            this.odemeBtn.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.odemeBtn.Enabled = false;
+            this.odemeBtn.FlatAppearance.BorderSize = 0;
+            this.odemeBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.odemeBtn.Font = new System.Drawing.Font("Palatino Linotype", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.odemeBtn.ForeColor = System.Drawing.SystemColors.Control;
+            this.odemeBtn.Location = new System.Drawing.Point(763, 141);
+            this.odemeBtn.Name = "odemeBtn";
+            this.odemeBtn.Size = new System.Drawing.Size(125, 35);
+            this.odemeBtn.TabIndex = 26;
+            this.odemeBtn.Text = "ÖDEME (F4)";
+            this.odemeBtn.UseVisualStyleBackColor = false;
+            this.odemeBtn.Click += new System.EventHandler(this.odemeBtn_Click);
             // 
-            // kayitBtn
+            // alisBtn
             // 
-            this.kayitBtn.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.kayitBtn.Enabled = false;
-            this.kayitBtn.FlatAppearance.BorderSize = 0;
-            this.kayitBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.kayitBtn.Font = new System.Drawing.Font("Palatino Linotype", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.kayitBtn.ForeColor = System.Drawing.SystemColors.Control;
-            this.kayitBtn.Location = new System.Drawing.Point(404, 141);
-            this.kayitBtn.Name = "kayitBtn";
-            this.kayitBtn.Size = new System.Drawing.Size(125, 35);
-            this.kayitBtn.TabIndex = 24;
-            this.kayitBtn.Text = "Düzenle";
-            this.kayitBtn.UseVisualStyleBackColor = false;
+            this.alisBtn.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.alisBtn.Enabled = false;
+            this.alisBtn.FlatAppearance.BorderSize = 0;
+            this.alisBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.alisBtn.Font = new System.Drawing.Font("Palatino Linotype", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.alisBtn.ForeColor = System.Drawing.SystemColors.Control;
+            this.alisBtn.Location = new System.Drawing.Point(404, 141);
+            this.alisBtn.Name = "alisBtn";
+            this.alisBtn.Size = new System.Drawing.Size(125, 35);
+            this.alisBtn.TabIndex = 24;
+            this.alisBtn.Text = "ALIŞ (F2)";
+            this.alisBtn.UseVisualStyleBackColor = false;
+            this.alisBtn.Click += new System.EventHandler(this.alisBtn_Click);
             // 
-            // vazgecBtn
+            // tahsilatBtn
             // 
-            this.vazgecBtn.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.vazgecBtn.Enabled = false;
-            this.vazgecBtn.FlatAppearance.BorderSize = 0;
-            this.vazgecBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.vazgecBtn.Font = new System.Drawing.Font("Palatino Linotype", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.vazgecBtn.ForeColor = System.Drawing.SystemColors.Control;
-            this.vazgecBtn.Location = new System.Drawing.Point(585, 141);
-            this.vazgecBtn.Name = "vazgecBtn";
-            this.vazgecBtn.Size = new System.Drawing.Size(125, 35);
-            this.vazgecBtn.TabIndex = 25;
-            this.vazgecBtn.Text = "Vazgeç";
-            this.vazgecBtn.UseVisualStyleBackColor = false;
+            this.tahsilatBtn.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.tahsilatBtn.Enabled = false;
+            this.tahsilatBtn.FlatAppearance.BorderSize = 0;
+            this.tahsilatBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.tahsilatBtn.Font = new System.Drawing.Font("Palatino Linotype", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.tahsilatBtn.ForeColor = System.Drawing.SystemColors.Control;
+            this.tahsilatBtn.Location = new System.Drawing.Point(585, 141);
+            this.tahsilatBtn.Name = "tahsilatBtn";
+            this.tahsilatBtn.Size = new System.Drawing.Size(125, 35);
+            this.tahsilatBtn.TabIndex = 25;
+            this.tahsilatBtn.Text = "TAHSİLAT (F3)";
+            this.tahsilatBtn.UseVisualStyleBackColor = false;
+            this.tahsilatBtn.Click += new System.EventHandler(this.tahsilatBtn_Click);
             // 
             // Form_Cari
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1146, 503);
+            this.ClientSize = new System.Drawing.Size(1132, 533);
             this.Controls.Add(this.dataGridView);
             this.Controls.Add(this.panel1);
             this.Name = "Form_Cari";
@@ -604,10 +609,10 @@ namespace Takip_Programı.Forms
         public System.Windows.Forms.TextBox mevkiTxtBox;
         public System.Windows.Forms.Label label2;
         public System.Windows.Forms.Label label1;
-        public System.Windows.Forms.Button yeniBtn;
-        public System.Windows.Forms.Button silBtn;
-        public System.Windows.Forms.Button kayitBtn;
-        public System.Windows.Forms.Button vazgecBtn;
+        public System.Windows.Forms.Button satisBtn;
+        public System.Windows.Forms.Button odemeBtn;
+        public System.Windows.Forms.Button alisBtn;
+        public System.Windows.Forms.Button tahsilatBtn;
         public System.Windows.Forms.TextBox bakiyeTxtBox;
         public System.Windows.Forms.Label label11;
         public System.Windows.Forms.ComboBox fiyatComboBox;

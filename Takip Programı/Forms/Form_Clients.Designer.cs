@@ -45,6 +45,7 @@ namespace Takip_Programı.Forms
             this.vergiNoColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.adressColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.riskTxtBox = new System.Windows.Forms.NumericUpDown();
             this.idTxtBox = new System.Windows.Forms.TextBox();
             this.adresTxtBox = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -60,7 +61,6 @@ namespace Takip_Programı.Forms
             this.mevkiTxtBox = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.riskTxtBox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.soyadTxtBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -74,6 +74,7 @@ namespace Takip_Programı.Forms
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.riskTxtBox)).BeginInit();
             this.SuspendLayout();
             // 
             // TabPage1
@@ -123,7 +124,7 @@ namespace Takip_Programı.Forms
             this.dataGridView.RowTemplate.Height = 25;
             this.dataGridView.Size = new System.Drawing.Size(1060, 462);
             this.dataGridView.TabIndex = 0;
-            this.dataGridView.CellClick += dataGridView_CellClick;
+            this.dataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellClick);
             // 
             // Id
             // 
@@ -228,6 +229,7 @@ namespace Takip_Programı.Forms
             // 
             this.panel1.AutoScroll = true;
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(253)))), ((int)(((byte)(176)))));
+            this.panel1.Controls.Add(this.riskTxtBox);
             this.panel1.Controls.Add(this.idTxtBox);
             this.panel1.Controls.Add(this.adresTxtBox);
             this.panel1.Controls.Add(this.label10);
@@ -243,7 +245,6 @@ namespace Takip_Programı.Forms
             this.panel1.Controls.Add(this.mevkiTxtBox);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.riskTxtBox);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.soyadTxtBox);
             this.panel1.Controls.Add(this.label2);
@@ -258,6 +259,19 @@ namespace Takip_Programı.Forms
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1060, 164);
             this.panel1.TabIndex = 28;
+            // 
+            // riskTxtBox
+            // 
+            this.riskTxtBox.Location = new System.Drawing.Point(113, 70);
+            this.riskTxtBox.Maximum = new decimal(new int[] {
+            276447232,
+            23283,
+            0,
+            0});
+            this.riskTxtBox.Name = "riskTxtBox";
+            this.riskTxtBox.Size = new System.Drawing.Size(114, 23);
+            this.riskTxtBox.TabIndex = 48;
+            this.riskTxtBox.ThousandsSeparator = true;
             // 
             // idTxtBox
             // 
@@ -342,6 +356,7 @@ namespace Takip_Programı.Forms
             this.cepTelTxtBox.Name = "cepTelTxtBox";
             this.cepTelTxtBox.Size = new System.Drawing.Size(114, 23);
             this.cepTelTxtBox.TabIndex = 40;
+            this.cepTelTxtBox.TextChanged += new System.EventHandler(this.cepTelTxtBox_TextChanged);
             // 
             // label9
             // 
@@ -378,6 +393,7 @@ namespace Takip_Programı.Forms
             this.telTxtBox.Name = "telTxtBox";
             this.telTxtBox.Size = new System.Drawing.Size(114, 23);
             this.telTxtBox.TabIndex = 37;
+            this.telTxtBox.TextChanged += new System.EventHandler(this.cepTelTxtBox_TextChanged);
             // 
             // label4
             // 
@@ -428,14 +444,6 @@ namespace Takip_Programı.Forms
             this.label6.Size = new System.Drawing.Size(127, 20);
             this.label6.TabIndex = 33;
             this.label6.Text = "Fiyat Değişikliği : ";
-            // 
-            // riskTxtBox
-            // 
-            this.riskTxtBox.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.riskTxtBox.Location = new System.Drawing.Point(113, 68);
-            this.riskTxtBox.Name = "riskTxtBox";
-            this.riskTxtBox.Size = new System.Drawing.Size(114, 23);
-            this.riskTxtBox.TabIndex = 32;
             // 
             // label3
             // 
@@ -571,6 +579,7 @@ namespace Takip_Programı.Forms
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.riskTxtBox)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -600,7 +609,6 @@ namespace Takip_Programı.Forms
         public System.Windows.Forms.TextBox mevkiTxtBox;
         public System.Windows.Forms.Label label5;
         public System.Windows.Forms.Label label6;
-        public System.Windows.Forms.TextBox riskTxtBox;
         public System.Windows.Forms.Label label3;
         public System.Windows.Forms.TextBox soyadTxtBox;
         public System.Windows.Forms.Label label2;
@@ -620,5 +628,6 @@ namespace Takip_Programı.Forms
         private System.Windows.Forms.DataGridViewTextBoxColumn vergiDaireColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn vergiNoColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn adressColumn;
+        private System.Windows.Forms.NumericUpDown riskTxtBox;
     }
 }

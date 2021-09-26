@@ -38,14 +38,6 @@ namespace Takip_Programı.Forms
             this.TabPage1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dataGridView = new System.Windows.Forms.DataGridView();
-            this.idColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.urunColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.turColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.miktarColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.alisFiyatColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.satisFiyatColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.alisTutarColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.satisTutarColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.idTxtBox = new System.Windows.Forms.TextBox();
             this.miktarTxtBox = new System.Windows.Forms.TextBox();
@@ -67,6 +59,20 @@ namespace Takip_Programı.Forms
             this.kayitBtn = new System.Windows.Forms.Button();
             this.vazgecBtn = new System.Windows.Forms.Button();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.DepoSilBtn = new System.Windows.Forms.Button();
+            this.DepoVazgecBtn = new System.Windows.Forms.Button();
+            this.DepoDuzenleBtn = new System.Windows.Forms.Button();
+            this.DepoYeniBtn = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.DepoStokBox = new System.Windows.Forms.NumericUpDown();
+            this.DepoHacmiBox = new System.Windows.Forms.NumericUpDown();
+            this.yakitTurComBox = new System.Windows.Forms.ComboBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.depoAdiTxtBox = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.panel3 = new System.Windows.Forms.Panel();
             this.pompasilbtn = new System.Windows.Forms.Button();
@@ -93,12 +99,25 @@ namespace Takip_Programı.Forms
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.tabPage6 = new System.Windows.Forms.TabPage();
             this.tabPage7 = new System.Windows.Forms.TabPage();
+            this.idColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.urunColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.turColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.miktarColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.alisFiyatColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.satisFiyatColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.alisTutarColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.satisTutarColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.TabPage1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.panel1.SuspendLayout();
+            this.tabPage3.SuspendLayout();
+            this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DepoStokBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DepoHacmiBox)).BeginInit();
             this.tabPage4.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PumpGridView)).BeginInit();
@@ -121,6 +140,7 @@ namespace Takip_Programı.Forms
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(903, 637);
             this.tabControl1.TabIndex = 0;
+            this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             // 
             // tabPage2
             // 
@@ -174,75 +194,6 @@ namespace Takip_Programı.Forms
             this.dataGridView.Size = new System.Drawing.Size(889, 412);
             this.dataGridView.TabIndex = 0;
             this.dataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellClick);
-            // 
-            // idColumn
-            // 
-            this.idColumn.DataPropertyName = "Id";
-            this.idColumn.HeaderText = "ID";
-            this.idColumn.Name = "idColumn";
-            this.idColumn.ReadOnly = true;
-            this.idColumn.Visible = false;
-            // 
-            // urunColumn
-            // 
-            this.urunColumn.DataPropertyName = "Name";
-            this.urunColumn.FillWeight = 120F;
-            this.urunColumn.HeaderText = "ÜRÜN ADI";
-            this.urunColumn.Name = "urunColumn";
-            this.urunColumn.ReadOnly = true;
-            this.urunColumn.Width = 120;
-            // 
-            // turColumn
-            // 
-            this.turColumn.DataPropertyName = "Type";
-            this.turColumn.FillWeight = 120F;
-            this.turColumn.HeaderText = "ÜRÜN TÜRÜ";
-            this.turColumn.Name = "turColumn";
-            this.turColumn.ReadOnly = true;
-            this.turColumn.Width = 120;
-            // 
-            // miktarColumn
-            // 
-            this.miktarColumn.DataPropertyName = "Amount";
-            this.miktarColumn.HeaderText = "MİKTAR";
-            this.miktarColumn.Name = "miktarColumn";
-            this.miktarColumn.ReadOnly = true;
-            // 
-            // alisFiyatColumn
-            // 
-            this.alisFiyatColumn.DataPropertyName = "BuyPrice";
-            this.alisFiyatColumn.FillWeight = 120F;
-            this.alisFiyatColumn.HeaderText = "ALIŞ FİYATI";
-            this.alisFiyatColumn.Name = "alisFiyatColumn";
-            this.alisFiyatColumn.ReadOnly = true;
-            this.alisFiyatColumn.Width = 120;
-            // 
-            // satisFiyatColumn
-            // 
-            this.satisFiyatColumn.DataPropertyName = "SellPrice";
-            this.satisFiyatColumn.FillWeight = 125F;
-            this.satisFiyatColumn.HeaderText = "SATIŞ FİYATI";
-            this.satisFiyatColumn.Name = "satisFiyatColumn";
-            this.satisFiyatColumn.ReadOnly = true;
-            this.satisFiyatColumn.Width = 125;
-            // 
-            // alisTutarColumn
-            // 
-            this.alisTutarColumn.DataPropertyName = "BuyAmount";
-            this.alisTutarColumn.FillWeight = 125F;
-            this.alisTutarColumn.HeaderText = "ALIŞ TUTARI";
-            this.alisTutarColumn.Name = "alisTutarColumn";
-            this.alisTutarColumn.ReadOnly = true;
-            this.alisTutarColumn.Width = 125;
-            // 
-            // satisTutarColumn
-            // 
-            this.satisTutarColumn.DataPropertyName = "SellAmount";
-            this.satisTutarColumn.FillWeight = 135F;
-            this.satisTutarColumn.HeaderText = "SATIŞ TUTARI";
-            this.satisTutarColumn.Name = "satisTutarColumn";
-            this.satisTutarColumn.ReadOnly = true;
-            this.satisTutarColumn.Width = 135;
             // 
             // panel1
             // 
@@ -501,6 +452,7 @@ namespace Takip_Programı.Forms
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.panel4);
             this.tabPage3.Location = new System.Drawing.Point(4, 51);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
@@ -508,6 +460,177 @@ namespace Takip_Programı.Forms
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Depo Tanımları";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(181)))), ((int)(((byte)(234)))), ((int)(((byte)(234)))));
+            this.panel4.Controls.Add(this.DepoSilBtn);
+            this.panel4.Controls.Add(this.DepoVazgecBtn);
+            this.panel4.Controls.Add(this.DepoDuzenleBtn);
+            this.panel4.Controls.Add(this.DepoYeniBtn);
+            this.panel4.Controls.Add(this.dataGridView1);
+            this.panel4.Controls.Add(this.DepoStokBox);
+            this.panel4.Controls.Add(this.DepoHacmiBox);
+            this.panel4.Controls.Add(this.yakitTurComBox);
+            this.panel4.Controls.Add(this.label15);
+            this.panel4.Controls.Add(this.label16);
+            this.panel4.Controls.Add(this.depoAdiTxtBox);
+            this.panel4.Controls.Add(this.label14);
+            this.panel4.Controls.Add(this.label13);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel4.Location = new System.Drawing.Point(3, 3);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(889, 576);
+            this.panel4.TabIndex = 0;
+            // 
+            // DepoSilBtn
+            // 
+            this.DepoSilBtn.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.DepoSilBtn.Enabled = false;
+            this.DepoSilBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.DepoSilBtn.Font = new System.Drawing.Font("Palatino Linotype", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.DepoSilBtn.ForeColor = System.Drawing.SystemColors.Control;
+            this.DepoSilBtn.Location = new System.Drawing.Point(613, 131);
+            this.DepoSilBtn.Name = "DepoSilBtn";
+            this.DepoSilBtn.Size = new System.Drawing.Size(125, 35);
+            this.DepoSilBtn.TabIndex = 18;
+            this.DepoSilBtn.Text = "Sil";
+            this.DepoSilBtn.UseVisualStyleBackColor = false;
+            this.DepoSilBtn.Click += new System.EventHandler(this.DepoSilBtn_Click);
+            // 
+            // DepoVazgecBtn
+            // 
+            this.DepoVazgecBtn.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.DepoVazgecBtn.Enabled = false;
+            this.DepoVazgecBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.DepoVazgecBtn.Font = new System.Drawing.Font("Palatino Linotype", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.DepoVazgecBtn.ForeColor = System.Drawing.SystemColors.Control;
+            this.DepoVazgecBtn.Location = new System.Drawing.Point(439, 131);
+            this.DepoVazgecBtn.Name = "DepoVazgecBtn";
+            this.DepoVazgecBtn.Size = new System.Drawing.Size(125, 35);
+            this.DepoVazgecBtn.TabIndex = 17;
+            this.DepoVazgecBtn.Text = "Vazgeç";
+            this.DepoVazgecBtn.UseVisualStyleBackColor = false;
+            this.DepoVazgecBtn.Click += new System.EventHandler(this.DepoVazgecBtn_Click);
+            // 
+            // DepoDuzenleBtn
+            // 
+            this.DepoDuzenleBtn.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.DepoDuzenleBtn.Enabled = false;
+            this.DepoDuzenleBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.DepoDuzenleBtn.Font = new System.Drawing.Font("Palatino Linotype", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.DepoDuzenleBtn.ForeColor = System.Drawing.SystemColors.Control;
+            this.DepoDuzenleBtn.Location = new System.Drawing.Point(265, 131);
+            this.DepoDuzenleBtn.Name = "DepoDuzenleBtn";
+            this.DepoDuzenleBtn.Size = new System.Drawing.Size(125, 35);
+            this.DepoDuzenleBtn.TabIndex = 16;
+            this.DepoDuzenleBtn.Text = "Düzenle";
+            this.DepoDuzenleBtn.UseVisualStyleBackColor = false;
+            this.DepoDuzenleBtn.Click += new System.EventHandler(this.DepoDuzenleBtn_Click);
+            // 
+            // DepoYeniBtn
+            // 
+            this.DepoYeniBtn.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.DepoYeniBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.DepoYeniBtn.Font = new System.Drawing.Font("Palatino Linotype", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.DepoYeniBtn.ForeColor = System.Drawing.SystemColors.Control;
+            this.DepoYeniBtn.Location = new System.Drawing.Point(94, 131);
+            this.DepoYeniBtn.Name = "DepoYeniBtn";
+            this.DepoYeniBtn.Size = new System.Drawing.Size(125, 35);
+            this.DepoYeniBtn.TabIndex = 15;
+            this.DepoYeniBtn.Text = "Yeni Kayıt";
+            this.DepoYeniBtn.UseVisualStyleBackColor = false;
+            this.DepoYeniBtn.Click += new System.EventHandler(this.DepoYeniBtn_Click);
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dataGridView1.GridColor = System.Drawing.Color.White;
+            this.dataGridView1.Location = new System.Drawing.Point(0, 191);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowTemplate.Height = 25;
+            this.dataGridView1.Size = new System.Drawing.Size(889, 385);
+            this.dataGridView1.TabIndex = 11;
+            // 
+            // DepoStokBox
+            // 
+            this.DepoStokBox.Location = new System.Drawing.Point(543, 57);
+            this.DepoStokBox.Maximum = new decimal(new int[] {
+            -1304428545,
+            434162106,
+            542,
+            0});
+            this.DepoStokBox.Name = "DepoStokBox";
+            this.DepoStokBox.Size = new System.Drawing.Size(141, 25);
+            this.DepoStokBox.TabIndex = 10;
+            this.DepoStokBox.ThousandsSeparator = true;
+            // 
+            // DepoHacmiBox
+            // 
+            this.DepoHacmiBox.Location = new System.Drawing.Point(543, 24);
+            this.DepoHacmiBox.Maximum = new decimal(new int[] {
+            -1981284353,
+            -1966660860,
+            0,
+            0});
+            this.DepoHacmiBox.Name = "DepoHacmiBox";
+            this.DepoHacmiBox.Size = new System.Drawing.Size(141, 25);
+            this.DepoHacmiBox.TabIndex = 9;
+            this.DepoHacmiBox.ThousandsSeparator = true;
+            // 
+            // yakitTurComBox
+            // 
+            this.yakitTurComBox.FormattingEnabled = true;
+            this.yakitTurComBox.Location = new System.Drawing.Point(180, 21);
+            this.yakitTurComBox.Name = "yakitTurComBox";
+            this.yakitTurComBox.Size = new System.Drawing.Size(164, 26);
+            this.yakitTurComBox.TabIndex = 8;
+            this.yakitTurComBox.SelectedIndexChanged += new System.EventHandler(this.yakitTurComBox_SelectedIndexChanged);
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(440, 57);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(97, 19);
+            this.label15.TabIndex = 6;
+            this.label15.Text = "Stok Miktarı :";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(442, 26);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(95, 19);
+            this.label16.TabIndex = 4;
+            this.label16.Text = "Depo Hacmi :";
+            // 
+            // depoAdiTxtBox
+            // 
+            this.depoAdiTxtBox.Location = new System.Drawing.Point(179, 54);
+            this.depoAdiTxtBox.Name = "depoAdiTxtBox";
+            this.depoAdiTxtBox.Size = new System.Drawing.Size(165, 25);
+            this.depoAdiTxtBox.TabIndex = 3;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(97, 57);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(76, 19);
+            this.label14.TabIndex = 2;
+            this.label14.Text = "Depo Adı :";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(27, 26);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(146, 19);
+            this.label13.TabIndex = 0;
+            this.label13.Text = "Yakıt veya Yağ Türü :";
             // 
             // tabPage4
             // 
@@ -779,6 +902,76 @@ namespace Takip_Programı.Forms
             this.tabPage7.Text = "Veri Yolu";
             this.tabPage7.UseVisualStyleBackColor = true;
             // 
+            // idColumn
+            // 
+            this.idColumn.DataPropertyName = "Id";
+            this.idColumn.HeaderText = "ID";
+            this.idColumn.Name = "idColumn";
+            this.idColumn.ReadOnly = true;
+            this.idColumn.Visible = false;
+            // 
+            // urunColumn
+            // 
+            this.urunColumn.DataPropertyName = "Name";
+            this.urunColumn.FillWeight = 120F;
+            this.urunColumn.HeaderText = "ÜRÜN ADI";
+            this.urunColumn.Name = "urunColumn";
+            this.urunColumn.ReadOnly = true;
+            this.urunColumn.Width = 120;
+            // 
+            // turColumn
+            // 
+            this.turColumn.DataPropertyName = "Type";
+            this.turColumn.FillWeight = 120F;
+            this.turColumn.HeaderText = "ÜRÜN TÜRÜ";
+            this.turColumn.Name = "turColumn";
+            this.turColumn.ReadOnly = true;
+            this.turColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.turColumn.Width = 120;
+            // 
+            // miktarColumn
+            // 
+            this.miktarColumn.DataPropertyName = "Amount";
+            this.miktarColumn.HeaderText = "MİKTAR";
+            this.miktarColumn.Name = "miktarColumn";
+            this.miktarColumn.ReadOnly = true;
+            // 
+            // alisFiyatColumn
+            // 
+            this.alisFiyatColumn.DataPropertyName = "BuyPrice";
+            this.alisFiyatColumn.FillWeight = 120F;
+            this.alisFiyatColumn.HeaderText = "ALIŞ FİYATI";
+            this.alisFiyatColumn.Name = "alisFiyatColumn";
+            this.alisFiyatColumn.ReadOnly = true;
+            this.alisFiyatColumn.Width = 120;
+            // 
+            // satisFiyatColumn
+            // 
+            this.satisFiyatColumn.DataPropertyName = "SellPrice";
+            this.satisFiyatColumn.FillWeight = 125F;
+            this.satisFiyatColumn.HeaderText = "SATIŞ FİYATI";
+            this.satisFiyatColumn.Name = "satisFiyatColumn";
+            this.satisFiyatColumn.ReadOnly = true;
+            this.satisFiyatColumn.Width = 125;
+            // 
+            // alisTutarColumn
+            // 
+            this.alisTutarColumn.DataPropertyName = "BuyAmount";
+            this.alisTutarColumn.FillWeight = 125F;
+            this.alisTutarColumn.HeaderText = "ALIŞ TUTARI";
+            this.alisTutarColumn.Name = "alisTutarColumn";
+            this.alisTutarColumn.ReadOnly = true;
+            this.alisTutarColumn.Width = 125;
+            // 
+            // satisTutarColumn
+            // 
+            this.satisTutarColumn.DataPropertyName = "SellAmount";
+            this.satisTutarColumn.FillWeight = 135F;
+            this.satisTutarColumn.HeaderText = "SATIŞ TUTARI";
+            this.satisTutarColumn.Name = "satisTutarColumn";
+            this.satisTutarColumn.ReadOnly = true;
+            this.satisTutarColumn.Width = 135;
+            // 
             // Form_Settings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -794,6 +987,12 @@ namespace Takip_Programı.Forms
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.tabPage3.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DepoStokBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DepoHacmiBox)).EndInit();
             this.tabPage4.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
@@ -835,14 +1034,6 @@ namespace Takip_Programı.Forms
         public TextBox miktarTxtBox;
         private DataGridView dataGridView;
         public TextBox idTxtBox;
-        private DataGridViewTextBoxColumn idColumn;
-        private DataGridViewTextBoxColumn urunColumn;
-        private DataGridViewTextBoxColumn turColumn;
-        private DataGridViewTextBoxColumn miktarColumn;
-        private DataGridViewTextBoxColumn alisFiyatColumn;
-        private DataGridViewTextBoxColumn satisFiyatColumn;
-        private DataGridViewTextBoxColumn alisTutarColumn;
-        private DataGridViewTextBoxColumn satisTutarColumn;
         private Panel panel3;
         private Label label7;
         private TextBox PompaTutarText;
@@ -866,5 +1057,27 @@ namespace Takip_Programı.Forms
         private DataGridViewTextBoxColumn PompaNewCounterColumn;
         private DataGridViewTextBoxColumn PompaGapColumn;
         private DataGridViewTextBoxColumn PompaTotalColunn;
+        private Panel panel4;
+        public Button DepoSilBtn;
+        public Button DepoVazgecBtn;
+        public Button DepoDuzenleBtn;
+        public Button DepoYeniBtn;
+        private DataGridView dataGridView1;
+        private NumericUpDown DepoStokBox;
+        private NumericUpDown DepoHacmiBox;
+        private ComboBox yakitTurComBox;
+        private Label label15;
+        private Label label16;
+        private TextBox depoAdiTxtBox;
+        private Label label14;
+        private Label label13;
+        private DataGridViewTextBoxColumn idColumn;
+        private DataGridViewTextBoxColumn urunColumn;
+        private DataGridViewTextBoxColumn turColumn;
+        private DataGridViewTextBoxColumn miktarColumn;
+        private DataGridViewTextBoxColumn alisFiyatColumn;
+        private DataGridViewTextBoxColumn satisFiyatColumn;
+        private DataGridViewTextBoxColumn alisTutarColumn;
+        private DataGridViewTextBoxColumn satisTutarColumn;
     }
 }

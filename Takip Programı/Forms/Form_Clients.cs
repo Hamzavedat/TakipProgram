@@ -45,7 +45,7 @@ namespace Takip_Programı.Forms
             {
                 Name = adTxtBox.Text,
                 Surname = soyadTxtBox.Text,
-                Risk = riskTxtBox.Text,
+                Risk = Convert.ToInt32(riskTxtBox.Value),
                 Change = fiyatComboBox.Text == "Etkilensin" ? 1 : 0,
                 Position = mevkiTxtBox.Text,
                 Phone = telTxtBox.Text,
@@ -102,7 +102,7 @@ namespace Takip_Programı.Forms
                 Id = Convert.ToInt16(idTxtBox.Text),
                 Name = adTxtBox.Text,
                 Surname = soyadTxtBox.Text,
-                Risk = riskTxtBox.Text,
+                Risk = Convert.ToInt32(riskTxtBox.Value),
                 Change = fiyatComboBox.Text == "Etkilensin" ? 1 : 0,
                 Position = mevkiTxtBox.Text,
                 Phone = telTxtBox.Text,
@@ -175,6 +175,23 @@ namespace Takip_Programı.Forms
                 yeniBtn.Enabled = false;
             }
         }
-       
+
+        private void cepTelTxtBox_TextChanged(object sender, EventArgs e)
+        {
+            var text = "";
+            foreach(var item in (sender as TextBox).Text)
+            {
+                if (item == '0' || item == '1' || item == '2' || item == '3' || item == '4' || item == '5' || item == '6' ||
+                    item == '7' || item == '8' || item == '9' )
+                {
+                    text += item;
+                }
+            }
+            if (text.Length < (sender as TextBox).Text.Length)
+            {
+                MessageBox.Show("Lütfen Sadece Rakam Giriniz", "HATA");
+            }
+            (sender as TextBox).Text = text;
+        }
     }
 }
