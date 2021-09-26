@@ -44,6 +44,7 @@ namespace Takip_Programı
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.cariBtn = new System.Windows.Forms.Button();
             this.ustPanel.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -52,6 +53,7 @@ namespace Takip_Programı
             // ustPanel
             // 
             this.ustPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(236)))), ((int)(((byte)(221)))));
+            this.ustPanel.Controls.Add(this.cariBtn);
             this.ustPanel.Controls.Add(this.ayarlarBtn);
             this.ustPanel.Controls.Add(this.label1);
             this.ustPanel.Controls.Add(this.stokBtn);
@@ -253,6 +255,27 @@ namespace Takip_Programı
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // cariBtn
+            // 
+            this.cariBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(236)))), ((int)(((byte)(221)))));
+            this.cariBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.cariBtn.Cursor = System.Windows.Forms.Cursors.Default;
+            this.cariBtn.Dock = System.Windows.Forms.DockStyle.Left;
+            this.cariBtn.FlatAppearance.BorderSize = 0;
+            this.cariBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cariBtn.Font = new System.Drawing.Font("Palatino Linotype", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cariBtn.ForeColor = System.Drawing.Color.Black;
+            this.cariBtn.Image = global::Takip_Programı.Properties.Resources.wallet;
+            this.cariBtn.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.cariBtn.Location = new System.Drawing.Point(721, 0);
+            this.cariBtn.Name = "cariBtn";
+            this.cariBtn.Size = new System.Drawing.Size(103, 52);
+            this.cariBtn.TabIndex = 8;
+            this.cariBtn.Text = "CARİ İŞ";
+            this.cariBtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.cariBtn.UseVisualStyleBackColor = false;
+            this.cariBtn.Click += new System.EventHandler(this.cariBtn_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -295,6 +318,7 @@ namespace Takip_Programı
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Button cariBtn;
     }
 }
 

@@ -92,6 +92,7 @@ namespace Takip_Programı.Forms
             kayitBtn.Enabled = false;
             vazgecBtn.Enabled = false;
             silBtn.Enabled = false;
+            yeniBtn.Enabled = true;
         }
 
         private void kayitBtn_Click(object sender, EventArgs e)
@@ -130,6 +131,7 @@ namespace Takip_Programı.Forms
             kayitBtn.Enabled = false;
             vazgecBtn.Enabled = false;
             silBtn.Enabled = false;
+            yeniBtn.Enabled = true;
         }
 
         private void vazgecBtn_Click(object sender, EventArgs e)
@@ -148,6 +150,7 @@ namespace Takip_Programı.Forms
             kayitBtn.Enabled = false;
             vazgecBtn.Enabled = false;
             silBtn.Enabled = false;
+            yeniBtn.Enabled = true;
         }
 
         private void dataGridView_CellClick(object sender, DataGridViewCellEventArgs e)

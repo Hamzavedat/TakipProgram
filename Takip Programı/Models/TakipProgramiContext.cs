@@ -15,6 +15,7 @@ namespace Takip_Programı.Models
         }
         public DbSet<User> User { get; set; }
         public DbSet<Customer> Customer { get; set; }
-        public DbSet<WarehouseDefine> WarehouseDefine { get; set; }
+        public DbSet<ProductDefine> ProductDefine { get; set; }
+        public DbSet<PumpDefine> PumpDefine { get; set; }
     }
 }

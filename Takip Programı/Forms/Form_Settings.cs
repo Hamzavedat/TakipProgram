@@ -16,7 +16,9 @@ namespace Takip_Programı.Forms
     public partial class Form_Settings : Form
     {
         TakipProgramiContext context = new TakipProgramiContext();
-        ObservableCollection<WarehouseDefine> WarehouseDefine { get; set; }
+        ObservableCollection<ProductDefine> ProductDefine { get; set; }
+        ObservableCollection<PumpDefine> PumpDefine { get; set; }
+        private int SelectedPumpId { get; set; }
         public Form_Settings()
         {
             InitializeComponent();
@@ -25,8 +27,10 @@ namespace Takip_Programı.Forms
             this.MinimumSize = this.Size;
             this.MaximumSize = this.Size;
             this.ResizeRedraw = false;
-            WarehouseDefine = new ObservableCollection<WarehouseDefine>(context.WarehouseDefine.ToList());
-            dataGridView.DataSource = WarehouseDefine;
+            ProductDefine = new ObservableCollection<ProductDefine>(context.ProductDefine.ToList());
+            dataGridView.DataSource = ProductDefine;
+            PumpDefine = new ObservableCollection<PumpDefine>(context.PumpDefine.ToList());
+            PumpGridView.DataSource = PumpDefine;
         }
         private void LoadTheme()
         {
@@ -34,23 +38,134 @@ namespace Takip_Programı.Forms
             kayitBtn.BackColor = ColorTranslator.FromHtml("#5F939A");
             silBtn.BackColor = ColorTranslator.FromHtml("#5F939A");
             vazgecBtn.BackColor = ColorTranslator.FromHtml("#5F939A");
+            pompakayitbtn.BackColor = ColorTranslator.FromHtml("#5F939A");
+            pompaduzenlebtn.BackColor = ColorTranslator.FromHtml("#5F939A");
+            pompasilbtn.BackColor = ColorTranslator.FromHtml("#5F939A");
+            pompavazgecbtn.BackColor = ColorTranslator.FromHtml("#5F939A");
         }
         private void yeniBtn_Click(object sender, EventArgs e)
         {
-            var data = new WarehouseDefine()
+            if (string.IsNullOrWhiteSpace(urunNameTxtBox.Text))
+            {
+                MessageBox.Show("Ürün Adı Boş Bırakılamaz!");
+                return;
+            }
+            if (string.IsNullOrWhiteSpace(urunTurTxtBox.Text))
+            {
+                MessageBox.Show("Ürün Tipi Boş Bırakılamaz!");
+                return;
+            }
+            #region texts null check
+        /*    if (string.IsNullOrWhiteSpace(miktarTxtBox.Text))
+            {
+                MessageBox.Show("Ürün Miktarı Boş Bırakılamaz!");
+                return;
+            }
+            if (string.IsNullOrWhiteSpace(alisFiyatTxtBox.Text))
+            {
+                MessageBox.Show("Ürün Alış Fiyatı Boş Bırakılamaz!");
+                return;
+            }
+            if (string.IsNullOrWhiteSpace(satisFiyatTxtBox.Text))
+            {
+                MessageBox.Show("Ürün Satış Fiyatı Boş Bırakılamaz!");
+                return;
+            }
+            if (string.IsNullOrWhiteSpace(alisTutarTxtBox.Text))
+            {
+                MessageBox.Show("Ürün Alış Tutarı Boş Bırakılamaz!");
+                return;
+            }
+            if (string.IsNullOrWhiteSpace(satisTutarTxtBox.Text))
+            {
+                MessageBox.Show("Ürün Satış Tutarı Boş Bırakılamaz!");
+                return;
+            }*/
+            #endregion
+            var data = new ProductDefine()
             {
                 Name = urunNameTxtBox.Text,
-                Type = urunTurTxtBox.Text,
-                Amount = Convert.ToInt32(miktarTxtBox.Text),
-                BuyPrice = Convert.ToInt32(alisFiyatTxtBox.Text),
-                SellPrice = Convert.ToInt32(satisFiyatTxtBox.Text),
-                BuyAmount = Convert.ToInt32(alisTutarTxtBox.Text),
-                SellAmount = Convert.ToInt32(satisTutarTxtBox.Text),
+                Type = urunTurTxtBox.Text
             };
-            context.WarehouseDefine.Add(data);
+            try
+            {
+                try
+                {
+                    
+                    data.Amount = Convert.ToDouble(miktarTxtBox.Text.Replace('.',','));
+                }
+                catch (Exception ex)
+                {
+                    if (!string.IsNullOrWhiteSpace(miktarTxtBox.Text))
+                    {
+                        MessageBox.Show("Lütfen miktara sadece rakam giriniz!");
+                        return;
+                    }
+                 
+                }
+                try
+                {
+                    data.BuyPrice = Convert.ToDouble(alisFiyatTxtBox.Text.Replace('.', ','));
+                }
+                catch (Exception ex)
+                {
+                   
+                    if (!string.IsNullOrWhiteSpace(alisFiyatTxtBox.Text))
+                    {
+                        MessageBox.Show("Lütfen alış fiyatına sadece rakam giriniz!");
+                        return;
+                    }
+                }
+                try
+                {
+                    data.SellPrice = Convert.ToDouble(satisFiyatTxtBox.Text.Replace('.', ','));
+                }
+                catch (Exception ex)
+                {
+                   
+                    if (!string.IsNullOrWhiteSpace(satisFiyatTxtBox.Text))
+                    {
+                        MessageBox.Show("Lütfen satış fiyatına sadece rakam giriniz!");
+                        return;
+                    }
+                }
+                try
+                {
+                    data.BuyAmount = Convert.ToDouble(alisTutarTxtBox.Text.Replace('.', ','));
+                }
+                catch (Exception ex)
+                {
+                  
+                    if (!string.IsNullOrWhiteSpace(alisTutarTxtBox.Text))
+                    {
+                        MessageBox.Show("Lütfen alış tutarına sadece rakam giriniz!");
+                        return;
+                    }
+                }
+                try
+                {
+                    data.SellAmount = Convert.ToDouble(satisTutarTxtBox.Text.Replace('.', ','));
+                }
+                catch (Exception ex)
+                {
+                  
+                    if (!string.IsNullOrWhiteSpace(satisTutarTxtBox.Text))
+                    {
+                        MessageBox.Show("Lütfen satış tutarına sadece rakam giriniz!");
+                        return;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Bir hata oluştu tekrar deneyiniz!");
+                return;
+            }
+         
+            context.ProductDefine.Add(data);
             context.SaveChanges();
-            WarehouseDefine = new ObservableCollection<WarehouseDefine>(context.WarehouseDefine.ToList());
-            dataGridView.DataSource = WarehouseDefine;
+            ProductDefine = new ObservableCollection<ProductDefine>(context.ProductDefine.ToList());
+            dataGridView.DataSource = ProductDefine;
             urunNameTxtBox.Text = null;
             idTxtBox.Text = null;
             urunTurTxtBox.Text = null;
@@ -62,11 +177,11 @@ namespace Takip_Programı.Forms
         }
         private void silBtn_Click(object sender, EventArgs e)
         {
-            var Warehouse = context.WarehouseDefine.FirstOrDefault(i => i.Id == Convert.ToInt16(idTxtBox.Text));
-            context.WarehouseDefine.Remove(Warehouse);
+            var Warehouse = context.ProductDefine.FirstOrDefault(i => i.Id == Convert.ToInt16(idTxtBox.Text));
+            context.ProductDefine.Remove(Warehouse);
             context.SaveChanges();
-            WarehouseDefine = new ObservableCollection<WarehouseDefine>(context.WarehouseDefine.ToList());
-            dataGridView.DataSource = WarehouseDefine;
+            ProductDefine = new ObservableCollection<ProductDefine>(context.ProductDefine.ToList());
+            dataGridView.DataSource = ProductDefine;
             urunNameTxtBox.Text = null;
             idTxtBox.Text = null;
             urunTurTxtBox.Text = null;
@@ -78,27 +193,108 @@ namespace Takip_Programı.Forms
             kayitBtn.Enabled = false;
             vazgecBtn.Enabled = false;
             silBtn.Enabled = false;
+            yeniBtn.Enabled = true;
         }
 
         private void kayitBtn_Click(object sender, EventArgs e)
         {
-            var warehouse = new WarehouseDefine()
+            if (string.IsNullOrWhiteSpace(urunNameTxtBox.Text))
+            {
+                MessageBox.Show("Ürün Adı Boş Bırakılamaz!");
+                return;
+            }
+            if (string.IsNullOrWhiteSpace(urunTurTxtBox.Text))
+            {
+                MessageBox.Show("Ürün Tipi Boş Bırakılamaz!");
+                return;
+            }          
+            var data = new ProductDefine()
             {
                 Id = Convert.ToInt16(idTxtBox.Text),
                 Name = urunNameTxtBox.Text,
-                Type = urunTurTxtBox.Text,
-                Amount = Convert.ToInt32(miktarTxtBox.Text),
-                BuyPrice = Convert.ToInt32(alisFiyatTxtBox.Text),
-                SellPrice = Convert.ToInt32(satisFiyatTxtBox.Text),
-                BuyAmount = Convert.ToInt32(alisTutarTxtBox.Text),
-                SellAmount = Convert.ToInt32(satisTutarTxtBox.Text),
+                Type = urunTurTxtBox.Text
             };
-            context.Customer.AsNoTracking();
-            var current = context.WarehouseDefine.FirstOrDefault(i => i.Id == Convert.ToInt16(idTxtBox.Text));
-            context.Entry(current).CurrentValues.SetValues(warehouse);
+            try
+            {
+                try
+                {
+
+                    data.Amount = Convert.ToDouble(miktarTxtBox.Text.Replace('.', ','));
+                }
+                catch (Exception ex)
+                {
+                    if (!string.IsNullOrWhiteSpace(miktarTxtBox.Text))
+                    {
+                        MessageBox.Show("Lütfen miktara sadece rakam giriniz!");
+                        return;
+                    }
+
+                }
+                try
+                {
+                    data.BuyPrice = Convert.ToDouble(alisFiyatTxtBox.Text.Replace('.', ','));
+                }
+                catch (Exception ex)
+                {
+
+                    if (!string.IsNullOrWhiteSpace(alisFiyatTxtBox.Text))
+                    {
+                        MessageBox.Show("Lütfen alış fiyatına sadece rakam giriniz!");
+                        return;
+                    }
+                }
+                try
+                {
+                    data.SellPrice = Convert.ToDouble(satisFiyatTxtBox.Text.Replace('.', ','));
+                }
+                catch (Exception ex)
+                {
+
+                    if (!string.IsNullOrWhiteSpace(satisFiyatTxtBox.Text))
+                    {
+                        MessageBox.Show("Lütfen satış fiyatına sadece rakam giriniz!");
+                        return;
+                    }
+                }
+                try
+                {
+                    data.BuyAmount = Convert.ToDouble(alisTutarTxtBox.Text.Replace('.', ','));
+                }
+                catch (Exception ex)
+                {
+
+                    if (!string.IsNullOrWhiteSpace(alisTutarTxtBox.Text))
+                    {
+                        MessageBox.Show("Lütfen alış tutarına sadece rakam giriniz!");
+                        return;
+                    }
+                }
+                try
+                {
+                    data.SellAmount = Convert.ToDouble(satisTutarTxtBox.Text.Replace('.', ','));
+                }
+                catch (Exception ex)
+                {
+
+                    if (!string.IsNullOrWhiteSpace(satisTutarTxtBox.Text))
+                    {
+                        MessageBox.Show("Lütfen satış tutarına sadece rakam giriniz!");
+                        return;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Bir hata oluştu tekrar deneyiniz!");
+                return;
+            }
+
+            context.ProductDefine.AsNoTracking();
+            var current = context.ProductDefine.FirstOrDefault(i => i.Id == Convert.ToInt16(idTxtBox.Text));
+            context.Entry(current).CurrentValues.SetValues(data);
             context.SaveChanges();
-            WarehouseDefine = new ObservableCollection<WarehouseDefine>(context.WarehouseDefine.ToList());
-            dataGridView.DataSource = WarehouseDefine;
+            ProductDefine = new ObservableCollection<ProductDefine>(context.ProductDefine.ToList());
+            dataGridView.DataSource = ProductDefine;
             urunNameTxtBox.Text = null;
             idTxtBox.Text = null;
             urunTurTxtBox.Text = null;
@@ -110,6 +306,7 @@ namespace Takip_Programı.Forms
             kayitBtn.Enabled = false;
             vazgecBtn.Enabled = false;
             silBtn.Enabled = false;
+            yeniBtn.Enabled = true;
         }
         private void vazgecBtn_Click(object sender, EventArgs e)
         {
@@ -124,6 +321,7 @@ namespace Takip_Programı.Forms
             kayitBtn.Enabled = false;
             vazgecBtn.Enabled = false;
             silBtn.Enabled = false;
+            yeniBtn.Enabled = true;
         }
         private void dataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -144,6 +342,220 @@ namespace Takip_Programı.Forms
                 yeniBtn.Enabled = false;
             }
         }
+        private void pompakayitbtn_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(PompaAdıText.Text))
+            {
+                MessageBox.Show("Pompa İsmi Boş Geçilemez!");
+                return;
+            }
+            var newpomp = new PumpDefine
+            {
+                Name = PompaAdıText.Text
+            };
+            try
+            {
+                if (!string.IsNullOrWhiteSpace(PompaEskiSayacText.Text))
+                {
+                    try
+                    {
+                        newpomp.LastCounter = Convert.ToDouble(PompaEskiSayacText.Text.Replace(".", ","));
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show("Lütfen Eski Sayaç İçin Sadece Rakam Giriniz!");
+                        return;
+                    }
+                }
+                if (!string.IsNullOrWhiteSpace(PompaYeniSayacText.Text))
+                {
+                    try
+                    {
+                        newpomp.NewCounter = Convert.ToDouble(PompaYeniSayacText.Text.Replace(".", ","));
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show("Lütfen Yeni Sayaç İçin Sadece Rakam Giriniz!");
+                        return;
+                    }
+                }
+                if (!string.IsNullOrWhiteSpace(PompaFarkText.Text))
+                {
+                    try
+                    {
+                        newpomp.Gap = Convert.ToDouble(PompaFarkText.Text.Replace(".", ","));
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show("Lütfen Fark İçin Sadece Rakam Giriniz!");
+                        return;
+                    }
+                }
+                if (!string.IsNullOrWhiteSpace(PompaTutarText.Text))
+                {
+                    try
+                    {
+                        newpomp.Total = Convert.ToDouble(PompaTutarText.Text.Replace(".", ","));
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show("Lütfen Tutar İçin Sadece Rakam Giriniz!");
+                        return;
+                    }
+                }
+                context.PumpDefine.Add(newpomp);
+                context.SaveChanges();
+                PumpDefine = new ObservableCollection<PumpDefine>(context.PumpDefine.ToList());
+                PumpGridView.DataSource = PumpDefine;
+                PompaTutarText.Text = null;
+                PompaEskiSayacText.Text = null;
+                PompaYeniSayacText.Text = null;
+                PompaAdıText.Text = null;
+                PompaFarkText.Text = null;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Bir Hata Meydana Geldi!\nTekrar Deneyiniz");
+                return;
+            }
+        }
 
+        private void pompaduzenlebtn_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(PompaAdıText.Text))
+            {
+                MessageBox.Show("Pompa İsmi Boş Geçilemez!");
+                return;
+            }
+            var newpomp = new PumpDefine
+            {
+                Name = PompaAdıText.Text
+            };
+            try
+            {
+                if (!string.IsNullOrWhiteSpace(PompaEskiSayacText.Text))
+                {
+                    try
+                    {
+                        newpomp.LastCounter = Convert.ToDouble(PompaEskiSayacText.Text.Replace(".", ","));
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show("Lütfen Eski Sayaç İçin Sadece Rakam Giriniz!");
+                        return;
+                    }
+                }
+                if (!string.IsNullOrWhiteSpace(PompaYeniSayacText.Text))
+                {
+                    try
+                    {
+                        newpomp.NewCounter = Convert.ToDouble(PompaYeniSayacText.Text.Replace(".", ","));
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show("Lütfen Yeni Sayaç İçin Sadece Rakam Giriniz!");
+                        return;
+                    }
+                }
+                if (!string.IsNullOrWhiteSpace(PompaFarkText.Text))
+                {
+                    try
+                    {
+                        newpomp.Gap = Convert.ToDouble(PompaFarkText.Text.Replace(".", ","));
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show("Lütfen Fark İçin Sadece Rakam Giriniz!");
+                        return;
+                    }
+                }
+                if (!string.IsNullOrWhiteSpace(PompaTutarText.Text))
+                {
+                    try
+                    {
+                        newpomp.Total = Convert.ToDouble(PompaTutarText.Text.Replace(".", ","));
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show("Lütfen Tutar İçin Sadece Rakam Giriniz!");
+                        return;
+                    }
+                }
+                context.PumpDefine.AsNoTracking();
+                var current = context.PumpDefine.FirstOrDefault(i => i.ID == SelectedPumpId);
+                newpomp.ID = SelectedPumpId;
+                context.Entry(current).CurrentValues.SetValues(newpomp);
+                context.SaveChanges();
+                PumpDefine = new ObservableCollection<PumpDefine>(context.PumpDefine.ToList());
+                PumpGridView.DataSource = PumpDefine;
+                PompaTutarText.Text = null;
+                PompaEskiSayacText.Text = null;
+                PompaYeniSayacText.Text = null;
+                PompaAdıText.Text = null;
+                PompaFarkText.Text = null;
+                pompaduzenlebtn.Enabled = false;
+                pompavazgecbtn.Enabled = false;
+                pompasilbtn.Enabled = false;
+                pompakayitbtn.Enabled = true;
+
+            }
+            catch (Exception ex)
+            {
+                var message = ex.Message;
+                MessageBox.Show(message, "HATA");
+                return;
+            }
+        }
+
+        private void pompavazgecbtn_Click(object sender, EventArgs e)
+        {
+            PompaTutarText.Text = null;
+            PompaEskiSayacText.Text = null;
+            PompaYeniSayacText.Text = null;
+            PompaAdıText.Text = null;
+            PompaFarkText.Text = null;
+            pompaduzenlebtn.Enabled = false;
+            pompavazgecbtn.Enabled = false;
+            pompasilbtn.Enabled = false;
+            pompakayitbtn.Enabled = true;
+
+        }
+
+        private void pompasilbtn_Click(object sender, EventArgs e)
+        {
+            var current = context.PumpDefine.FirstOrDefault(i => i.ID == SelectedPumpId);
+            context.PumpDefine.Remove(current);
+            context.SaveChanges();
+            PumpDefine = new ObservableCollection<PumpDefine>(context.PumpDefine.ToList());
+            PumpGridView.DataSource = PumpDefine;
+            PompaTutarText.Text = null;
+            PompaEskiSayacText.Text = null;
+            PompaYeniSayacText.Text = null;
+            PompaAdıText.Text = null;
+            PompaFarkText.Text = null;
+            pompaduzenlebtn.Enabled = false;
+            pompavazgecbtn.Enabled = false;
+            pompasilbtn.Enabled = false;
+            pompakayitbtn.Enabled = true;
+
+        }
+
+        private void PumpGridView_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = this.PumpGridView.Rows[e.RowIndex];
+                SelectedPumpId = Convert.ToInt16(row.Cells[0].Value.ToString());
+                PompaAdıText.Text = row.Cells[1].Value.ToString();
+                PompaEskiSayacText.Text = row.Cells[2].Value.ToString();
+                PompaYeniSayacText.Text = row.Cells[3].Value.ToString();
+                PompaFarkText.Text = row.Cells[4].Value.ToString();
+                PompaTutarText.Text = row.Cells[5].Value.ToString();
+                pompaduzenlebtn.Enabled = true;
+                pompasilbtn.Enabled = true;
+                pompavazgecbtn.Enabled = true;
+                pompakayitbtn.Enabled = false;
+            }
+        }
     }
 }

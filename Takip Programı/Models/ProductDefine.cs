@@ -6,15 +6,15 @@ using System.Threading.Tasks;
 
 namespace Takip_Programı.Models
 {
-    public class WarehouseDefine
+    public class ProductDefine
     {
         public int Id { get; set; }
         public string Name { get; set; }
         public string Type { get; set; }
-        public int Amount { get; set; }
-        public int BuyPrice { get; set; }
-        public int SellPrice { get; set; }
-        public int BuyAmount { get; set; }
-        public int SellAmount { get; set; }
+        public double Amount { get; set; }
+        public double BuyPrice { get; set; }
+        public double SellPrice { get; set; }
+        public double BuyAmount { get; set; }
+        public double SellAmount { get; set; }
     }
 }

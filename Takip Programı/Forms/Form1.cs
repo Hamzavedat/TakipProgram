@@ -55,6 +55,7 @@ namespace Takip_Programı
             kksatisBtn.BackColor = System.Drawing.Color.FromArgb(212, 236, 221);
             stokBtn.BackColor = System.Drawing.Color.FromArgb(212, 236, 221);
             ayarlarBtn.BackColor = System.Drawing.Color.FromArgb(212, 236, 221);
+            cariBtn.BackColor = System.Drawing.Color.FromArgb(212, 236, 221);
             musteriBtn.BackColor = ColorTranslator.FromHtml("#3DB2FF");
             //            OpenChildForm(new Form_Clients(), sender);
             if (newform != null)
@@ -73,6 +74,7 @@ namespace Takip_Programı
             kksatisBtn.BackColor = System.Drawing.Color.FromArgb(212, 236, 221);
             stokBtn.BackColor = System.Drawing.Color.FromArgb(212, 236, 221);
             ayarlarBtn.BackColor = System.Drawing.Color.FromArgb(212, 236, 221);
+            cariBtn.BackColor = System.Drawing.Color.FromArgb(212, 236, 221);
             psatisBtn.BackColor = ColorTranslator.FromHtml("#66DE93");
         }
 
@@ -84,6 +86,7 @@ namespace Takip_Programı
             kksatisBtn.BackColor = System.Drawing.Color.FromArgb(212, 236, 221);
             stokBtn.BackColor = System.Drawing.Color.FromArgb(212, 236, 221);
             ayarlarBtn.BackColor = System.Drawing.Color.FromArgb(212, 236, 221);
+            cariBtn.BackColor = System.Drawing.Color.FromArgb(212, 236, 221);
             pompaBtn.BackColor = ColorTranslator.FromHtml("#FFF47D");
             if (newform != null)
             {
@@ -101,6 +104,7 @@ namespace Takip_Programı
             kksatisBtn.BackColor = System.Drawing.Color.FromArgb(212, 236, 221);
             stokBtn.BackColor = System.Drawing.Color.FromArgb(212, 236, 221);
             ayarlarBtn.BackColor = System.Drawing.Color.FromArgb(212, 236, 221);
+            cariBtn.BackColor = System.Drawing.Color.FromArgb(212, 236, 221);
             depoBtn.BackColor = ColorTranslator.FromHtml("#FFE6E6");
         }
 
@@ -112,6 +116,7 @@ namespace Takip_Programı
             depoBtn.BackColor = System.Drawing.Color.FromArgb(212, 236, 221);
             stokBtn.BackColor = System.Drawing.Color.FromArgb(212, 236, 221);
             ayarlarBtn.BackColor = System.Drawing.Color.FromArgb(212, 236, 221);
+            cariBtn.BackColor = System.Drawing.Color.FromArgb(212, 236, 221);
             kksatisBtn.BackColor = ColorTranslator.FromHtml("#F3F2C9");
         }
 
@@ -123,6 +128,7 @@ namespace Takip_Programı
             depoBtn.BackColor = System.Drawing.Color.FromArgb(212, 236, 221);
             kksatisBtn.BackColor = System.Drawing.Color.FromArgb(212, 236, 221);
             ayarlarBtn.BackColor = System.Drawing.Color.FromArgb(212, 236, 221);
+            cariBtn.BackColor = System.Drawing.Color.FromArgb(212, 236, 221);
             stokBtn.BackColor = ColorTranslator.FromHtml("#B2B1B9");
         }
 
@@ -134,6 +140,7 @@ namespace Takip_Programı
             depoBtn.BackColor = System.Drawing.Color.FromArgb(212, 236, 221);
             kksatisBtn.BackColor = System.Drawing.Color.FromArgb(212, 236, 221);
             stokBtn.BackColor = System.Drawing.Color.FromArgb(212, 236, 221);
+            cariBtn.BackColor = System.Drawing.Color.FromArgb(212, 236, 221);
             ayarlarBtn.BackColor = ColorTranslator.FromHtml("#B5EAEA");
             if (newform != null)
             {
@@ -149,6 +156,24 @@ namespace Takip_Programı
             var date = DateTime.Now.ToString("dd.MM.yyyy", culture);
             var hour = DateTime.Now.ToString("HH:mm:ss", culture);
             label1.Text = "Tarih: " + date +"\nSaat: " + hour;
+        }
+
+        private void cariBtn_Click(object sender, EventArgs e)
+        {
+            musteriBtn.BackColor = System.Drawing.Color.FromArgb(212, 236, 221);
+            psatisBtn.BackColor = System.Drawing.Color.FromArgb(212, 236, 221);
+            pompaBtn.BackColor = System.Drawing.Color.FromArgb(212, 236, 221);
+            depoBtn.BackColor = System.Drawing.Color.FromArgb(212, 236, 221);
+            kksatisBtn.BackColor = System.Drawing.Color.FromArgb(212, 236, 221);
+            stokBtn.BackColor = System.Drawing.Color.FromArgb(212, 236, 221);
+            ayarlarBtn.BackColor = System.Drawing.Color.FromArgb(212, 236, 221);
+            cariBtn.BackColor = ColorTranslator.FromHtml("#6ECB63");
+            if (newform != null)
+            {
+                newform.Close();
+            }
+            newform = new Form_Cari();
+            newform.ShowDialog();
         }
 
         /*   private void button1_Click(object sender, EventArgs e)

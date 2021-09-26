@@ -68,14 +68,40 @@ namespace Takip_Programı.Forms
             this.vazgecBtn = new System.Windows.Forms.Button();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.pompasilbtn = new System.Windows.Forms.Button();
+            this.pompavazgecbtn = new System.Windows.Forms.Button();
+            this.pompaduzenlebtn = new System.Windows.Forms.Button();
+            this.pompakayitbtn = new System.Windows.Forms.Button();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.PompaTutarText = new System.Windows.Forms.TextBox();
+            this.PompaFarkText = new System.Windows.Forms.TextBox();
+            this.PompaYeniSayacText = new System.Windows.Forms.TextBox();
+            this.PompaEskiSayacText = new System.Windows.Forms.TextBox();
+            this.PompaAdıText = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.PumpGridView = new System.Windows.Forms.DataGridView();
+            this.PompaNameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PompaLastCounterColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PompaNewCounterColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PompaGapColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PompaTotalColunn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.tabPage7 = new System.Windows.Forms.TabPage();
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.TabPage1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.panel1.SuspendLayout();
+            this.tabPage4.SuspendLayout();
+            this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PumpGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -85,6 +111,7 @@ namespace Takip_Programı.Forms
             this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Controls.Add(this.tabPage5);
             this.tabControl1.Controls.Add(this.tabPage6);
+            this.tabControl1.Controls.Add(this.tabPage7);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Font = new System.Drawing.Font("Palatino Linotype", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.tabControl1.HotTrack = true;
@@ -92,7 +119,7 @@ namespace Takip_Programı.Forms
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.Padding = new System.Drawing.Point(20, 15);
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(879, 637);
+            this.tabControl1.Size = new System.Drawing.Size(903, 637);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage2
@@ -101,9 +128,9 @@ namespace Takip_Programı.Forms
             this.tabPage2.Location = new System.Drawing.Point(4, 51);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(871, 582);
+            this.tabPage2.Size = new System.Drawing.Size(895, 582);
             this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Depo Tanımları";
+            this.tabPage2.Text = "Ürün Tanımları";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // TabPage1
@@ -115,7 +142,7 @@ namespace Takip_Programı.Forms
             this.TabPage1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TabPage1.Location = new System.Drawing.Point(3, 3);
             this.TabPage1.Name = "TabPage1";
-            this.TabPage1.Size = new System.Drawing.Size(865, 576);
+            this.TabPage1.Size = new System.Drawing.Size(889, 576);
             this.TabPage1.TabIndex = 2;
             // 
             // panel2
@@ -124,7 +151,7 @@ namespace Takip_Programı.Forms
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 164);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(865, 412);
+            this.panel2.Size = new System.Drawing.Size(889, 412);
             this.panel2.TabIndex = 29;
             // 
             // dataGridView
@@ -144,9 +171,9 @@ namespace Takip_Programı.Forms
             this.dataGridView.Location = new System.Drawing.Point(0, 0);
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.RowTemplate.Height = 25;
-            this.dataGridView.Size = new System.Drawing.Size(1060, 462);
+            this.dataGridView.Size = new System.Drawing.Size(889, 412);
             this.dataGridView.TabIndex = 0;
-            this.dataGridView.CellClick += dataGridView_CellClick;
+            this.dataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellClick);
             // 
             // idColumn
             // 
@@ -243,7 +270,7 @@ namespace Takip_Programı.Forms
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(865, 164);
+            this.panel1.Size = new System.Drawing.Size(889, 164);
             this.panel1.TabIndex = 28;
             // 
             // idTxtBox
@@ -477,29 +504,259 @@ namespace Takip_Programı.Forms
             this.tabPage3.Location = new System.Drawing.Point(4, 51);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(871, 582);
+            this.tabPage3.Size = new System.Drawing.Size(895, 582);
             this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Pompa Tanımları";
+            this.tabPage3.Text = "Depo Tanımları";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // tabPage4
             // 
+            this.tabPage4.Controls.Add(this.panel3);
             this.tabPage4.Location = new System.Drawing.Point(4, 51);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(871, 582);
+            this.tabPage4.Size = new System.Drawing.Size(895, 582);
             this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "Personel Tanımları";
+            this.tabPage4.Text = "Pompa Tanımları";
             this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(181)))), ((int)(((byte)(234)))), ((int)(((byte)(234)))));
+            this.panel3.Controls.Add(this.pompasilbtn);
+            this.panel3.Controls.Add(this.pompavazgecbtn);
+            this.panel3.Controls.Add(this.pompaduzenlebtn);
+            this.panel3.Controls.Add(this.pompakayitbtn);
+            this.panel3.Controls.Add(this.label12);
+            this.panel3.Controls.Add(this.label11);
+            this.panel3.Controls.Add(this.label10);
+            this.panel3.Controls.Add(this.label7);
+            this.panel3.Controls.Add(this.PompaTutarText);
+            this.panel3.Controls.Add(this.PompaFarkText);
+            this.panel3.Controls.Add(this.PompaYeniSayacText);
+            this.panel3.Controls.Add(this.PompaEskiSayacText);
+            this.panel3.Controls.Add(this.PompaAdıText);
+            this.panel3.Controls.Add(this.label3);
+            this.panel3.Controls.Add(this.PumpGridView);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel3.Location = new System.Drawing.Point(3, 3);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(889, 576);
+            this.panel3.TabIndex = 0;
+            // 
+            // pompasilbtn
+            // 
+            this.pompasilbtn.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.pompasilbtn.Enabled = false;
+            this.pompasilbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.pompasilbtn.Font = new System.Drawing.Font("Palatino Linotype", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.pompasilbtn.ForeColor = System.Drawing.SystemColors.Control;
+            this.pompasilbtn.Location = new System.Drawing.Point(584, 96);
+            this.pompasilbtn.Name = "pompasilbtn";
+            this.pompasilbtn.Size = new System.Drawing.Size(125, 35);
+            this.pompasilbtn.TabIndex = 14;
+            this.pompasilbtn.Text = "Sil";
+            this.pompasilbtn.UseVisualStyleBackColor = false;
+            this.pompasilbtn.Click += new System.EventHandler(this.pompasilbtn_Click);
+            // 
+            // pompavazgecbtn
+            // 
+            this.pompavazgecbtn.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.pompavazgecbtn.Enabled = false;
+            this.pompavazgecbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.pompavazgecbtn.Font = new System.Drawing.Font("Palatino Linotype", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.pompavazgecbtn.ForeColor = System.Drawing.SystemColors.Control;
+            this.pompavazgecbtn.Location = new System.Drawing.Point(410, 96);
+            this.pompavazgecbtn.Name = "pompavazgecbtn";
+            this.pompavazgecbtn.Size = new System.Drawing.Size(125, 35);
+            this.pompavazgecbtn.TabIndex = 13;
+            this.pompavazgecbtn.Text = "Vazgeç";
+            this.pompavazgecbtn.UseVisualStyleBackColor = false;
+            this.pompavazgecbtn.Click += new System.EventHandler(this.pompavazgecbtn_Click);
+            // 
+            // pompaduzenlebtn
+            // 
+            this.pompaduzenlebtn.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.pompaduzenlebtn.Enabled = false;
+            this.pompaduzenlebtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.pompaduzenlebtn.Font = new System.Drawing.Font("Palatino Linotype", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.pompaduzenlebtn.ForeColor = System.Drawing.SystemColors.Control;
+            this.pompaduzenlebtn.Location = new System.Drawing.Point(236, 96);
+            this.pompaduzenlebtn.Name = "pompaduzenlebtn";
+            this.pompaduzenlebtn.Size = new System.Drawing.Size(125, 35);
+            this.pompaduzenlebtn.TabIndex = 12;
+            this.pompaduzenlebtn.Text = "Düzenle";
+            this.pompaduzenlebtn.UseVisualStyleBackColor = false;
+            this.pompaduzenlebtn.Click += new System.EventHandler(this.pompaduzenlebtn_Click);
+            // 
+            // pompakayitbtn
+            // 
+            this.pompakayitbtn.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.pompakayitbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.pompakayitbtn.Font = new System.Drawing.Font("Palatino Linotype", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.pompakayitbtn.ForeColor = System.Drawing.SystemColors.Control;
+            this.pompakayitbtn.Location = new System.Drawing.Point(65, 96);
+            this.pompakayitbtn.Name = "pompakayitbtn";
+            this.pompakayitbtn.Size = new System.Drawing.Size(125, 35);
+            this.pompakayitbtn.TabIndex = 11;
+            this.pompakayitbtn.Text = "Yeni Kayıt";
+            this.pompakayitbtn.UseVisualStyleBackColor = false;
+            this.pompakayitbtn.Click += new System.EventHandler(this.pompakayitbtn_Click);
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Palatino Linotype", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label12.Location = new System.Drawing.Point(603, 54);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(48, 20);
+            this.label12.TabIndex = 10;
+            this.label12.Text = "Tutar:";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Palatino Linotype", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label11.Location = new System.Drawing.Point(608, 23);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(43, 20);
+            this.label11.TabIndex = 9;
+            this.label11.Text = "Fark:";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Palatino Linotype", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label10.Location = new System.Drawing.Point(346, 54);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(83, 20);
+            this.label10.TabIndex = 8;
+            this.label10.Text = "Yeni Sayaç:";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Palatino Linotype", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label7.Location = new System.Drawing.Point(346, 23);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(83, 20);
+            this.label7.TabIndex = 7;
+            this.label7.Text = "Eski Sayaç:";
+            // 
+            // PompaTutarText
+            // 
+            this.PompaTutarText.Location = new System.Drawing.Point(657, 53);
+            this.PompaTutarText.Name = "PompaTutarText";
+            this.PompaTutarText.Size = new System.Drawing.Size(100, 25);
+            this.PompaTutarText.TabIndex = 6;
+            // 
+            // PompaFarkText
+            // 
+            this.PompaFarkText.Location = new System.Drawing.Point(657, 22);
+            this.PompaFarkText.Name = "PompaFarkText";
+            this.PompaFarkText.Size = new System.Drawing.Size(100, 25);
+            this.PompaFarkText.TabIndex = 5;
+            // 
+            // PompaYeniSayacText
+            // 
+            this.PompaYeniSayacText.Location = new System.Drawing.Point(435, 52);
+            this.PompaYeniSayacText.Name = "PompaYeniSayacText";
+            this.PompaYeniSayacText.Size = new System.Drawing.Size(100, 25);
+            this.PompaYeniSayacText.TabIndex = 4;
+            // 
+            // PompaEskiSayacText
+            // 
+            this.PompaEskiSayacText.Location = new System.Drawing.Point(435, 21);
+            this.PompaEskiSayacText.Name = "PompaEskiSayacText";
+            this.PompaEskiSayacText.Size = new System.Drawing.Size(100, 25);
+            this.PompaEskiSayacText.TabIndex = 3;
+            // 
+            // PompaAdıText
+            // 
+            this.PompaAdıText.Location = new System.Drawing.Point(135, 21);
+            this.PompaAdıText.Name = "PompaAdıText";
+            this.PompaAdıText.Size = new System.Drawing.Size(146, 25);
+            this.PompaAdıText.TabIndex = 2;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Palatino Linotype", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label3.Location = new System.Drawing.Point(42, 22);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(87, 20);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "Pompa Adı:";
+            // 
+            // PumpGridView
+            // 
+            this.PumpGridView.BackgroundColor = System.Drawing.Color.White;
+            this.PumpGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.PumpGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.PompaNameColumn,
+            this.Id,
+            this.PompaLastCounterColumn,
+            this.PompaNewCounterColumn,
+            this.PompaGapColumn,
+            this.PompaTotalColunn});
+            this.PumpGridView.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.PumpGridView.Location = new System.Drawing.Point(0, 150);
+            this.PumpGridView.Name = "PumpGridView";
+            this.PumpGridView.RowTemplate.Height = 25;
+            this.PumpGridView.Size = new System.Drawing.Size(889, 426);
+            this.PumpGridView.TabIndex = 0;
+            this.PumpGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.PumpGridView_CellClick);
+            // 
+            // PompaNameColumn
+            // 
+            this.PompaNameColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.PompaNameColumn.DataPropertyName = "Name";
+            this.PompaNameColumn.HeaderText = "Pompa Adı";
+            this.PompaNameColumn.Name = "PompaNameColumn";
+            // 
+            // Id
+            // 
+            this.Id.DataPropertyName = "ID";
+            this.Id.HeaderText = "id";
+            this.Id.Name = "Id";
+            this.Id.Visible = false;
+            // 
+            // PompaLastCounterColumn
+            // 
+            this.PompaLastCounterColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.PompaLastCounterColumn.DataPropertyName = "LastCounter";
+            this.PompaLastCounterColumn.HeaderText = "Eski Sayaç";
+            this.PompaLastCounterColumn.Name = "PompaLastCounterColumn";
+            // 
+            // PompaNewCounterColumn
+            // 
+            this.PompaNewCounterColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.PompaNewCounterColumn.DataPropertyName = "NewCounter";
+            this.PompaNewCounterColumn.HeaderText = "Yeni Sayaç";
+            this.PompaNewCounterColumn.Name = "PompaNewCounterColumn";
+            // 
+            // PompaGapColumn
+            // 
+            this.PompaGapColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.PompaGapColumn.DataPropertyName = "Gap";
+            this.PompaGapColumn.HeaderText = "Fark";
+            this.PompaGapColumn.Name = "PompaGapColumn";
+            // 
+            // PompaTotalColunn
+            // 
+            this.PompaTotalColunn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.PompaTotalColunn.DataPropertyName = "Total";
+            this.PompaTotalColunn.HeaderText = "Tutar";
+            this.PompaTotalColunn.Name = "PompaTotalColunn";
             // 
             // tabPage5
             // 
             this.tabPage5.Location = new System.Drawing.Point(4, 51);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(871, 582);
+            this.tabPage5.Size = new System.Drawing.Size(895, 582);
             this.tabPage5.TabIndex = 4;
-            this.tabPage5.Text = "Kullanıcılar";
+            this.tabPage5.Text = "Personel Tanımları";
             this.tabPage5.UseVisualStyleBackColor = true;
             // 
             // tabPage6
@@ -507,16 +764,26 @@ namespace Takip_Programı.Forms
             this.tabPage6.Location = new System.Drawing.Point(4, 51);
             this.tabPage6.Name = "tabPage6";
             this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage6.Size = new System.Drawing.Size(871, 582);
+            this.tabPage6.Size = new System.Drawing.Size(895, 582);
             this.tabPage6.TabIndex = 5;
-            this.tabPage6.Text = "Veri Yolu";
+            this.tabPage6.Text = "Kullanıcılar";
             this.tabPage6.UseVisualStyleBackColor = true;
+            // 
+            // tabPage7
+            // 
+            this.tabPage7.Location = new System.Drawing.Point(4, 51);
+            this.tabPage7.Name = "tabPage7";
+            this.tabPage7.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage7.Size = new System.Drawing.Size(895, 582);
+            this.tabPage7.TabIndex = 6;
+            this.tabPage7.Text = "Veri Yolu";
+            this.tabPage7.UseVisualStyleBackColor = true;
             // 
             // Form_Settings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(879, 637);
+            this.ClientSize = new System.Drawing.Size(903, 637);
             this.Controls.Add(this.tabControl1);
             this.Name = "Form_Settings";
             this.Text = "Form_Settings";
@@ -527,9 +794,14 @@ namespace Takip_Programı.Forms
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.tabPage4.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PumpGridView)).EndInit();
             this.ResumeLayout(false);
 
         }
+
 
 
         #endregion
@@ -571,5 +843,28 @@ namespace Takip_Programı.Forms
         private DataGridViewTextBoxColumn satisFiyatColumn;
         private DataGridViewTextBoxColumn alisTutarColumn;
         private DataGridViewTextBoxColumn satisTutarColumn;
+        private Panel panel3;
+        private Label label7;
+        private TextBox PompaTutarText;
+        private TextBox PompaFarkText;
+        private TextBox PompaYeniSayacText;
+        private TextBox PompaEskiSayacText;
+        private TextBox PompaAdıText;
+        private Label label3;
+        private DataGridView PumpGridView;
+        private TabPage tabPage7;
+        private Label label12;
+        private Label label11;
+        private Label label10;
+        public Button pompakayitbtn;
+        public Button pompasilbtn;
+        public Button pompavazgecbtn;
+        public Button pompaduzenlebtn;
+        private DataGridViewTextBoxColumn PompaNameColumn;
+        private DataGridViewTextBoxColumn Id;
+        private DataGridViewTextBoxColumn PompaLastCounterColumn;
+        private DataGridViewTextBoxColumn PompaNewCounterColumn;
+        private DataGridViewTextBoxColumn PompaGapColumn;
+        private DataGridViewTextBoxColumn PompaTotalColunn;
     }
 }
