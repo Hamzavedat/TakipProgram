@@ -349,218 +349,29 @@ namespace Takip_Programı.Forms
         }
         private void pompakayitbtn_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(PompaAdıText.Text))
-            {
-                MessageBox.Show("Pompa İsmi Boş Geçilemez!");
-                return;
-            }
-            var newpomp = new PumpDefine
-            {
-                Name = PompaAdıText.Text
-            };
-            try
-            {
-                if (!string.IsNullOrWhiteSpace(PompaEskiSayacText.Text))
-                {
-                    try
-                    {
-                        newpomp.LastCounter = Convert.ToDouble(PompaEskiSayacText.Text.Replace(".", ","));
-                    }
-                    catch (Exception)
-                    {
-                        MessageBox.Show("Lütfen Eski Sayaç İçin Sadece Rakam Giriniz!");
-                        return;
-                    }
-                }
-                if (!string.IsNullOrWhiteSpace(PompaYeniSayacText.Text))
-                {
-                    try
-                    {
-                        newpomp.NewCounter = Convert.ToDouble(PompaYeniSayacText.Text.Replace(".", ","));
-                    }
-                    catch (Exception)
-                    {
-                        MessageBox.Show("Lütfen Yeni Sayaç İçin Sadece Rakam Giriniz!");
-                        return;
-                    }
-                }
-                if (!string.IsNullOrWhiteSpace(PompaFarkText.Text))
-                {
-                    try
-                    {
-                        newpomp.Gap = Convert.ToDouble(PompaFarkText.Text.Replace(".", ","));
-                    }
-                    catch (Exception)
-                    {
-                        MessageBox.Show("Lütfen Fark İçin Sadece Rakam Giriniz!");
-                        return;
-                    }
-                }
-                if (!string.IsNullOrWhiteSpace(PompaTutarText.Text))
-                {
-                    try
-                    {
-                        newpomp.Total = Convert.ToDouble(PompaTutarText.Text.Replace(".", ","));
-                    }
-                    catch (Exception)
-                    {
-                        MessageBox.Show("Lütfen Tutar İçin Sadece Rakam Giriniz!");
-                        return;
-                    }
-                }
-                context.PumpDefine.Add(newpomp);
-                context.SaveChanges();
-                PumpDefine = new ObservableCollection<PumpDefine>(context.PumpDefine.ToList());
-                PumpGridView.DataSource = PumpDefine;
-                PompaTutarText.Text = null;
-                PompaEskiSayacText.Text = null;
-                PompaYeniSayacText.Text = null;
-                PompaAdıText.Text = null;
-                PompaFarkText.Text = null;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Bir Hata Meydana Geldi!\nTekrar Deneyiniz");
-                return;
-            }
+            
         }
 
         private void pompaduzenlebtn_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(PompaAdıText.Text))
-            {
-                MessageBox.Show("Pompa İsmi Boş Geçilemez!");
-                return;
-            }
-            var newpomp = new PumpDefine
-            {
-                Name = PompaAdıText.Text
-            };
-            try
-            {
-                if (!string.IsNullOrWhiteSpace(PompaEskiSayacText.Text))
-                {
-                    try
-                    {
-                        newpomp.LastCounter = Convert.ToDouble(PompaEskiSayacText.Text.Replace(".", ","));
-                    }
-                    catch (Exception)
-                    {
-                        MessageBox.Show("Lütfen Eski Sayaç İçin Sadece Rakam Giriniz!");
-                        return;
-                    }
-                }
-                if (!string.IsNullOrWhiteSpace(PompaYeniSayacText.Text))
-                {
-                    try
-                    {
-                        newpomp.NewCounter = Convert.ToDouble(PompaYeniSayacText.Text.Replace(".", ","));
-                    }
-                    catch (Exception)
-                    {
-                        MessageBox.Show("Lütfen Yeni Sayaç İçin Sadece Rakam Giriniz!");
-                        return;
-                    }
-                }
-                if (!string.IsNullOrWhiteSpace(PompaFarkText.Text))
-                {
-                    try
-                    {
-                        newpomp.Gap = Convert.ToDouble(PompaFarkText.Text.Replace(".", ","));
-                    }
-                    catch (Exception)
-                    {
-                        MessageBox.Show("Lütfen Fark İçin Sadece Rakam Giriniz!");
-                        return;
-                    }
-                }
-                if (!string.IsNullOrWhiteSpace(PompaTutarText.Text))
-                {
-                    try
-                    {
-                        newpomp.Total = Convert.ToDouble(PompaTutarText.Text.Replace(".", ","));
-                    }
-                    catch (Exception)
-                    {
-                        MessageBox.Show("Lütfen Tutar İçin Sadece Rakam Giriniz!");
-                        return;
-                    }
-                }
-                context.PumpDefine.AsNoTracking();
-                var current = context.PumpDefine.FirstOrDefault(i => i.ID == SelectedPumpId);
-                newpomp.ID = SelectedPumpId;
-                context.Entry(current).CurrentValues.SetValues(newpomp);
-                context.SaveChanges();
-                PumpDefine = new ObservableCollection<PumpDefine>(context.PumpDefine.ToList());
-                PumpGridView.DataSource = PumpDefine;
-                PompaTutarText.Text = null;
-                PompaEskiSayacText.Text = null;
-                PompaYeniSayacText.Text = null;
-                PompaAdıText.Text = null;
-                PompaFarkText.Text = null;
-                pompaduzenlebtn.Enabled = false;
-                pompavazgecbtn.Enabled = false;
-                pompasilbtn.Enabled = false;
-                pompakayitbtn.Enabled = true;
-
-            }
-            catch (Exception ex)
-            {
-                var message = ex.Message;
-                MessageBox.Show(message, "HATA");
-                return;
-            }
+           
         }
 
         private void pompavazgecbtn_Click(object sender, EventArgs e)
         {
-            PompaTutarText.Text = null;
-            PompaEskiSayacText.Text = null;
-            PompaYeniSayacText.Text = null;
-            PompaAdıText.Text = null;
-            PompaFarkText.Text = null;
-            pompaduzenlebtn.Enabled = false;
-            pompavazgecbtn.Enabled = false;
-            pompasilbtn.Enabled = false;
-            pompakayitbtn.Enabled = true;
+          
 
         }
 
         private void pompasilbtn_Click(object sender, EventArgs e)
         {
-            var current = context.PumpDefine.FirstOrDefault(i => i.ID == SelectedPumpId);
-            context.PumpDefine.Remove(current);
-            context.SaveChanges();
-            PumpDefine = new ObservableCollection<PumpDefine>(context.PumpDefine.ToList());
-            PumpGridView.DataSource = PumpDefine;
-            PompaTutarText.Text = null;
-            PompaEskiSayacText.Text = null;
-            PompaYeniSayacText.Text = null;
-            PompaAdıText.Text = null;
-            PompaFarkText.Text = null;
-            pompaduzenlebtn.Enabled = false;
-            pompavazgecbtn.Enabled = false;
-            pompasilbtn.Enabled = false;
-            pompakayitbtn.Enabled = true;
+            
 
         }
 
         private void PumpGridView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0)
-            {
-                DataGridViewRow row = this.PumpGridView.Rows[e.RowIndex];
-                SelectedPumpId = Convert.ToInt16(row.Cells[0].Value.ToString());
-                PompaAdıText.Text = row.Cells[1].Value.ToString();
-                PompaEskiSayacText.Text = row.Cells[2].Value.ToString();
-                PompaYeniSayacText.Text = row.Cells[3].Value.ToString();
-                PompaFarkText.Text = row.Cells[4].Value.ToString();
-                PompaTutarText.Text = row.Cells[5].Value.ToString();
-                pompaduzenlebtn.Enabled = true;
-                pompasilbtn.Enabled = true;
-                pompavazgecbtn.Enabled = true;
-                pompakayitbtn.Enabled = false;
-            }
+            
         }
 
         private void DepoYeniBtn_Click(object sender, EventArgs e)
