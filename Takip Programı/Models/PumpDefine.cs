@@ -8,11 +8,9 @@ namespace Takip_Programı.Models
 {
     public class PumpDefine
     {
-        public int ID { get; set; }
-        public string Name { get; set; }
-        public double LastCounter { get; set; }
-        public double NewCounter { get; set; }
-        public double Gap { get; set; }
-        public double Total { get; set; }
+        public int Id { get; set; }
+        public string PumpName { get; set; }
+        public double InitialCounter { get; set; }
+        public WareHouse WareHouse { get; set; }
     }
 }
