@@ -29,25 +29,18 @@ namespace Takip_Programı.Forms
         /// </summary>
         private void InitializeComponent()
         {
-            this.musteriListView = new System.Windows.Forms.ListView();
-            this.ADI = new System.Windows.Forms.ColumnHeader();
-            this.SOYADI = new System.Windows.Forms.ColumnHeader();
-            this.RISK = new System.Windows.Forms.ColumnHeader();
-            this.FIAT = new System.Windows.Forms.ColumnHeader();
-            this.MEVKI = new System.Windows.Forms.ColumnHeader();
-            this.TEL = new System.Windows.Forms.ColumnHeader();
-            this.CEPTEL = new System.Windows.Forms.ColumnHeader();
-            this.vergiNoTxtBox = new System.Windows.Forms.TextBox();
+            this.amountTxtBox = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.vergiDaireTxtBox = new System.Windows.Forms.TextBox();
+            this.diffrenceTxtBox = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.idTextBox = new System.Windows.Forms.TextBox();
+            this.personNameTextBox = new System.Windows.Forms.TextBox();
+            this.dateComboBox = new System.Windows.Forms.ComboBox();
             this.pompaComboBox = new System.Windows.Forms.ComboBox();
-            this.telTxtBox = new System.Windows.Forms.TextBox();
+            this.lastCounterTxtBox = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.mevkiTxtBox = new System.Windows.Forms.TextBox();
+            this.firstCounterTxtBox = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -58,86 +51,30 @@ namespace Takip_Programı.Forms
             this.vazgecBtn = new System.Windows.Forms.Button();
             this.TabPage1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.dataGridView = new System.Windows.Forms.DataGridView();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.WorkDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PersonName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FirstCounter = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LastCounter = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Difference = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PumpDefine = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PumpNames = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.TabPage1.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.SuspendLayout();
             // 
-            // musteriListView
+            // amountTxtBox
             // 
-            this.musteriListView.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(161)))), ((int)(((byte)(157)))));
-            this.musteriListView.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.musteriListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.ADI,
-            this.SOYADI,
-            this.RISK,
-            this.FIAT,
-            this.MEVKI,
-            this.TEL,
-            this.CEPTEL});
-            this.musteriListView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.musteriListView.Font = new System.Drawing.Font("Palatino Linotype", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.musteriListView.ForeColor = System.Drawing.Color.Black;
-            this.musteriListView.FullRowSelect = true;
-            this.musteriListView.GridLines = true;
-            this.musteriListView.HideSelection = false;
-            this.musteriListView.Location = new System.Drawing.Point(0, 0);
-            this.musteriListView.Name = "musteriListView";
-            this.musteriListView.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.musteriListView.Size = new System.Drawing.Size(754, 296);
-            this.musteriListView.TabIndex = 28;
-            this.musteriListView.UseCompatibleStateImageBehavior = false;
-            this.musteriListView.View = System.Windows.Forms.View.Details;
-            // 
-            // ADI
-            // 
-            this.ADI.Name = "ADI";
-            this.ADI.Text = "VARDİYA TARİHİ";
-            this.ADI.Width = 110;
-            // 
-            // SOYADI
-            // 
-            this.SOYADI.Name = "SOYADI";
-            this.SOYADI.Text = "PERSONEL ADI";
-            this.SOYADI.Width = 110;
-            // 
-            // RISK
-            // 
-            this.RISK.Name = "RISK";
-            this.RISK.Text = "İLK SAYAÇ";
-            this.RISK.Width = 100;
-            // 
-            // FIAT
-            // 
-            this.FIAT.Name = "FIAT";
-            this.FIAT.Text = "SON SAYAÇ";
-            this.FIAT.Width = 140;
-            // 
-            // MEVKI
-            // 
-            this.MEVKI.Name = "MEVKI";
-            this.MEVKI.Text = "FARK (LT)";
-            this.MEVKI.Width = 100;
-            // 
-            // TEL
-            // 
-            this.TEL.Name = "TEL";
-            this.TEL.Text = "FİYAT";
-            this.TEL.Width = 120;
-            // 
-            // CEPTEL
-            // 
-            this.CEPTEL.Name = "CEPTEL";
-            this.CEPTEL.Text = "TUTAR";
-            this.CEPTEL.Width = 120;
-            // 
-            // vergiNoTxtBox
-            // 
-            this.vergiNoTxtBox.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.vergiNoTxtBox.Location = new System.Drawing.Point(605, 68);
-            this.vergiNoTxtBox.Name = "vergiNoTxtBox";
-            this.vergiNoTxtBox.Size = new System.Drawing.Size(114, 23);
-            this.vergiNoTxtBox.TabIndex = 44;
+            this.amountTxtBox.BackColor = System.Drawing.Color.White;
+            this.amountTxtBox.Location = new System.Drawing.Point(690, 69);
+            this.amountTxtBox.Name = "amountTxtBox";
+            this.amountTxtBox.Size = new System.Drawing.Size(142, 23);
+            this.amountTxtBox.TabIndex = 44;
             // 
             // label7
             // 
@@ -147,19 +84,19 @@ namespace Takip_Programı.Forms
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Palatino Linotype", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label7.Location = new System.Drawing.Point(543, 70);
+            this.label7.Location = new System.Drawing.Point(628, 71);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(56, 20);
             this.label7.TabIndex = 43;
             this.label7.Text = "Tutar : ";
             // 
-            // vergiDaireTxtBox
+            // diffrenceTxtBox
             // 
-            this.vergiDaireTxtBox.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.vergiDaireTxtBox.Location = new System.Drawing.Point(605, 40);
-            this.vergiDaireTxtBox.Name = "vergiDaireTxtBox";
-            this.vergiDaireTxtBox.Size = new System.Drawing.Size(114, 23);
-            this.vergiDaireTxtBox.TabIndex = 42;
+            this.diffrenceTxtBox.BackColor = System.Drawing.Color.White;
+            this.diffrenceTxtBox.Location = new System.Drawing.Point(690, 41);
+            this.diffrenceTxtBox.Name = "diffrenceTxtBox";
+            this.diffrenceTxtBox.Size = new System.Drawing.Size(142, 23);
+            this.diffrenceTxtBox.TabIndex = 42;
             // 
             // label8
             // 
@@ -169,7 +106,7 @@ namespace Takip_Programı.Forms
             this.label8.AutoSize = true;
             this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Font = new System.Drawing.Font("Palatino Linotype", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label8.Location = new System.Drawing.Point(520, 39);
+            this.label8.Location = new System.Drawing.Point(605, 40);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(79, 20);
             this.label8.TabIndex = 41;
@@ -179,16 +116,17 @@ namespace Takip_Programı.Forms
             // 
             this.panel1.AutoScroll = true;
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(253)))), ((int)(((byte)(176)))));
-            this.panel1.Controls.Add(this.comboBox2);
-            this.panel1.Controls.Add(this.comboBox1);
-            this.panel1.Controls.Add(this.vergiNoTxtBox);
+            this.panel1.Controls.Add(this.idTextBox);
+            this.panel1.Controls.Add(this.personNameTextBox);
+            this.panel1.Controls.Add(this.dateComboBox);
+            this.panel1.Controls.Add(this.amountTxtBox);
             this.panel1.Controls.Add(this.label7);
-            this.panel1.Controls.Add(this.vergiDaireTxtBox);
+            this.panel1.Controls.Add(this.diffrenceTxtBox);
             this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.pompaComboBox);
-            this.panel1.Controls.Add(this.telTxtBox);
+            this.panel1.Controls.Add(this.lastCounterTxtBox);
             this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.mevkiTxtBox);
+            this.panel1.Controls.Add(this.firstCounterTxtBox);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
@@ -200,58 +138,56 @@ namespace Takip_Programı.Forms
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(754, 164);
+            this.panel1.Size = new System.Drawing.Size(924, 164);
             this.panel1.TabIndex = 28;
             // 
-            // comboBox2
+            // idTextBox
             // 
-            this.comboBox2.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox2.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
-            "Etkilensin",
-            "Etkilenmesin"});
-            this.comboBox2.Location = new System.Drawing.Point(130, 72);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(114, 23);
-            this.comboBox2.TabIndex = 48;
+            this.idTextBox.BackColor = System.Drawing.Color.White;
+            this.idTextBox.Location = new System.Drawing.Point(690, 12);
+            this.idTextBox.Name = "idTextBox";
+            this.idTextBox.Size = new System.Drawing.Size(142, 23);
+            this.idTextBox.TabIndex = 49;
             // 
-            // comboBox1
+            // personNameTextBox
             // 
-            this.comboBox1.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Etkilensin",
-            "Etkilenmesin"});
-            this.comboBox1.Location = new System.Drawing.Point(130, 41);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(114, 23);
-            this.comboBox1.TabIndex = 47;
+            this.personNameTextBox.BackColor = System.Drawing.Color.White;
+            this.personNameTextBox.Location = new System.Drawing.Point(130, 71);
+            this.personNameTextBox.Name = "personNameTextBox";
+            this.personNameTextBox.Size = new System.Drawing.Size(164, 23);
+            this.personNameTextBox.TabIndex = 48;
+            // 
+            // dateComboBox
+            // 
+            this.dateComboBox.BackColor = System.Drawing.Color.White;
+            this.dateComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.dateComboBox.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.dateComboBox.FormattingEnabled = true;
+            this.dateComboBox.Location = new System.Drawing.Point(130, 41);
+            this.dateComboBox.Name = "dateComboBox";
+            this.dateComboBox.Size = new System.Drawing.Size(164, 23);
+            this.dateComboBox.TabIndex = 47;
             // 
             // pompaComboBox
             // 
-            this.pompaComboBox.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.pompaComboBox.BackColor = System.Drawing.Color.White;
             this.pompaComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.pompaComboBox.ForeColor = System.Drawing.SystemColors.Desktop;
             this.pompaComboBox.FormattingEnabled = true;
-            this.pompaComboBox.Items.AddRange(new object[] {
-            "Etkilensin",
-            "Etkilenmesin"});
             this.pompaComboBox.Location = new System.Drawing.Point(130, 12);
             this.pompaComboBox.Name = "pompaComboBox";
-            this.pompaComboBox.Size = new System.Drawing.Size(114, 23);
+            this.pompaComboBox.Size = new System.Drawing.Size(164, 23);
             this.pompaComboBox.TabIndex = 38;
+            this.pompaComboBox.SelectedIndexChanged += new System.EventHandler(this.pompaComboBox_SelectedIndexChanged);
             // 
-            // telTxtBox
+            // lastCounterTxtBox
             // 
-            this.telTxtBox.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.telTxtBox.Location = new System.Drawing.Point(377, 71);
-            this.telTxtBox.Name = "telTxtBox";
-            this.telTxtBox.Size = new System.Drawing.Size(114, 23);
-            this.telTxtBox.TabIndex = 37;
+            this.lastCounterTxtBox.BackColor = System.Drawing.Color.White;
+            this.lastCounterTxtBox.Location = new System.Drawing.Point(427, 72);
+            this.lastCounterTxtBox.Name = "lastCounterTxtBox";
+            this.lastCounterTxtBox.Size = new System.Drawing.Size(142, 23);
+            this.lastCounterTxtBox.TabIndex = 37;
+            this.lastCounterTxtBox.TextChanged += new System.EventHandler(this.lastCounterTxtBox_TextChanged);
             // 
             // label4
             // 
@@ -261,19 +197,20 @@ namespace Takip_Programı.Forms
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Palatino Linotype", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(284, 74);
+            this.label4.Location = new System.Drawing.Point(334, 75);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(91, 20);
             this.label4.TabIndex = 36;
             this.label4.Text = "Yeni Sayaç : ";
             // 
-            // mevkiTxtBox
+            // firstCounterTxtBox
             // 
-            this.mevkiTxtBox.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.mevkiTxtBox.Location = new System.Drawing.Point(377, 40);
-            this.mevkiTxtBox.Name = "mevkiTxtBox";
-            this.mevkiTxtBox.Size = new System.Drawing.Size(114, 23);
-            this.mevkiTxtBox.TabIndex = 35;
+            this.firstCounterTxtBox.BackColor = System.Drawing.Color.White;
+            this.firstCounterTxtBox.Location = new System.Drawing.Point(427, 41);
+            this.firstCounterTxtBox.Name = "firstCounterTxtBox";
+            this.firstCounterTxtBox.Size = new System.Drawing.Size(142, 23);
+            this.firstCounterTxtBox.TabIndex = 35;
+            this.firstCounterTxtBox.TextChanged += new System.EventHandler(this.firstCounterTxtBox_TextChanged);
             // 
             // label5
             // 
@@ -283,7 +220,7 @@ namespace Takip_Programı.Forms
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Palatino Linotype", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(284, 39);
+            this.label5.Location = new System.Drawing.Point(334, 40);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(87, 20);
             this.label5.TabIndex = 34;
@@ -344,10 +281,12 @@ namespace Takip_Programı.Forms
             this.yeniBtn.TabIndex = 22;
             this.yeniBtn.Text = "Yeni Kayıt";
             this.yeniBtn.UseVisualStyleBackColor = false;
+            this.yeniBtn.Click += new System.EventHandler(this.yeniBtn_Click);
             // 
             // silBtn
             // 
             this.silBtn.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.silBtn.Enabled = false;
             this.silBtn.FlatAppearance.BorderSize = 0;
             this.silBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.silBtn.Font = new System.Drawing.Font("Palatino Linotype", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -358,10 +297,12 @@ namespace Takip_Programı.Forms
             this.silBtn.TabIndex = 26;
             this.silBtn.Text = "Sil";
             this.silBtn.UseVisualStyleBackColor = false;
+            this.silBtn.Click += new System.EventHandler(this.silBtn_Click);
             // 
             // kayitBtn
             // 
             this.kayitBtn.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.kayitBtn.Enabled = false;
             this.kayitBtn.FlatAppearance.BorderSize = 0;
             this.kayitBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.kayitBtn.Font = new System.Drawing.Font("Palatino Linotype", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -370,12 +311,14 @@ namespace Takip_Programı.Forms
             this.kayitBtn.Name = "kayitBtn";
             this.kayitBtn.Size = new System.Drawing.Size(125, 35);
             this.kayitBtn.TabIndex = 24;
-            this.kayitBtn.Text = "Kaydet";
+            this.kayitBtn.Text = "Düzenle";
             this.kayitBtn.UseVisualStyleBackColor = false;
+            this.kayitBtn.Click += new System.EventHandler(this.kayitBtn_Click);
             // 
             // vazgecBtn
             // 
             this.vazgecBtn.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.vazgecBtn.Enabled = false;
             this.vazgecBtn.FlatAppearance.BorderSize = 0;
             this.vazgecBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.vazgecBtn.Font = new System.Drawing.Font("Palatino Linotype", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -386,6 +329,7 @@ namespace Takip_Programı.Forms
             this.vazgecBtn.TabIndex = 25;
             this.vazgecBtn.Text = "Vazgeç";
             this.vazgecBtn.UseVisualStyleBackColor = false;
+            this.vazgecBtn.Click += new System.EventHandler(this.vazgecBtn_Click);
             // 
             // TabPage1
             // 
@@ -396,38 +340,130 @@ namespace Takip_Programı.Forms
             this.TabPage1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TabPage1.Location = new System.Drawing.Point(0, 0);
             this.TabPage1.Name = "TabPage1";
-            this.TabPage1.Size = new System.Drawing.Size(754, 460);
+            this.TabPage1.Size = new System.Drawing.Size(924, 586);
             this.TabPage1.TabIndex = 2;
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.musteriListView);
+            this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.dataGridView);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 164);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(754, 296);
+            this.panel2.Size = new System.Drawing.Size(924, 422);
             this.panel2.TabIndex = 29;
+            // 
+            // dataGridView
+            // 
+            this.dataGridView.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Id,
+            this.WorkDate,
+            this.PersonName,
+            this.FirstCounter,
+            this.LastCounter,
+            this.Difference,
+            this.Price,
+            this.Amount,
+            this.PumpDefine,
+            this.PumpNames});
+            this.dataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView.Location = new System.Drawing.Point(0, 0);
+            this.dataGridView.Name = "dataGridView";
+            this.dataGridView.RowTemplate.Height = 25;
+            this.dataGridView.Size = new System.Drawing.Size(924, 422);
+            this.dataGridView.TabIndex = 0;
+            this.dataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellClick);
+            // 
+            // Id
+            // 
+            this.Id.DataPropertyName = "Id";
+            this.Id.HeaderText = "IdColumn";
+            this.Id.Name = "Id";
+            this.Id.Visible = false;
+            // 
+            // WorkDate
+            // 
+            this.WorkDate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.WorkDate.DataPropertyName = "WorkDate";
+            this.WorkDate.HeaderText = "Vardiya Tarihi";
+            this.WorkDate.Name = "WorkDate";
+            // 
+            // PersonName
+            // 
+            this.PersonName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.PersonName.DataPropertyName = "PersonName";
+            this.PersonName.HeaderText = "Personel Adı";
+            this.PersonName.Name = "PersonName";
+            // 
+            // FirstCounter
+            // 
+            this.FirstCounter.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.FirstCounter.DataPropertyName = "FirstCounter";
+            this.FirstCounter.HeaderText = "İlk Sayaç";
+            this.FirstCounter.Name = "FirstCounter";
+            // 
+            // LastCounter
+            // 
+            this.LastCounter.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.LastCounter.DataPropertyName = "LastCounter";
+            this.LastCounter.HeaderText = "Son Sayaç";
+            this.LastCounter.Name = "LastCounter";
+            // 
+            // Difference
+            // 
+            this.Difference.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Difference.DataPropertyName = "Difference";
+            this.Difference.HeaderText = "Fark (Lt)";
+            this.Difference.Name = "Difference";
+            // 
+            // Price
+            // 
+            this.Price.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Price.DataPropertyName = "Price";
+            this.Price.HeaderText = "Fiyat";
+            this.Price.Name = "Price";
+            // 
+            // Amount
+            // 
+            this.Amount.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Amount.DataPropertyName = "Amount";
+            this.Amount.HeaderText = "Tutar";
+            this.Amount.Name = "Amount";
+            // 
+            // PumpDefine
+            // 
+            this.PumpDefine.DataPropertyName = "PumpDefine";
+            this.PumpDefine.HeaderText = "PumpDefineColumn";
+            this.PumpDefine.Name = "PumpDefine";
+            this.PumpDefine.Visible = false;
+            // 
+            // PumpNames
+            // 
+            this.PumpNames.DataPropertyName = "PumpNames";
+            this.PumpNames.HeaderText = "PumpNamesColumn";
+            this.PumpNames.Name = "PumpNames";
+            this.PumpNames.Visible = false;
             // 
             // Form_Pomp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(754, 460);
+            this.ClientSize = new System.Drawing.Size(924, 586);
             this.Controls.Add(this.TabPage1);
             this.Name = "Form_Pomp";
             this.Text = "Form_Pomp";
-            this.Load += new System.EventHandler(this.Form_Pomp_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.TabPage1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        public System.Windows.Forms.ListView musteriListView;
         public System.Windows.Forms.ColumnHeader VARDIYA;
         public System.Windows.Forms.ColumnHeader PERSONEL;
         public System.Windows.Forms.ColumnHeader ILKSYC;
@@ -435,17 +471,16 @@ namespace Takip_Programı.Forms
         public System.Windows.Forms.ColumnHeader FARK;
         public System.Windows.Forms.ColumnHeader FIYAT;
         public System.Windows.Forms.ColumnHeader TUTAR;
-        public System.Windows.Forms.TextBox vergiNoTxtBox;
+        public System.Windows.Forms.TextBox amountTxtBox;
         public System.Windows.Forms.Label label7;
-        public System.Windows.Forms.TextBox vergiDaireTxtBox;
+        public System.Windows.Forms.TextBox diffrenceTxtBox;
         public System.Windows.Forms.Label label8;
         public System.Windows.Forms.Panel panel1;
-        public System.Windows.Forms.ComboBox comboBox2;
-        public System.Windows.Forms.ComboBox comboBox1;
+        public System.Windows.Forms.ComboBox dateComboBox;
         public System.Windows.Forms.ComboBox pompaComboBox;
-        public System.Windows.Forms.TextBox telTxtBox;
+        public System.Windows.Forms.TextBox lastCounterTxtBox;
         public System.Windows.Forms.Label label4;
-        public System.Windows.Forms.TextBox mevkiTxtBox;
+        public System.Windows.Forms.TextBox firstCounterTxtBox;
         public System.Windows.Forms.Label label5;
         public System.Windows.Forms.Label label3;
         public System.Windows.Forms.Label label2;
@@ -456,12 +491,18 @@ namespace Takip_Programı.Forms
         public System.Windows.Forms.Button vazgecBtn;
         public System.Windows.Forms.Panel TabPage1;
         public System.Windows.Forms.Panel panel2;
-        public System.Windows.Forms.ColumnHeader ADI;
-        public System.Windows.Forms.ColumnHeader SOYADI;
-        public System.Windows.Forms.ColumnHeader RISK;
-        public System.Windows.Forms.ColumnHeader FIAT;
-        public System.Windows.Forms.ColumnHeader MEVKI;
-        public System.Windows.Forms.ColumnHeader TEL;
-        public System.Windows.Forms.ColumnHeader CEPTEL;
+        private System.Windows.Forms.DataGridView dataGridView;
+        public System.Windows.Forms.TextBox personNameTextBox;
+        public System.Windows.Forms.TextBox idTextBox;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn WorkDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PersonName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FirstCounter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn LastCounter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Difference;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Price;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Amount;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PumpDefine;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PumpNames;
     }
 }

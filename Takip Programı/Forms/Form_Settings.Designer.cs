@@ -102,14 +102,15 @@ namespace Takip_Programı.Forms
             this.baslangicSayac = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.PumpGridView = new System.Windows.Forms.DataGridView();
+            this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.tabPage7 = new System.Windows.Forms.TabPage();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PompaDepoColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PompaNameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PompaInitialCounterColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PompaSellColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.tabPage6 = new System.Windows.Forms.TabPage();
-            this.tabPage7 = new System.Windows.Forms.TabPage();
+            this.Counter = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.TabPage1.SuspendLayout();
@@ -912,7 +913,8 @@ namespace Takip_Programı.Forms
             this.PompaDepoColumn,
             this.PompaNameColumn,
             this.PompaInitialCounterColumn,
-            this.PompaSellColumn});
+            this.PompaSellColumn,
+            this.Counter});
             this.PumpGridView.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.PumpGridView.Location = new System.Drawing.Point(0, 150);
             this.PumpGridView.Name = "PumpGridView";
@@ -920,6 +922,36 @@ namespace Takip_Programı.Forms
             this.PumpGridView.Size = new System.Drawing.Size(889, 426);
             this.PumpGridView.TabIndex = 0;
             this.PumpGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.PumpGridView_CellClick);
+            // 
+            // tabPage5
+            // 
+            this.tabPage5.Location = new System.Drawing.Point(4, 51);
+            this.tabPage5.Name = "tabPage5";
+            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage5.Size = new System.Drawing.Size(895, 582);
+            this.tabPage5.TabIndex = 4;
+            this.tabPage5.Text = "Personel Tanımları";
+            this.tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // tabPage6
+            // 
+            this.tabPage6.Location = new System.Drawing.Point(4, 51);
+            this.tabPage6.Name = "tabPage6";
+            this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage6.Size = new System.Drawing.Size(895, 582);
+            this.tabPage6.TabIndex = 5;
+            this.tabPage6.Text = "Kullanıcılar";
+            this.tabPage6.UseVisualStyleBackColor = true;
+            // 
+            // tabPage7
+            // 
+            this.tabPage7.Location = new System.Drawing.Point(4, 51);
+            this.tabPage7.Name = "tabPage7";
+            this.tabPage7.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage7.Size = new System.Drawing.Size(895, 582);
+            this.tabPage7.TabIndex = 6;
+            this.tabPage7.Text = "Veri Yolu";
+            this.tabPage7.UseVisualStyleBackColor = true;
             // 
             // Id
             // 
@@ -956,35 +988,12 @@ namespace Takip_Programı.Forms
             this.PompaSellColumn.HeaderText = "Satış Fiyatı";
             this.PompaSellColumn.Name = "PompaSellColumn";
             // 
-            // tabPage5
+            // Counter
             // 
-            this.tabPage5.Location = new System.Drawing.Point(4, 51);
-            this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(895, 582);
-            this.tabPage5.TabIndex = 4;
-            this.tabPage5.Text = "Personel Tanımları";
-            this.tabPage5.UseVisualStyleBackColor = true;
-            // 
-            // tabPage6
-            // 
-            this.tabPage6.Location = new System.Drawing.Point(4, 51);
-            this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage6.Size = new System.Drawing.Size(895, 582);
-            this.tabPage6.TabIndex = 5;
-            this.tabPage6.Text = "Kullanıcılar";
-            this.tabPage6.UseVisualStyleBackColor = true;
-            // 
-            // tabPage7
-            // 
-            this.tabPage7.Location = new System.Drawing.Point(4, 51);
-            this.tabPage7.Name = "tabPage7";
-            this.tabPage7.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage7.Size = new System.Drawing.Size(895, 582);
-            this.tabPage7.TabIndex = 6;
-            this.tabPage7.Text = "Veri Yolu";
-            this.tabPage7.UseVisualStyleBackColor = true;
+            this.Counter.DataPropertyName = "Counter";
+            this.Counter.HeaderText = "Anlık Sayaç";
+            this.Counter.Name = "Counter";
+            this.Counter.Visible = false;
             // 
             // Form_Settings
             // 
@@ -1094,5 +1103,6 @@ namespace Takip_Programı.Forms
         private DataGridViewTextBoxColumn PompaNameColumn;
         private DataGridViewTextBoxColumn PompaInitialCounterColumn;
         private DataGridViewTextBoxColumn PompaSellColumn;
+        private DataGridViewTextBoxColumn Counter;
     }
 }

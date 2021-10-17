@@ -651,7 +651,8 @@ namespace Takip_Programı.Forms
                             PumpName = c.PumpName,
                             InitialCounter = c.InitialCounter,
                             pompaSatisFiyati = c.WareHouse.ProductDefine.SellPrice,
-                            WareHouse = c.WareHouse.WareHouseName
+                            WareHouse = c.WareHouse.WareHouseName,
+                            Counter = c.Counter
                         }).ToList();
                     pumpIdTextBox.Text = null;
                     depoComboBox.Text = null;
@@ -694,12 +695,24 @@ namespace Takip_Programı.Forms
                     {
                         Id = Convert.ToInt32(pumpIdTextBox.Text),
                         PumpName = pompaName.Text,
-                        InitialCounter = Convert.ToDouble(baslangicSayac.Text.Replace('.', ',')),
-                        WareHouse = ware
+                        WareHouse = ware, 
+                        Counter = pumpDefine.Counter
                     };
+                    try
+                    {
+                        pump.InitialCounter = Convert.ToDouble(baslangicSayac.Text.Replace('.', ','));
+                    }
+                    catch (Exception)
+                    {
+                        if (!string.IsNullOrWhiteSpace(baslangicSayac.Text))
+                        {
+                            MessageBox.Show("Lütfen tutara sadece sayı giriniz!");
+                            return;
+                        }
+                    }
                     pumpDefine.PumpName = pump.PumpName;
                     pumpDefine.InitialCounter = pump.InitialCounter;
-                    pumpDefine.WareHouse = pump.WareHouse;
+                    pumpDefine.WareHouse = pump.WareHouse; 
                     context.SaveChanges();
                     PumpDefine = new ObservableCollection<PumpDefine>(context.PumpDefine.ToList());
                     PumpGridView.DataSource = PumpDefine.Select(c =>
@@ -790,10 +803,10 @@ namespace Takip_Programı.Forms
             if (e.RowIndex >= 0)
             {
                 DataGridViewRow row = this.PumpGridView.Rows[e.RowIndex];
-                pumpIdTextBox.Text = row.Cells[0].Value.ToString();
-                depoComboBox.Text = row.Cells[4].Value.ToString();
-                pompaName.Text = row.Cells[1].Value.ToString();
-                baslangicSayac.Text = row.Cells[2].Value.ToString();
+                pumpIdTextBox.Text = row.Cells[1].Value.ToString();
+                depoComboBox.Text = row.Cells[5].Value.ToString();
+                pompaName.Text = row.Cells[2].Value.ToString();
+                baslangicSayac.Text = row.Cells[3].Value.ToString();
                 pompasilbtn.Enabled = true;
                 pompaduzenlebtn.Enabled = true;
                 pompavazgecbtn.Enabled = true;

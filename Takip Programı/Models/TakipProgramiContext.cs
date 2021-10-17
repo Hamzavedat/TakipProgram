@@ -18,5 +18,6 @@ namespace Takip_Programı.Models
         public DbSet<ProductDefine> ProductDefine { get; set; }
         public DbSet<PumpDefine> PumpDefine { get; set; }
         public DbSet<WareHouse> WareHouseDefine { get; set; }
+        public DbSet<PumpFormModel> PumpFormModel { get; set; }
     }
 }

@@ -10,8 +10,8 @@ namespace Takip_Programı.Models
     {
         public int Id { get; set; }
         public string WareHouseName { get; set; }
-        public int WareHouseVolume { get; set; }
-        public int WareHouseStock { get; set; }
+        public double WareHouseVolume { get; set; }
+        public double WareHouseStock { get; set; }
         public ProductDefine ProductDefine { get; set; }
     }
 }

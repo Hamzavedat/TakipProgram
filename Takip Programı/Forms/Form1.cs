@@ -78,6 +78,12 @@ namespace Takip_Programı
             ayarlarBtn.BackColor = System.Drawing.Color.FromArgb(212, 236, 221);
             cariBtn.BackColor = System.Drawing.Color.FromArgb(212, 236, 221);
             psatisBtn.BackColor = ColorTranslator.FromHtml("#66DE93");
+            if (newform != null)
+            {
+                newform.Close();
+            }
+            newform = new SellProduct();
+            newform.ShowDialog();
         }
 
         private void pompaBtn_Click(object sender, EventArgs e)
