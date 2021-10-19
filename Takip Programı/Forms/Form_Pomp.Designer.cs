@@ -453,7 +453,7 @@ namespace Takip_Programı.Forms
             this.ClientSize = new System.Drawing.Size(924, 586);
             this.Controls.Add(this.TabPage1);
             this.Name = "Form_Pomp";
-            this.Text = "Form_Pomp";
+            this.Text = "Pompa İşlemleri";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.TabPage1.ResumeLayout(false);

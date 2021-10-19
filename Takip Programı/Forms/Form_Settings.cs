@@ -819,7 +819,7 @@ namespace Takip_Programı.Forms
         {
             if ((sender as ComboBox).SelectedIndex != -1)
             {
-                SelectedWareHouseId = (int)(sender as ComboBox).SelectedValue;
+                SelectedWareHouseId = Convert.ToInt32((sender as ComboBox).SelectedValue);
             }
             else
             {

@@ -577,7 +577,7 @@ namespace Takip_Programı.Forms
             this.Controls.Add(this.dataGridView);
             this.Controls.Add(this.panel1);
             this.Name = "Form_Cari";
-            this.Text = "Form_Cari";
+            this.Text = "Cari İşlemler";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

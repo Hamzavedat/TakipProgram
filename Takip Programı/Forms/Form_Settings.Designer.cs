@@ -102,15 +102,15 @@ namespace Takip_Programı.Forms
             this.baslangicSayac = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.PumpGridView = new System.Windows.Forms.DataGridView();
-            this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.tabPage6 = new System.Windows.Forms.TabPage();
-            this.tabPage7 = new System.Windows.Forms.TabPage();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PompaDepoColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PompaNameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PompaInitialCounterColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PompaSellColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Counter = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.tabPage7 = new System.Windows.Forms.TabPage();
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.TabPage1.SuspendLayout();
@@ -923,36 +923,6 @@ namespace Takip_Programı.Forms
             this.PumpGridView.TabIndex = 0;
             this.PumpGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.PumpGridView_CellClick);
             // 
-            // tabPage5
-            // 
-            this.tabPage5.Location = new System.Drawing.Point(4, 51);
-            this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(895, 582);
-            this.tabPage5.TabIndex = 4;
-            this.tabPage5.Text = "Personel Tanımları";
-            this.tabPage5.UseVisualStyleBackColor = true;
-            // 
-            // tabPage6
-            // 
-            this.tabPage6.Location = new System.Drawing.Point(4, 51);
-            this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage6.Size = new System.Drawing.Size(895, 582);
-            this.tabPage6.TabIndex = 5;
-            this.tabPage6.Text = "Kullanıcılar";
-            this.tabPage6.UseVisualStyleBackColor = true;
-            // 
-            // tabPage7
-            // 
-            this.tabPage7.Location = new System.Drawing.Point(4, 51);
-            this.tabPage7.Name = "tabPage7";
-            this.tabPage7.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage7.Size = new System.Drawing.Size(895, 582);
-            this.tabPage7.TabIndex = 6;
-            this.tabPage7.Text = "Veri Yolu";
-            this.tabPage7.UseVisualStyleBackColor = true;
-            // 
             // Id
             // 
             this.Id.DataPropertyName = "Id";
@@ -995,6 +965,36 @@ namespace Takip_Programı.Forms
             this.Counter.Name = "Counter";
             this.Counter.Visible = false;
             // 
+            // tabPage5
+            // 
+            this.tabPage5.Location = new System.Drawing.Point(4, 51);
+            this.tabPage5.Name = "tabPage5";
+            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage5.Size = new System.Drawing.Size(895, 582);
+            this.tabPage5.TabIndex = 4;
+            this.tabPage5.Text = "Personel Tanımları";
+            this.tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // tabPage6
+            // 
+            this.tabPage6.Location = new System.Drawing.Point(4, 51);
+            this.tabPage6.Name = "tabPage6";
+            this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage6.Size = new System.Drawing.Size(895, 582);
+            this.tabPage6.TabIndex = 5;
+            this.tabPage6.Text = "Kullanıcılar";
+            this.tabPage6.UseVisualStyleBackColor = true;
+            // 
+            // tabPage7
+            // 
+            this.tabPage7.Location = new System.Drawing.Point(4, 51);
+            this.tabPage7.Name = "tabPage7";
+            this.tabPage7.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage7.Size = new System.Drawing.Size(895, 582);
+            this.tabPage7.TabIndex = 6;
+            this.tabPage7.Text = "Veri Yolu";
+            this.tabPage7.UseVisualStyleBackColor = true;
+            // 
             // Form_Settings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -1002,7 +1002,7 @@ namespace Takip_Programı.Forms
             this.ClientSize = new System.Drawing.Size(903, 637);
             this.Controls.Add(this.tabControl1);
             this.Name = "Form_Settings";
-            this.Text = "Form_Settings";
+            this.Text = "Ayarlar";
             this.tabControl1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.TabPage1.ResumeLayout(false);

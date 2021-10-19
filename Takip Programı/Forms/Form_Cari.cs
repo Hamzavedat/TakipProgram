@@ -15,6 +15,7 @@ namespace Takip_Programı.Forms
     {
         TakipProgramiContext context = new TakipProgramiContext();
         private string SelectedId { get; set; }
+        private Form newform { get; set; }
         public Form_Cari()
         {
             InitializeComponent();
@@ -74,6 +75,7 @@ namespace Takip_Programı.Forms
                 vergiDaireTxtBox.Text = string.Empty;
                 vergiNoTxtBox.Text = string.Empty;
                 fiyatComboBox.SelectedIndex = -1;
+                bakiyeTxtBox.Text = string.Empty;
                 return;
             }
             
@@ -86,6 +88,7 @@ namespace Takip_Programı.Forms
             vergiDaireTxtBox.Text = data.VergiDairesi;
             vergiNoTxtBox.Text = data.VergiNo;
             fiyatComboBox.SelectedIndex = data.Change;
+            bakiyeTxtBox.Text = data.TotalDebt.ToString() + " ₺";
             satisBtn.Enabled = true;
             alisBtn.Enabled = true;
             tahsilatBtn.Enabled = true;
@@ -96,10 +99,20 @@ namespace Takip_Programı.Forms
         {
             if ((sender as Button).Enabled)
             {
+                if (nameComboBox.SelectedIndex != -1)
+                {
+                    if (newform != null)
+                    {
+                        newform.Close();
+                    }
+                    newform = new Client_Sale(SelectedId);
+                    newform.ShowDialog();
+                }
+  
 
             }
         }
-
+        
         private void alisBtn_Click(object sender, EventArgs e)
         {
             if ((sender as Button).Enabled)

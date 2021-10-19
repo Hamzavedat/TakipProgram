@@ -17,7 +17,7 @@ namespace Takip_Programı.Models
             using (SQLiteCommand command = con.CreateCommand())
             {
                 con.Open();
-                command.CommandText = "CREATE TABLE IF NOT EXISTS 'Customer' ('Id' INTEGER NOT NULL, 'Name' TEXT, 'Surname' TEXT, 'Risk' INTEGER NOT NULL, 'Change'  INTEGER NOT NULL, 'Position' TEXT, 'Phone'  TEXT, 'MobilePhone' TEXT, 'VergiDairesi'    TEXT, 'VergiNo' TEXT, 'Adress'  TEXT, CONSTRAINT 'PK_Customer' PRIMARY KEY('Id' AUTOINCREMENT))";
+                command.CommandText = "CREATE TABLE IF NOT EXISTS 'Customer' ('Id' INTEGER NOT NULL, 'Name' TEXT, 'Surname' TEXT, 'Risk' INTEGER NOT NULL, 'Change'  INTEGER NOT NULL, 'Position' TEXT, 'Phone'  TEXT, 'MobilePhone' TEXT, 'VergiDairesi' TEXT, 'VergiNo' TEXT, 'Adress'  TEXT,	'TotalDebt'	REAL,'ProductDebtList' TEXT, 'PruductDebtNumberList' TEXT, CONSTRAINT 'PK_Customer' PRIMARY KEY('Id' AUTOINCREMENT))";
                 command.ExecuteNonQuery();
                 command.CommandText = "CREATE TABLE IF NOT EXISTS 'ProductDefine' ( 'Id' INTEGER NOT NULL, 'Name' TEXT, 'Type' TEXT, 'Amount' REAL NOT NULL, 'BuyPrice' REAL NOT NULL, 'SellPrice' REAL NOT NULL, 'BuyAmount' REAL NOT NULL, 'SellAmount' REAL NOT NULL, CONSTRAINT 'PK_ProductDefine' PRIMARY KEY('Id' AUTOINCREMENT))";
                 command.ExecuteNonQuery();

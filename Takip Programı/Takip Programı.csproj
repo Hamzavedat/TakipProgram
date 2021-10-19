@@ -8,6 +8,11 @@
     <ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
     <AssemblyName>Takip_Programı</AssemblyName>
     <RootNamespace>Takip_Programı</RootNamespace>
+    <ApplicationIcon>gas-pump (1).ico</ApplicationIcon>
+    <Win32Resource />
+    <StartupObject></StartupObject>
+    <PackageId>Takip Programı</PackageId>
+    <Authors>Cengiz Yazılım</Authors>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
@@ -34,6 +39,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Update="Properties\Settings.Designer.cs">
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Update="Properties\Resources.resx">
@@ -43,5 +53,11 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
   </ItemGroup>
 </Project>

@@ -34,6 +34,24 @@ namespace Takip_Programı.Forms
             urun_cmbbox.SelectedIndex = -1;
             dataGridView1.DataSource = SaleProductList;
             TotalPrice = 0;
+            this.KeyDown += Form_Sale_KeyDown;
+        }
+        private void Form_Sale_KeyDown(object sender, KeyEventArgs e)
+        {
+            switch (e.KeyCode)
+            {
+                case Keys.Enter:
+                    eklebtn_Click(eklebtn, new EventArgs());
+                    break;
+                case Keys.F1:
+                    satbtn_Click(satbtn, new EventArgs());
+                    break;
+                case Keys.Delete:
+                    satbtn_Click(silbtn, new EventArgs());
+                    break;              
+                default:
+                    break;
+            }
         }
 
         private void eklebtn_Click(object sender, EventArgs e)
@@ -82,38 +100,42 @@ namespace Takip_Programı.Forms
 
         private void satbtn_Click(object sender, EventArgs e)
         {
-            if (SaleProductList.Count>0)
+            if (silbtn.Enabled)
             {
-
-                DialogResult dialogResult = MessageBox.Show( $"Toplam Ücret {toplamtxt.Text}. Onaylıyor Musunuz?","Uyarı", MessageBoxButtons.YesNo);
-                if (dialogResult == DialogResult.Yes)
+                if (SaleProductList.Count > 0)
                 {
-                    var depolist = context.WareHouseDefine.ToList();
-                    foreach (var item in SaleProductList)
+
+                    DialogResult dialogResult = MessageBox.Show($"Toplam Ücret {toplamtxt.Text}. Onaylıyor Musunuz?", "Uyarı", MessageBoxButtons.YesNo);
+                    if (dialogResult == DialogResult.Yes)
                     {
-                        if ((depolist.Where(i => i.ProductDefine.Id == item.ProductId).ToList()).Count > 0)
+                        var depolist = context.WareHouseDefine.ToList();
+                        foreach (var item in SaleProductList)
                         {
-                            var depo = depolist.FirstOrDefault(i => i.ProductDefine.Id == item.ProductId);
-                            if (item.ProductNumber <= depo.WareHouseStock)
+                            if ((depolist.Where(i => i.ProductDefine.Id == item.ProductId).ToList()).Count > 0)
                             {
-                                depo.WareHouseStock -= item.ProductNumber;
-                            }
-                            else
-                            {
-                                depo.WareHouseStock = 0;
-                            }
-                            context.SaveChanges();
+                                var depo = depolist.FirstOrDefault(i => i.ProductDefine.Id == item.ProductId);
+                                if (item.ProductNumber <= depo.WareHouseStock)
+                                {
+                                    depo.WareHouseStock -= item.ProductNumber;
+                                }
+                                else
+                                {
+                                    depo.WareHouseStock = 0;
+                                }
+                                context.SaveChanges();
 
+                            }
                         }
+                        Close();
                     }
-                    Close();
-                }
-                else if (dialogResult == DialogResult.No)
-                {
+                    else if (dialogResult == DialogResult.No)
+                    {
 
+                    }
                 }
+
             }
-         
+
         }
 
         private void urun_cmbbox_SelectedIndexChanged(object sender, EventArgs e)
@@ -175,8 +197,8 @@ namespace Takip_Programı.Forms
                 if (miktartxt.Text != "")
                 {
                     MessageBox.Show("Miktara Sadece Sayı Giriniz");
-                    miktartxt.Text = "";
-                    
+                    miktartxt.Text = miktartxt.Text.Substring(0, (miktartxt.Text.Length - 1));
+
                 }
             }
           

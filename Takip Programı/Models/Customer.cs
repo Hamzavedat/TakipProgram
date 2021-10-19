@@ -31,5 +31,8 @@ namespace Takip_Programı.Models
                 return Name + " " + Surname;
             }
         }
+        public double TotalDebt { get; set; }
+        public string ProductDebtList { get; set; }
+        public string PruductDebtNumberList { get; set; }
     }
 }

@@ -254,7 +254,7 @@ namespace Takip_Programı.Forms
             this.Controls.Add(this.urun_cmbbox);
             this.Controls.Add(this.label1);
             this.Name = "SellProduct";
-            this.Text = "SellProduct";
+            this.Text = "Satış Ekranı";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
